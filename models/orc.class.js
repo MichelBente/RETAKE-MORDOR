@@ -30,8 +30,9 @@ class Orc extends MoveableObject {
                 let path = this.IMAGES_WALKING[i];
                 this.img = this.imageCache[path];
                 this.currentImage++;
-            }, 150);
+                
+            }, 150); 
 
         }
-
+        
     }
