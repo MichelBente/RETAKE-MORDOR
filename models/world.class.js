@@ -9,7 +9,15 @@ class World {
         new Cloud()
     ];
     backgroundObjects = [
-        new BackgroundObject("./img/backgrounds/_PNG/game_background_4/layers/battleground.png")
+
+        new BackgroundObject("img/backgrounds/PNG/game_background_4/game_background_4.png", 40, 0),
+        new BackgroundObject("img/backgrounds/PNG/game_background_2/layers/back_decor.png",20, 0),
+        new BackgroundObject("img/backgrounds/PNG/game_background_2/layers/back_decor.png",0, 0),
+        new BackgroundObject("img/backgrounds/PNG/game_background_2/layers/back_decor.png",50, 0),
+        new BackgroundObject("img/backgrounds/PNG/game_background_2/layers/front_decor.png",60, 80),
+        new BackgroundObject("img/backgrounds/PNG/game_background_2/layers/front_decor.png",80, 0),
+        
+       
     ];
     canvas;
     ctx;
@@ -24,20 +32,12 @@ class World {
 
     draw() {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-
+        this.addObjectsToMap(this.backgroundObjects);
         this.addToMap(this.character);
-
-        this.enemies.forEach(enemy => {
-            this.addToMap(enemy);
-        });
-        this.clouds.forEach(cloud => {
-            this.addToMap(cloud);
-        });
-
-        this.backgroundObjects.forEach(backgroundObject => {
-            this.addToMap(backgroundObject);
-        });
-
+        this.addObjectsToMap(this.enemies);
+        this.addObjectsToMap(this.clouds);
+        
+       
         // draw wird immerwieder aufgerufen
         let self = this;
         requestAnimationFrame(function () {
@@ -45,6 +45,11 @@ class World {
         });
     }
 
+addObjectsToMap(objects) {
+    objects.forEach(o => {
+        this.addToMap(o);
+    })
+}
 
     addToMap(mo) {
         this.ctx.drawImage(mo.img, mo.x, mo.y, mo.width, mo.height);
