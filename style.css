@@ -1,0 +1,117 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("./img/backgrounds/PNG/game_background_3/game_background_3.png");
+    object-fit: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    overflow:hidden ;
+}
+
+.maincontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.header {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+}
+
+canvas {
+    background-color: rgb(0, 0, 0);
+    border: 2px solid rgba(255, 253, 253, 0.8);
+    margin-bottom: 350px;
+    margin-top: 50px;
+   /* background-image: url(./img/backgrounds/PNG/game_background_2/game_background_2.png);*/
+    object-fit: cover;
+    background-position: bottom;
+  }
+
+
+.logo {
+   width: 200px;
+   height: 200px;
+   border-radius: 100%;
+   margin-bottom: 30px;
+    transition: all 5s;
+    background-color: #fff;
+    border: 2px solid #fff;
+    width: 200px;
+    height: 200px;
+    z-index: 1;
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.5);
+    display: inline-block;
+    animation: bounce; 
+    animation-duration: 2s;
+    margin-left: 100px;
+  }
+
+.logo:hover .wrapper {
+    transform: perspective(900px) translateY(-80%) rotateX(50deg) translateZ(10);
+    box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+}
+
+@keyframes bounce {
+
+    0%,
+    100%,
+    20%,
+    50%,
+    80% {
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0)
+    }
+
+    40% {
+        -webkit-transform: translateY(-30px);
+        -ms-transform: translateY(-30px);
+        transform: translateY(-30px)
+    }
+
+    60% {
+        -webkit-transform: translateY(-15px);
+        -ms-transform: translateY(-15px);
+        transform: translateY(-15px)
+    }
+    100% {
+        -webkit-transform: translateY(-5px);
+        -ms-transform: translateY(-5px);
+        transform: translateY(-5px)
+}
+}
+
+.headline {
+    width: 1200px;
+    height: 200px;
+    margin-top: 50px;
+    line-height: 180px;
+    text-align: center;
+    text-transform: uppercase;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    font-size: 80px;
+    color: rgb(255, 255, 255);
+    font-family: monospace;
+    z-index: 20;
+    
+}
+
+.headline:hover {
+    cursor: pointer;
+    animation-name: bounce;
+    -moz-animation-name: bounce;
+}
