@@ -38,7 +38,7 @@ class MoveableObject {
 
     playAnimation(images) {
         let i = this.currentImage % this.IMAGES_WALKING.length; // let i = 0 % 10, das Modulu ersetzt die nicht vorhandene Stelle im Array und sorgt für eine fließende Reihenfolge für deine Wiederholung.
-        let path = this.images[i];
+        let path = images[i];
         this.img = this.imageCache[path];
         this.currentImage++;
     }
