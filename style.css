@@ -8,7 +8,7 @@ body {
     background-repeat: no-repeat;
     width: 100vw;
     height: 100vh;
-    overflow:hidden ;
+    overflow: hidden;
 }
 
 .maincontainer {
@@ -17,41 +17,40 @@ body {
     align-items: center;
     justify-content: center;
 }
+
 .header {
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
     justify-content: center;
+    margin-bottom: 20px;
 }
 
 canvas {
     background-color: rgb(0, 0, 0);
     border: 2px solid rgba(255, 253, 253, 0.8);
     margin-bottom: 350px;
-    margin-top: 50px;
-   /* background-image: url(./img/backgrounds/PNG/game_background_2/game_background_2.png);*/
+    margin-top: 50px!important;
+    /* background-image: url(./img/backgrounds/PNG/game_background_2/game_background_2.png);*/
     object-fit: cover;
     background-position: bottom;
-  }
+}
 
 
 .logo {
-   width: 200px;
-   height: 200px;
-   border-radius: 100%;
-   margin-bottom: 30px;
+    width: 800px;
+    height: 300px;
+    border-radius: 4px;
+    margin-bottom: 30px;
     transition: all 5s;
     background-color: #fff;
     border: 2px solid #fff;
-    width: 200px;
-    height: 200px;
     z-index: 1;
     box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.5);
     display: inline-block;
-    animation: bounce; 
+    animation: bounce;
     animation-duration: 2s;
-    margin-left: 100px;
-  }
+}
 
 .logo:hover .wrapper {
     transform: perspective(900px) translateY(-80%) rotateX(50deg) translateZ(10);
@@ -81,11 +80,12 @@ canvas {
         -ms-transform: translateY(-15px);
         transform: translateY(-15px)
     }
+
     100% {
         -webkit-transform: translateY(-5px);
         -ms-transform: translateY(-5px);
         transform: translateY(-5px)
-}
+    }
 }
 
 .headline {
@@ -107,7 +107,8 @@ canvas {
     color: rgb(255, 255, 255);
     font-family: monospace;
     z-index: 20;
-    
+    opacity: 100%;
+
 }
 
 .headline:hover {
