@@ -12,7 +12,9 @@ class Orc2 extends MoveableObject {
             "../img/orcs/_PNG/3_ORK/ORK_03_WALK_008.png",
             "../img/orcs/_PNG/3_ORK/ORK_03_WALK_009.png",
            ];
-    
+           grawl_sound = new Audio("audio/orc_crawl.");
+           sword_sound = new Audio("audio/swordhit.");
+
         constructor() {
             super().loadImage("../img/orcs/_PNG/3_ORK/ORK_03_WALK_000.png");
             this.loadImages(this.IMAGES_WALKING);
@@ -30,6 +32,8 @@ class Orc2 extends MoveableObject {
                     let path = this.IMAGES_WALKING[i];
                     this.img = this.imageCache[path];
                     this.currentImage++;
+                    this.grawl_sound.play();
+                    this.sword_sound.play();
                 }, 120);
     
             }

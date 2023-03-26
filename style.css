@@ -23,14 +23,14 @@ body {
     flex-direction: row-reverse;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 40px!important;
 }
 
 canvas {
     background-color: rgb(0, 0, 0);
     border: 2px solid rgba(255, 253, 253, 0.8);
     margin-bottom: 350px;
-    margin-top: 50px!important;
+    margin-top: 30px!important;
     /* background-image: url(./img/backgrounds/PNG/game_background_2/game_background_2.png);*/
     object-fit: cover;
     background-position: bottom;
@@ -38,8 +38,8 @@ canvas {
 
 
 .logo {
-    width: 800px;
-    height: 300px;
+    width: 600px;
+    height: 250px;
     border-radius: 4px;
     margin-bottom: 30px;
     transition: all 5s;
