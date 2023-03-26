@@ -33,8 +33,6 @@ class Orc2 extends MoveableObject {
                     this.img = this.imageCache[path];
                     this.currentImage++;
                     this.otherDirection = true;
-                    this.ctx.translate(mo.width, 0);
-                    this.ctx.scale(-1, 1);
                     
               //      this.grawl_sound.play();
               //      this.sword_sound.play();

@@ -35,8 +35,6 @@ class Endboss extends MoveableObject {
                 this.img = this.imageCache[path];
                 this.currentImage++;
                 this.otherDirection = true;
-                this.ctx.translate(mo.width, 0);
-                this.ctx.scale(-1, 1);
         //        this.horn_sound.play();
             }, 120);
 
