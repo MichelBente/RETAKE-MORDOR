@@ -1,21 +1,21 @@
 class character extends MoveableObject {
-    x = -50;
-    y = -30;
+    x = 0;
+    y = 0;
     speed = 10;
-    speedY = 0;
-    acceleration = 2.5;
+    speedY = 2;
+    acceleration = 1.5;
 
     IMAGES_WALKING = [
-        "../img/elfs/_PNG/3/Elf_03__WALK_000.png",
-        "../img/elfs/_PNG/3/Elf_03__WALK_001.png",
-        "../img/elfs/_PNG/3/Elf_03__WALK_002.png",
-        "../img/elfs/_PNG/3/Elf_03__WALK_003.png",
-        "../img/elfs/_PNG/3/Elf_03__WALK_004.png",
-        "../img/elfs/_PNG/3/Elf_03__WALK_005.png",
-        "../img/elfs/_PNG/3/Elf_03__WALK_006.png",
-        "../img/elfs/_PNG/3/Elf_03__WALK_007.png",
-        "../img/elfs/_PNG/3/Elf_03__WALK_008.png",
-        "../img/elfs/_PNG/3/Elf_03__WALK_009.png",
+        "../img/elfs/_PNG/3/Elf_03__RUN_000.png",
+        "../img/elfs/_PNG/3/Elf_03__RUN_001.png",
+        "../img/elfs/_PNG/3/Elf_03__RUN_002.png",
+        "../img/elfs/_PNG/3/Elf_03__RUN_003.png",
+        "../img/elfs/_PNG/3/Elf_03__RUN_004.png",
+        "../img/elfs/_PNG/3/Elf_03__RUN_005.png",
+        "../img/elfs/_PNG/3/Elf_03__RUN_006.png",
+        "../img/elfs/_PNG/3/Elf_03__RUN_007.png",
+        "../img/elfs/_PNG/3/Elf_03__RUN_008.png",
+        "../img/elfs/_PNG/3/Elf_03__RUN_009.png",
     ];
 
     IMAGES_JUMPING = [
@@ -37,8 +37,9 @@ class character extends MoveableObject {
 
 
     constructor() {
-        super().loadImage("../img/elfs/_PNG/3/Elf_03__WALK_000.png");
+        super().loadImage("../img/elfs/_PNG/3/Elf_03__IDLE_000.png");
         this.loadImages(this.IMAGES_WALKING);
+        this.loadImages(this.IMAGES_JUMPING);
         this.applyGravity();
         this.animate();
     }
@@ -58,22 +59,28 @@ class character extends MoveableObject {
                 this.otherDirection = true;
                 this.walking_sound.play();
             }
+        
+            if (this.world.keyboard.UP && this.x > 0) {
+                this.y += this.speedY;
+                this.walking_sound.play();
+            }
+
 
             this.world.camera_x = -this.x + 100;
         }, 1000 / 60);
 
 
-        //   setInterval(() => {
+           setInterval(() => {
 
-            //   if (this.isAboveGround()) {
-                //   this.playAnimation(this.IMAGES_JUMPING);
-            //   } else {
+               if (this.isAboveGround()) {
+                   this.playAnimation(this.IMAGES_JUMPING);
+               } else {
 
-                //   if (this.world.keyboard.RIGHT || this.world.keyboard.LEFT) {
-                    //   this.playAnimation(this.IMAGES_WALKING);
-                //   }
-            //   }
-        //   }, 60);
+                   if (this.world.keyboard.RIGHT || this.world.keyboard.LEFT) {
+                       this.playAnimation(this.IMAGES_WALKING);
+                  }
+               }
+           }, 60);
 
     }
 
