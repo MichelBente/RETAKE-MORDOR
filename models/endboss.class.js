@@ -3,6 +3,7 @@ class Endboss extends MoveableObject {
     height = 800;
     width = 800;
     y = -300;
+    speed = 2; 
 
     IMAGES_WALKING = [
         "../img/orcs/_PNG/2_ORK/ORK_02_WALK_000.png",
@@ -34,9 +35,9 @@ class Endboss extends MoveableObject {
                 let path = this.IMAGES_WALKING[i];
                 this.img = this.imageCache[path];
                 this.currentImage++;
-                this.otherDirection = true;
+                this.otherDirection = true; 
         //        this.horn_sound.play();
-            }, 120);
+            }, 60);
 
         }
 

@@ -7,10 +7,10 @@ class BackgroundObject extends MoveableObject {
   //  nopassing_sound = new Audio("audio/you_shall_not_pass.mp3");
   
 
-    constructor(imagePath, x) {
+    constructor(imagePath, x ) {
         super().loadImage(imagePath);
-        this.y = x;
-        this.x = 330 - this.height; // 480 -400
+        this.x = x;
+        this.y = 480 - this.height; // 480 -400
     //    this.thunder_sound.play();
      //   this.nopassing_sound.play();
        

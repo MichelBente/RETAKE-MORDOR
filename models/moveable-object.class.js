@@ -9,6 +9,21 @@ class MoveableObject {
     speed = 0.15;
     otherDirection = false;
 
+   
+
+    applyGravity() {
+        setInterval(() => {
+            if (this.y < 180) {
+            this.y -= this.speedY;
+            this.speedY -= this.acceleration;
+            }
+        }, 1000 / 25); // 25 mal pro Sekunde
+    }
+
+    isAboveGround() {
+        return this.y < 180;
+    }
+
     loadImage(path) {
         this.img = new Image(); // this.img = document.getElementById('image'); <img  id="image" src="#"> 
         this.img.src = path;
