@@ -1,6 +1,6 @@
 class character extends MoveableObject {
-    x = 0;
-    y = 0;
+    x = -50;
+    y = 80;
     speed = 10;
     speedY = 2;
     acceleration = 1.5;
