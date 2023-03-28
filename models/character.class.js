@@ -1,9 +1,11 @@
 class character extends MoveableObject {
-    x = -50;
-    y = 80;
-    speed = 10;
-    speedY = 2;
-    acceleration = 1.5;
+    y = 30;
+    speed = 20;
+    otherDirection = false;
+    frame = 210;
+    frame = 80;
+    frameW = -420;
+    frameH = -130;
 
     IMAGES_WALKING = [
         "../img/elfs/_PNG/3/Elf_03__RUN_000.png",
@@ -33,7 +35,7 @@ class character extends MoveableObject {
 
     world;
     walking_sound = new Audio("audio/walking.mp3")
-    jumoing_sound = new Audio("");
+    jumping_sound = new Audio("audio/jump.mp3");
 
 
     constructor() {
@@ -49,22 +51,21 @@ class character extends MoveableObject {
         setInterval(() => {
             this.walking_sound.pause();
             if (this.world.keyboard.RIGHT && this.x < this.world.level.level_end_x) {
-                this.x += this.speed;
-                this.otherDirection = false;
-                this.walking_sound.play();
+              this.moveRight();
+              this.otherDirection = false;
+              this.walking_sound.play();
             }
 
             if (this.world.keyboard.LEFT && this.x > 0) {
-                this.x -= this.speed;
+                this.moveLeft();
                 this.otherDirection = true;
                 this.walking_sound.play();
             }
         
-            if (this.world.keyboard.UP && this.x > 0) {
-                this.y += this.speedY;
-                this.walking_sound.play();
+            if (this.world.keyboard.SPACE && !this.isAboveGround())  {
+                this.jump();
+                this.jumping_sound.play();
             }
-
 
             this.world.camera_x = -this.x + 100;
         }, 1000 / 60);
@@ -83,9 +84,10 @@ class character extends MoveableObject {
            }, 60);
 
     }
+jump() {
+    this.speedY = 30;
+}
 
-    jump() {
 
 
-    }
 }

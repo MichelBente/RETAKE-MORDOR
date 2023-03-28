@@ -27,13 +27,13 @@ class Orc extends MoveableObject {
 }
 
         animate() {
-            this.moveLeft();
             setInterval(() => {
-                let i = this.currentImage % this.IMAGES_WALKING.length; // let i = 0 % 10, das Modulu ersetzt die nicht vorhandene Stelle im Array und sorgt für eine fließende Reihenfolge für deine Wiederholung.
-                let path = this.IMAGES_WALKING[i];
-                this.img = this.imageCache[path];
-                this.currentImage++;
-                this.otherDirection = true;
+                this.moveLeft();
+            }, 1000 / 60);
+
+           
+            setInterval(() => {
+              this.playAnimation(this.IMAGES_WALKING);
           //      this.axe_sound.play();
             }, 120);
 
