@@ -12,7 +12,7 @@ class Orc extends MoveableObject {
         "../img/orcs/_PNG/1_ORK/ORK_01_WALK_008.png",
         "../img/orcs/_PNG/1_ORK/ORK_01_WALK_009.png",
        ];
-      //  axe_sound = new Audio("audio/axehit.mp3");
+       // axe_sound = new Audio("audio/axehit.mp3");
 
 
 
@@ -34,7 +34,7 @@ class Orc extends MoveableObject {
            
             setInterval(() => {
               this.playAnimation(this.IMAGES_WALKING);
-          //      this.axe_sound.play();
+                this.axe_sound.play();
             }, 120);
 
         }
