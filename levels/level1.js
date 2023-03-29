@@ -1,15 +1,23 @@
 const level1 = new Level(
     [
-        new Orc()
+        new Orc(),
+        new Orc(),
+        new Orc(),
+        new Orc(),
     ],
 
     [
         new Orc2(),
         new Orc2(),
+        new Orc2(),
         new Endboss(),
     ],
     [
-        new Cloud()
+        new Cloud(),
+        new Cloud(),
+        new Cloud(),
+        new Cloud(),
+        
     ],
     [
         new BackgroundObject("img/backgrounds/PNG/game_background_4/game_background_4.png", -720),

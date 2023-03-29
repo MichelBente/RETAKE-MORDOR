@@ -1,5 +1,6 @@
 class Character extends MoveableObject {
     y = 30;
+    x = 80;
     speed = 20;
     otherDirection = false;
     framex = 210;
@@ -31,6 +32,19 @@ class Character extends MoveableObject {
         "../img/elfs/_PNG/3/Elf_03__JUMP_007.png",
         "../img/elfs/_PNG/3/Elf_03__JUMP_008.png",
         "../img/elfs/_PNG/3/Elf_03__JUMP_009.png",
+    ];
+
+    IMAGES_IDLE = [
+        "../img/elfs/_PNG/3/Elf_03__IDLE_000.png",
+        "../img/elfs/_PNG/3/Elf_03__IDLE_001.png",
+        "../img/elfs/_PNG/3/Elf_03__IDLE_002.png",
+        "../img/elfs/_PNG/3/Elf_03__IDLE_003.png",
+        "../img/elfs/_PNG/3/Elf_03__IDLE_004.png",
+        "../img/elfs/_PNG/3/Elf_03__IDLE_005.png",
+        "../img/elfs/_PNG/3/Elf_03__IDLE_006.png",
+        "../img/elfs/_PNG/3/Elf_03__IDLE_007.png",
+        "../img/elfs/_PNG/3/Elf_03__IDLE_008.png",
+        "../img/elfs/_PNG/3/Elf_03__IDLE_009.png",
     ];
 
     IMAGES_HURT = [
@@ -74,9 +88,9 @@ class Character extends MoveableObject {
 
     world;
     walking_sound = new Audio("audio/walking.mp3")
-    jumping_sound = new Audio("audio/jump.mp3");
-    hurt_sound = new Audio("audio/hurt1.mp3");
-    die_sound = new Audio("audio/die.mp3");
+    //jumping_sound = new Audio("audio/jump.mp3");
+    //  hurt_sound = new Audio("audio/hurt1.mp3");
+    // die_sound = new Audio("audio/die.mp3");
 
 
     constructor() {
@@ -86,6 +100,7 @@ class Character extends MoveableObject {
         this.loadImages(this.IMAGES_HURT);
         this.loadImages(this.IMAGES_DEAD);
         this.loadImages(this.IMAGES_ATTACK);
+        this.loadImages(this.IMAGES_IDLE);
         this.applyGravity();
         this.animate();
     }
@@ -93,7 +108,11 @@ class Character extends MoveableObject {
     animate() {
 
         setInterval(() => {
+            this.playAnimation(this.IMAGES_IDLE);
             this.walking_sound.pause();
+            
+
+
             if (this.world.keyboard.RIGHT && this.x < this.world.level.level_end_x) {
                 this.moveRight();
                 this.otherDirection = false;
@@ -112,14 +131,14 @@ class Character extends MoveableObject {
             }
 
             this.world.camera_x = -this.x + 100;
-        }, 1000 / 60);
+        }, 1000 / 10);
 
 
         setInterval(() => {
-
+            
             if (this.isDead()) {
                 this.playAnimation(this.IMAGES_DEAD);
-            } else if (this.isHurt(this.hurt_sound.play())) {
+            } else if (this.isHurt()) {
                 this.playAnimation(this.IMAGES_HURT);
             } else if (this.isAboveGround()) {
                 this.playAnimation(this.IMAGES_JUMPING);
@@ -128,7 +147,7 @@ class Character extends MoveableObject {
                     this.playAnimation(this.IMAGES_WALKING);
                 }
             }
-        }, 60);
+        }, 50);
     }
 
 

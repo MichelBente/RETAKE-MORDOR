@@ -1,5 +1,11 @@
 class Orc2 extends MoveableObject {
 
+    framex = 210;
+    framey = 120;
+    framew = -390;
+    frameh = -150;
+
+
     IMAGES_WALKING = [
         "../img/orcs/_PNG/3_ORK/ORK_03_WALK_000.png",
         "../img/orcs/_PNG/3_ORK/ORK_03_WALK_001.png",
@@ -12,14 +18,14 @@ class Orc2 extends MoveableObject {
         "../img/orcs/_PNG/3_ORK/ORK_03_WALK_008.png",
         "../img/orcs/_PNG/3_ORK/ORK_03_WALK_009.png",
     ];
-     grawl_sound = new Audio("audio/orc_crawl.mp3");
-     sword_sound = new Audio("audio/swordhit.mp3");
+    // grawl_sound = new Audio("audio/orc_crawl.mp3");
+    // sword_sound = new Audio("audio/swordhit.mp3");
 
     constructor() {
         super().loadImage("../img/orcs/_PNG/3_ORK/ORK_03_WALK_000.png");
-        this.loadImages(this.IMAGES_WALKING, this.grawl_sound.play());
+        this.loadImages(this.IMAGES_WALKING);
 
-        this.x = Math.random() * 500;
+        this.x = Math.random() * 2500;
         this.speed = 0.15 + Math.random() * 0.5;
 
         this.animate();
@@ -33,8 +39,8 @@ class Orc2 extends MoveableObject {
 
         setInterval(() => {
             this.playAnimation(this.IMAGES_WALKING);
-                  this.axe_sound.play();
-                  this.grawl_sound.play();
+             //     this.axe_sound.play();
+             //     this.grawl_sound.play();
         }, 120);
 
     }

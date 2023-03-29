@@ -17,7 +17,7 @@ class Endboss extends MoveableObject {
         "../img/orcs/_PNG/2_ORK/ORK_02_WALK_008.png",
         "../img/orcs/_PNG/2_ORK/ORK_02_WALK_009.png",
     ];
-    horn_sound = new Audio("audio/horn.mp3");
+   // horn_sound = new Audio("audio/horn.mp3");
 
     constructor() {
         super().loadImage("../img/orcs/_PNG/2_ORK/ORK_02_WALK_000.png");
@@ -32,13 +32,13 @@ class Endboss extends MoveableObject {
     animate() {
         setInterval(() => {
             this.moveLeft();
-            this.horn_sound.play();
+         //   this.horn_sound.play();
         }, 1000 / 60);
 
        
         setInterval(() => {
           this.playAnimation(this.IMAGES_WALKING);
-          this.horn_sound.play();
+        //  this.horn_sound.play();
         }, 60);
 
     }
