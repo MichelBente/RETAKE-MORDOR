@@ -17,7 +17,7 @@ class DrawableObject {
     }
 
     drawFrame(ctx) {
-        if (this instanceof Character || this instanceof Orc || this instanceof Orc2) {
+        if (this instanceof Character || this instanceof Orc || this instanceof Orc2 || this instanceof Endboss) {
             ctx.beginPath();
             ctx.lineWidth = '5';
             ctx.strokeStyle = 'blue';
@@ -25,7 +25,6 @@ class DrawableObject {
             ctx.stroke();
         }
     }
-
 
 
     loadImages(arr) {

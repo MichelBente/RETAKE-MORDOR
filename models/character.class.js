@@ -1,6 +1,5 @@
 class Character extends MoveableObject {
-    y = 30;
-    x = 80;
+    y = 0;
     speed = 20;
     otherDirection = false;
     framex = 210;

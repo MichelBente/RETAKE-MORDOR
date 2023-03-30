@@ -3,6 +3,7 @@ class Level {
     enemies2;
     clouds;
     backgroundObjects;
+    endboss;
     level_end_x = 2500;
    
 
@@ -12,6 +13,7 @@ this.enemies = enemies;
 this.enemies2 = enemies2;
 this.clouds = clouds;
 this.backgroundObjects = backgroundObjects;
+this.endboss = Endboss;
 }
 
 

@@ -17,19 +17,18 @@ class MoveableObject extends DrawableObject {
     }
 
     isAboveGround() {
-        return this.y < 180;
+        return this.y < 95;
     }
 
 
-  
 
-    // Bessere Formel zur Kollisionsberechnung (Genauer)
-    isColliding(obj) {
-        return ((this.x + this.framex) + (this.width + this.framew) >= (obj.x && this.x + obj.framex ) && 
-            ((this.y + this.framey) + (this.height + this.frameh)) >= (obj.y + obj.framey) &&
-            (this.x + this.framex) <= (obj.x + obj.framex) &&
-            (this.y + this.framey) <= (obj.y + obj.framey) + (obj.height + obj.frameh)) && obj.onCollisionCourse; 
-    }
+    
+     isColliding(obj) {
+         return ((this.x + this.framex) + (this.width + this.framew) >= (obj.x && this.x + obj.framex ) && 
+             ((this.y + this.framey) <= (this.height + this.frameh)) >= (obj.y + obj.framey) &&
+             (this.x + this.framex) + (obj.x + obj.framex) &&
+             (this.y + this.framey) <= (obj.y + obj.framey) + (obj.height + obj.frameh)) && obj.onCollisionCourse; 
+     }
 
     hit() {
         this.energy -= 5;
@@ -41,10 +40,10 @@ class MoveableObject extends DrawableObject {
     }
 
     isHurt() {
-        let timepassed = new Date().getTime() - this.lastHit; // DIfference in ms
+        let timepassed = new Date().getTime() - this.lastHit; // Difference in ms
         timepassed = timepassed / 1000; // Difference in seconds
         return timepassed < 1;
-        console.log('collision', this.energy)
+        console.log('collision', energy)
     }
 
     isDead() {

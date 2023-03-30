@@ -21,19 +21,35 @@ class World {
         this.character.world = this;
     }
 
+// checkCollisions() {
+//     setInterval(() => {
+//         this.level.enemies.forEach((enemy) => {
+//             if (this.character.isColliding(enemy)) {
+//                 console.log('collision with', orc);
+//                 this.character.hit();
+//                 console.log('collision with', this.character.energy);
+//                 this.StatusBar.setPercentage(this.character.energy);
+//                 if (enemy.isColliding(this.character)) {
+//                     enemy.hit(this.character);
+//                     console.log('orc-hp',orc.health);
+//                 }
+                
+//             }
+//         });
+//         }, 200);
+//     }
+// ;
+
 checkCollisions() {
     setInterval(() => {
-        this.level.enemies.forEach((enemy) => {
-            if (this.character.isColliding(enemy)) {
-                this.character.hit();
-                this.StatusBar.setPercentage(this.character.energy)
-                console.log('Collision with Character', enemy);
-            }
-        });
-        }, 200);
-    }
-;
-
+      this.level.enemies.forEach((enemy) => {
+        if (this.character.isColliding(enemy)) {
+          this.character.hit();
+          this.StatusBar.setPercentage(this.character.energy);
+        }
+      });
+    }, 200);
+  }
 
 
     draw() {
