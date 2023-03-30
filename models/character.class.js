@@ -1,11 +1,19 @@
 class Character extends MoveableObject {
-    y = 0;
+    y = 30;
     speed = 20;
     otherDirection = false;
-    framex = 210;
-    framey = 80;
-    framew = -420;
-    frameh = -130;
+    // framex = 220;
+    // framey = 90;
+    // framew = -440;
+    // frameh = -140;
+    energy = 100;
+
+    offset = {
+        top: 93,
+        right: 220,
+        bottom: 50,
+        left: 220
+    };
 
     IMAGES_WALKING = [
         "../img/elfs/_PNG/3/Elf_03__RUN_000.png",
@@ -84,6 +92,9 @@ class Character extends MoveableObject {
         "../img/elfs/_PNG/3/Elf_03__ATTACK_008.png",
         "../img/elfs/_PNG/3/Elf_03__ATTACK_009.png",
     ];
+
+
+
 
     world;
     walking_sound = new Audio("audio/walking.mp3")

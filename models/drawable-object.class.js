@@ -1,5 +1,5 @@
 class DrawableObject {
-    x = -50;
+    x = -150;
     y = 80;
     img;
     imageCache = {};
@@ -21,7 +21,13 @@ class DrawableObject {
             ctx.beginPath();
             ctx.lineWidth = '5';
             ctx.strokeStyle = 'blue';
-            ctx.rect(this.x + this.framex, this.y + this.framey, this.width + this.framew, this.height + this.frameh);
+            let drawX;
+            if (this.otherDirection) {
+                drawX = this.x + this.offset.right;
+            } else {
+                drawX = this.x + this.offset.left;
+            }
+            ctx.rect(drawX, (this.y + this.offset.top), ((this.width - this.offset.right) - this.offset.left), ((this.height - this.offset.top) - this.offset.bottom));
             ctx.stroke();
         }
     }

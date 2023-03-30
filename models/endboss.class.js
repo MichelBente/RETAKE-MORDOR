@@ -5,10 +5,16 @@ class Endboss extends MoveableObject {
     x = 200;
     y = -180;
     speed = 0.5; 
-    framex = 230;
-    framey = 250;
-    framew = -410;
-    frameh = -300;
+    // framex = 230;
+    // framey = 250;
+    // framew = -410;
+    // frameh = -300;
+    offset = {
+        top: 200,
+        right: 330,
+        bottom: 50,
+        left: 250
+    };
 
     IMAGES_WALKING = [
         "../img/orcs/_PNG/2_ORK/ORK_02_WALK_000.png",

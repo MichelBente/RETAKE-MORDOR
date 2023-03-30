@@ -1,19 +1,22 @@
 class MoveableObject extends DrawableObject {
-    speed = 0.15;
+    damage = 5;
+    speed = 0.25;
     otherDirection = false;
-    speedY = 0;
-    acceleration = 2.5;
+    speedY = 2;
+    acceleration = 1.2;
     energy = 100;
     lastHit = 0;
+    lastDamage = 0;
+    
    
 
     applyGravity() {
         setInterval(() => {
-            if (this.isAboveGround() || this.speedY > 0) {
+            if (this.y < 95 || this.speedY > 0) {
                 this.y -= this.speedY;
                 this.speedY -= this.acceleration;
             }
-        }, 1000 / 25); // 25 mal pro Sekunde
+        })  // 25 mal pro Sekunde
     }
 
     isAboveGround() {
@@ -21,17 +24,31 @@ class MoveableObject extends DrawableObject {
     }
 
 
-
+// isColliding(obj) {
+//     return this.x + this.width - this.offset.right > obj.x + obj.offset.left &&
+//     this.y + this.height - this.offset.bottom >obj.y + obj.offset.top &&
+//     this.x + this.offset.left < obj.x + obj.width - obj.offset.right &&
+//     this.y + this.offset.top < obj.y + obj.height - obj.offset.bottom
+// }
     
-     isColliding(obj) {
-         return ((this.x + this.framex) + (this.width + this.framew) >= (obj.x && this.x + obj.framex ) && 
-             ((this.y + this.framey) <= (this.height + this.frameh)) >= (obj.y + obj.framey) &&
-             (this.x + this.framex) + (obj.x + obj.framex) &&
-             (this.y + this.framey) <= (obj.y + obj.framey) + (obj.height + obj.frameh)) && obj.onCollisionCourse; 
-     }
 
-    hit() {
-        this.energy -= 5;
+isColliding(obj) {
+    return this.x + this.width - this.offset.right > obj.x + obj.offset.left &&
+        this.y + this.height - this.offset.bottom > obj.y + obj.offset.top &&
+        this.x + this.offset.left < obj.x + obj.width - obj.offset.right &&
+        this.y + this.offset.top < obj.y + obj.height - obj.offset.bottom
+};
+
+    //   isColliding(obj) {
+    //   return ((this.x + this.framex) + (this.width + this.framew) >= (obj.x && this.x + obj.framex ) && 
+    //          ((this.y + this.framey) <= (this.height + this.frameh)) >= (obj.y + obj.framey) &&
+    //           (this.x + this.framex) + (obj.x + obj.framex) &&
+    //           (this.y + this.framey) <= (obj.y + obj.framey) + (obj.height + obj.frameh)) 
+    //   }
+
+    hit(obj) {
+        this.energy -= obj.damage;
+        this.lastDamage = obj.damage;
         if (this.energy < 0) {
             this.energy = 0;
         } else {
@@ -42,8 +59,7 @@ class MoveableObject extends DrawableObject {
     isHurt() {
         let timepassed = new Date().getTime() - this.lastHit; // Difference in ms
         timepassed = timepassed / 1000; // Difference in seconds
-        return timepassed < 1;
-        console.log('collision', energy)
+        return timepassed < 0.2;
     }
 
     isDead() {

@@ -1,10 +1,15 @@
 class Orc2 extends MoveableObject {
 
-    framex = 210;
-    framey = 120;
-    framew = -390;
-    frameh = -150;
-
+    // framex = 210;
+    // framey = 120;
+    // framew = -390;
+    // frameh = -150;
+    offset = {
+        top: 115,
+        right: 210,
+        bottom: 30,
+        left: 150
+    };
 
     IMAGES_WALKING = [
         "../img/orcs/_PNG/3_ORK/ORK_03_WALK_000.png",
