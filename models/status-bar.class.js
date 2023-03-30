@@ -36,7 +36,6 @@ class StatusBar extends DrawableObject {
         this.width = 300;
         this.height = 30;
         this.img = this.imageCache[path];
-
     }
 
     resolveImageIndex() {

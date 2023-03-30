@@ -1,5 +1,5 @@
 class MoveableObject extends DrawableObject {
-    damage = 5;
+    damage = 1;
     speed = 0.25;
     otherDirection = false;
     speedY = 2;
@@ -7,8 +7,8 @@ class MoveableObject extends DrawableObject {
     energy = 100;
     lastHit = 0;
     lastDamage = 0;
-    
-   
+
+
 
     applyGravity() {
         setInterval(() => {
@@ -20,24 +20,27 @@ class MoveableObject extends DrawableObject {
     }
 
     isAboveGround() {
-        return this.y < 95;
+        if (this instanceof ThrowableObject) { //throwableboject shall always fall
+            return true;
+        } else {
+            return this.y < 95;
+        }
     }
 
+    // isColliding(obj) {
+    //     return this.x + this.width - this.offset.right > obj.x + obj.offset.left &&
+    //     this.y + this.height - this.offset.bottom >obj.y + obj.offset.top &&
+    //     this.x + this.offset.left < obj.x + obj.width - obj.offset.right &&
+    //     this.y + this.offset.top < obj.y + obj.height - obj.offset.bottom
+    // }
 
-// isColliding(obj) {
-//     return this.x + this.width - this.offset.right > obj.x + obj.offset.left &&
-//     this.y + this.height - this.offset.bottom >obj.y + obj.offset.top &&
-//     this.x + this.offset.left < obj.x + obj.width - obj.offset.right &&
-//     this.y + this.offset.top < obj.y + obj.height - obj.offset.bottom
-// }
-    
 
-isColliding(obj) {
-    return this.x + this.width - this.offset.right > obj.x + obj.offset.left &&
-        this.y + this.height - this.offset.bottom > obj.y + obj.offset.top &&
-        this.x + this.offset.left < obj.x + obj.width - obj.offset.right &&
-        this.y + this.offset.top < obj.y + obj.height - obj.offset.bottom
-};
+    isColliding(obj) {
+        return this.x + this.width - this.offset.right > obj.x + obj.offset.left &&
+            this.y + this.height - this.offset.bottom > obj.y + obj.offset.top &&
+            this.x + this.offset.left < obj.x + obj.width - obj.offset.right &&
+            this.y + this.offset.top < obj.y + obj.height - obj.offset.bottom
+    };
 
     //   isColliding(obj) {
     //   return ((this.x + this.framex) + (this.width + this.framew) >= (obj.x && this.x + obj.framex ) && 

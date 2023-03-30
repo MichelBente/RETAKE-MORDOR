@@ -30,16 +30,16 @@ class Endboss extends MoveableObject {
     ];
 
     IMAGES_ATTACK = [
-        "../img/orcs/_PNG/3_ORK/ORK_02_ATTAK_000.png",
-        "../img/orcs/_PNG/3_ORK/ORK_02_ATTAK_001.png",
-        "../img/orcs/_PNG/3_ORK/ORK_02_ATTAK_002.png",
-        "../img/orcs/_PNG/3_ORK/ORK_02_ATTAK_003.png",
-        "../img/orcs/_PNG/3_ORK/ORK_02_ATTAK_004.png",
-        "../img/orcs/_PNG/3_ORK/ORK_02_ATTAK_005.png",
-        "../img/orcs/_PNG/3_ORK/ORK_02_ATTAK_006.png",
-        "../img/orcs/_PNG/3_ORK/ORK_02_ATTAK_007.png",
-        "../img/orcs/_PNG/3_ORK/ORK_02_ATTAK_008.png",
-        "../img/orcs/_PNG/3_ORK/ORK_02_ATTAK_009.png",
+        "../img/orcs/_PNG/2_ORK/ORK_02_ATTAK_000.png",
+        "../img/orcs/_PNG/2_ORK/ORK_02_ATTAK_001.png",
+        "../img/orcs/_PNG/2_ORK/ORK_02_ATTAK_002.png",
+        "../img/orcs/_PNG/2_ORK/ORK_02_ATTAK_003.png",
+        "../img/orcs/_PNG/2_ORK/ORK_02_ATTAK_004.png",
+        "../img/orcs/_PNG/2_ORK/ORK_02_ATTAK_005.png",
+        "../img/orcs/_PNG/2_ORK/ORK_02_ATTAK_006.png",
+        "../img/orcs/_PNG/2_ORK/ORK_02_ATTAK_007.png",
+        "../img/orcs/_PNG/2_ORK/ORK_02_ATTAK_008.png",
+        "../img/orcs/_PNG/2_ORK/ORK_02_ATTAK_009.png",
     ];
 
     IMAGES_DIE = [
@@ -68,7 +68,7 @@ class Endboss extends MoveableObject {
         this.loadImages(this.IMAGES_ATTACK);
         this.loadImages(this.IMAGES_DIE);
 
-        this.x = 300;
+        this.x = 2500;
         this.animate();
     }
 
@@ -76,21 +76,21 @@ class Endboss extends MoveableObject {
 
     animate() {
         if (this.isDead()) {
-            this.objectAnimation(this.IMAGES_DIE);
+            this.playAnimation(this.IMAGES_DIE);
         } else {
             setInterval(() => {
                 let moveInterval = setInterval(() => {
                     this.moveLeft();
-                    //   this.horn_sound.play();
+                //       this.horn_sound.play();
                 }, 1000 / 60);
                 let animationWalkInterval = setInterval(() => {
-                    this.objectAnimation(this.IMAGES_WALKING);
+                    this.playAnimation(this.IMAGES_WALKING);
                 }, 1000 / 10)
                 setTimeout(() => {
                     clearInterval(moveInterval);
                     clearInterval(animationWalkInterval);
                     let animationAttackInterval = setInterval(() => {
-                        this.objectAnimation(this.IMAGES_ATTACK);
+                        this.playAnimation(this.IMAGES_ATTACK);
                     }, 1000 / 10);
                     CustomElementRegistry.damage = 50;
                     console.log(this.damage);
