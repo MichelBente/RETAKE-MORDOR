@@ -1,4 +1,4 @@
-class ThrowableObject extends MoveableObject {
+class Fireball extends MoveableObject {
 
 
 
@@ -45,26 +45,57 @@ IMAGES_FIREBALL = [
    
 ];
 
+damage = 20;
 
-constructor(x,y) {
-    
-    super().loadImages(this.IMAGES_FIREBALL);
-    this.x = x;
-    this.y = y;
-    this.height = 190;
-    this.width = 300;  
+  constructor(x, y) {
+    super().loadImage(this.IMAGES_FIREBALL[0]);
+    this.loadImages(this.IMAGES_FIREBALL);
+    this.x = x + 100;
+    this.y = y - 70;
+    this.width = 500;
+    this.height = 500;
     this.throw();
+    this.specialAttack();
+  }
+
+  throw(x, y) {
+    this.speedx = 30;
+    let fireballSpeed = setInterval(() => {
+      this.x += 10;
+    }, 50);
+    setTimeout(() => {
+      clearInterval(fireballSpeed);
+      this.y = 500;
+    }, 1333);
+  }
+
+  specialAttack() {
+    let attack = setInterval(() => {
+      this.playAnimation(this.IMAGES_FIREBALL);
+    }, 1000 / 30);
+    setTimeout(() => {
+      clearInterval(attack);
+    }, 1333);
+  }
+}
+// constructor(x,y) {
+    
+//     super().loadImages(this.IMAGES_FIREBALL);
+//     this.x = x;
+//     this.y = y;
+//     this.height = 190;
+//     this.width = 300;  
+//     this.throw();
       
-}
+// }
 
-throw() {
-    this.x = x;
-    this.y = y;
-    this.speedY = 10;
-    this.applyGravity();
-    setInterval(() => {
-        this.x += 0;
-    }, 25);
-}
+// throw() {
+//     this.x = x;
+//     this.y = y;
+//     this.speedY = 10;
+//     this.applyGravity();
+//     setInterval(() => {
+//         this.x += 0;
+//     }, 25);
+// }
 
-}

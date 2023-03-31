@@ -144,24 +144,28 @@ class Character extends MoveableObject {
         }, 1000 / 10);
 
 
-        setInterval(() => {
-            
+        let animation = setInterval(() => {
+            this.playAnimation(this.IMAGES_IDLE);
+      
             if (this.isDead()) {
-                this.playAnimation(this.IMAGES_DEAD);
+              clearInterval(animation);
+              this.die();
             } else if (this.isHurt()) {
-                this.playAnimation(this.IMAGES_HURT);
-            } else if (this.isAboveGround()) {
-                this.playAnimation(this.IMAGES_JUMPING);
-            // } else if (this.isAttacking()) {
-                // this.playAnimation(this.IMAGES_ATTACK);
-            } else {
-                if (this.world.keyboard.RIGHT || this.world.keyboard.LEFT) {
-                    this.playAnimation(this.IMAGES_WALKING);
-                }
+              this.playAnimation(this.IMAGES_HURT);
             }
-        }, 50);
-    }
-
-
-
-}
+      
+            if (this.isAboveGround() || this.speedY > 0) {
+              this.playAnimation(this.IMAGES_JUMPING);
+            } else {
+              if (this.world.keyboard.right || this.world.keyboard.left) {
+                this.playAnimation(this.IMAGES_WALKING);
+              }
+            }
+          }, 1000 / 15);
+        }
+      
+        jump() {
+          this.speedY = 25;
+        }
+      }
+      

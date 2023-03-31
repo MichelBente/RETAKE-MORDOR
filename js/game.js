@@ -9,9 +9,6 @@ function init() {
     world = new World(canvas, keyboard);
 
 
-
-
-
 }
 
 window.addEventListener("keydown", (e) => {
@@ -32,7 +29,7 @@ window.addEventListener("keydown", (e) => {
         keyboard.SPACE = true;
     }
     if (e.keyCode == 13) {
-        keyboard.ENTER = true;
+        keyboard.specialAttack = true;
     }
 });
 
@@ -54,6 +51,6 @@ window.addEventListener("keyup", (e) => {
         keyboard.SPACE = false;
     }
     if (e.keyCode == 13) {
-        keyboard.ENTER = false;
+        keyboard.specialAttack = false;
     }
 });

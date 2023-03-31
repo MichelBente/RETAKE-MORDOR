@@ -17,9 +17,12 @@ class DrawableObject {
     }
 
     drawFrame(ctx) {
-        if (this instanceof Character || this instanceof Orc || this instanceof Orc2 || this instanceof Endboss) {
+        if (this instanceof Character || 
+            this instanceof Orc || 
+            this instanceof Orc2 || 
+            this instanceof Endboss) {
             ctx.beginPath();
-            ctx.lineWidth = '5';
+            ctx.lineWidth = '1';
             ctx.strokeStyle = 'blue';
             let drawX;
             if (this.otherDirection) {
@@ -27,7 +30,11 @@ class DrawableObject {
             } else {
                 drawX = this.x + this.offset.left;
             }
-            ctx.rect(drawX, (this.y + this.offset.top), ((this.width - this.offset.right) - this.offset.left), ((this.height - this.offset.top) - this.offset.bottom));
+            ctx.rect
+            (drawX, (this.y + this.offset.top), 
+            ((this.width - this.offset.right) - this.offset.left), 
+            ((this.height - this.offset.top) - this.offset.bottom)
+            );
             ctx.stroke();
         }
     }
@@ -37,11 +44,7 @@ class DrawableObject {
         arr.forEach(path => {
             let img = new Image();
             img.src = path;
-            img.style = 'transform: scaleX(-1)';
             this.imageCache[path] = img;
         });
     }
-
-
-
 }

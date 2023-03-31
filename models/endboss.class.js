@@ -1,7 +1,7 @@
 class Endboss extends MoveableObject {
-    energy = 200;
-    height = 600;
-    width = 600;
+    height = 196.875 * 3.5;
+    width = 375 * 3.5;
+    energy = 50;
     x = 200;
     y = -180;
     speed = 0.5;
@@ -62,7 +62,7 @@ class Endboss extends MoveableObject {
         super().loadImage("img/orcs/_PNG/2_ORK/ORK_02_IDLE_000.png");
         this.x = 2500;
         this.y = -190,
-            this.speed = 0.05 + Math.random() + 0.5;
+        this.speed = 0.05 + Math.random() + 0.5;
 
         this.loadImages(this.IMAGES_WALKING);
         this.loadImages(this.IMAGES_ATTACK);
@@ -75,33 +75,53 @@ class Endboss extends MoveableObject {
 
 
     animate() {
-        if (this.isDead()) {
-            this.playAnimation(this.IMAGES_DIE);
-        } else {
-            setInterval(() => {
+        const animationInterval = setInterval(() => {
+            if (this.isDead()) {
+                clearInterval(animationInterval);
+                this.die();
+
+            } else {
+
                 let moveInterval = setInterval(() => {
                     this.moveLeft();
-                //       this.horn_sound.play();
                 }, 1000 / 60);
+
                 let animationWalkInterval = setInterval(() => {
-                    this.playAnimation(this.IMAGES_WALKING);
+                    if (this.isDead()) {
+                        clearInterval(moveInterval);
+                        clearInterval(animationWalkInterval);
+                        clearInterval(animationInterval);
+                        this.die();
+                    } else {
+                        this.playAnimation(this.IMAGES_WALKING);
+                    }
                 }, 1000 / 10)
+
                 setTimeout(() => {
                     clearInterval(moveInterval);
                     clearInterval(animationWalkInterval);
+
                     let animationAttackInterval = setInterval(() => {
-                        this.playAnimation(this.IMAGES_ATTACK);
-                    }, 1000 / 10);
-                    CustomElementRegistry.damage = 50;
-                    console.log(this.damage);
+                        if (this.isDead()) {
+                            clearInterval(animationAttackInterval);
+                            clearInterval(animationInterval);
+                            this.die();
+                        } else {
+                            this.playAnimation(this.IMAGES_ATTACK);
+                        }
+                    }, 1000 / 20);
+
+                    this.damage = 30;
+
                     setTimeout(() => {
                         clearInterval(animationAttackInterval);
-                        this.damage = 5;
+                        this.damage = 8;
                         console.log(this.damage);
                     }, 2000);
+
                 }, 4000);
-            }, 6000);
-        }
+            }
+        }, 6000);
     }
 }
 

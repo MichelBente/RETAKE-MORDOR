@@ -8,24 +8,26 @@ class MoveableObject extends DrawableObject {
     lastHit = 0;
     lastDamage = 0;
 
-
+    offset = {
+        top: 0,
+        right: 0,
+        bottom: 0,
+        left: 0,
+    };
 
     applyGravity() {
         setInterval(() => {
-            if (this.y < 95 || this.speedY > 0) {
+            if (this.isAboveGround() || this.speedY > 0) {
                 this.y -= this.speedY;
                 this.speedY -= this.acceleration;
             }
-        })  // 25 mal pro Sekunde
+        }), 1000 / 30;  // 25 mal pro Sekunde
     }
 
     isAboveGround() {
-        if (this instanceof ThrowableObject) { //throwableboject shall always fall
-            return true;
-        } else {
             return this.y < 95;
         }
-    }
+    
 
     // isColliding(obj) {
     //     return this.x + this.width - this.offset.right > obj.x + obj.offset.left &&
@@ -87,9 +89,16 @@ class MoveableObject extends DrawableObject {
     }
 
 
-    jump() {
-        this.speedY = 30;
+    die() {
+        this.damage = 0;
+        this.currentImage = 0;
+        let animationInterval = setInterval(() => {
+          this.playAnimation(this.IMAGES_DEAD);
+        }, 100);
+        setTimeout(() => {
+          clearInterval(animationInterval);
+        }, 950);
+      }
     }
+    
 
-
-}

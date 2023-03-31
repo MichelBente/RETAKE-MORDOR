@@ -1,19 +1,19 @@
-class StatusBar extends DrawableObject {
+class StatusBar2 extends DrawableObject {
 
 
 
-    IMAGES_HPBAR = [
-        "../img/stuff/HP_BAR/HP_BAR/HP_bar_00.png",
-        "../img/stuff/HP_BAR/HP_BAR/HP_bar_10.png",
-        "../img/stuff/HP_BAR/HP_BAR/HP_bar_20.png",
-        "../img/stuff/HP_BAR/HP_BAR/HP_bar_30.png",
-        "../img/stuff/HP_BAR/HP_BAR/HP_bar_40.png",
-        "../img/stuff/HP_BAR/HP_BAR/HP_bar_50.png",
-        "../img/stuff/HP_BAR/HP_BAR/HP_bar_60.png",
-        "../img/stuff/HP_BAR/HP_BAR/HP_bar_70.png",
-        "../img/stuff/HP_BAR/HP_BAR/HP_bar_80.png",
-        "../img/stuff/HP_BAR/HP_BAR/HP_bar_90.png",
-        "../img/stuff/HP_BAR/HP_BAR/HP_bar_100.png",
+    IMAGES_MANABAR = [
+        "../img/stuff/MANA_Bar/Mana_bar_00.png",
+        "../img/stuff/MANA_Bar/Mana_bar_10.png",
+        "../img/stuff/MANA_Bar/Mana_bar_20.png",
+        "../img/stuff/MANA_Bar/Mana_bar_30.png",
+        "../img/stuff/MANA_Bar/Mana_bar_40.png",
+        "../img/stuff/MANA_Bar/Mana_bar_50.png",
+        "../img/stuff/MANA_Bar/Mana_bar_60.png",
+        "../img/stuff/MANA_Bar/Mana_bar_70.png",
+        "../img/stuff/MANA_Bar/Mana_bar_80.png",
+        "../img/stuff/MANA_Bar/Mana_bar_90.png",
+        "../img/stuff/MANA_Bar/Mana_bar_100.png",
     ];
 
     percentage = 100;
@@ -22,7 +22,7 @@ class StatusBar extends DrawableObject {
 
     constructor() {
         super();
-        this.loadImages(this.IMAGES_HPBAR);
+        this.loadImages(this.IMAGES_MANABAR);
         this.setPercentage(this.percentage);
     }
 
@@ -30,9 +30,9 @@ class StatusBar extends DrawableObject {
     //setPecentage(50);
     setPercentage(percentage) {
         this.percentage = percentage; // => 0.....10
-        let path = this.IMAGES_HPBAR[this.resolveImageIndex()];
-        this.x = 5;
-        this.y = 5;
+        let path = this.IMAGES_MANABAR[this.resolveImageIndex()];
+        this.x = 25;
+        this.y = 25;
         this.width = 300;
         this.height = 30;
         this.img = this.imageCache[path];

@@ -1,5 +1,6 @@
 class Orc2 extends MoveableObject {
-    energy = 50;
+    energy = 40;
+    damage = 10;
     // framex = 210;
     // framey = 120;
     // framew = -390;
@@ -25,16 +26,16 @@ class Orc2 extends MoveableObject {
     ];
 
     IMAGES_DIE = [
-        "..img/orcs/_PNG/3_ORK/ORK_03_DIE_000.png",
-        "..img/orcs/_PNG/3_ORK/ORK_03_DIE_001.png",
-        "..img/orcs/_PNG/3_ORK/ORK_03_DIE_002.png",
-        "..img/orcs/_PNG/3_ORK/ORK_03_DIE_003.png",
-        "..img/orcs/_PNG/3_ORK/ORK_03_DIE_004.png",
-        "..img/orcs/_PNG/3_ORK/ORK_03_DIE_005.png",
-        "..img/orcs/_PNG/3_ORK/ORK_03_DIE_006.png",
-        "..img/orcs/_PNG/3_ORK/ORK_03_DIE_007.png",
-        "..img/orcs/_PNG/3_ORK/ORK_03_DIE_008.png",
-        "..img/orcs/_PNG/3_ORK/ORK_03_DIE_009.png",
+        "../img/orcs/_PNG/3_ORK/ORK_03_DIE_000.png",
+        "../img/orcs/_PNG/3_ORK/ORK_03_DIE_001.png",
+        "../img/orcs/_PNG/3_ORK/ORK_03_DIE_002.png",
+        "../img/orcs/_PNG/3_ORK/ORK_03_DIE_003.png",
+        "../img/orcs/_PNG/3_ORK/ORK_03_DIE_004.png",
+        "../img/orcs/_PNG/3_ORK/ORK_03_DIE_005.png",
+        "../img/orcs/_PNG/3_ORK/ORK_03_DIE_006.png",
+        "../img/orcs/_PNG/3_ORK/ORK_03_DIE_007.png",
+        "../img/orcs/_PNG/3_ORK/ORK_03_DIE_008.png",
+        "../img/orcs/_PNG/3_ORK/ORK_03_DIE_009.png",
        
     ];
     // grawl_sound = new Audio("audio/orc_crawl.mp3");
@@ -43,31 +44,27 @@ class Orc2 extends MoveableObject {
     constructor() {
         super().loadImage("../img/orcs/_PNG/3_ORK/ORK_03_WALK_000.png");
         this.loadImages(this.IMAGES_WALKING);
-
-        this.x = Math.random() * 2500;
-        this.speed = 0.15 + Math.random() * 0.5;
+        this.loadImages(this.IMAGES_DIE);
+        this.x = 300 + Math.random() * 400;
+        this.speed = 0.15 + Math.random() * 0.25;
 
         this.animate();
     }
 
     animate() {
-        setInterval(() => {
+        let moveInterval = setInterval(() => {
             this.moveLeft();
         }, 1000 / 60);
 
 
-          setInterval(() => {
+        let animationInterval = setInterval(() => {
+            this.playAnimation(this.IMAGES_WALKING);
             if (this.isDead()) {
-                this.playAnimation(this.IMAGES_DIE);
-            } else
-                this.playAnimation(this.IMAGES_WALKING);
-            //     this.axe_sound.play();
-            //     this.grawl_sound.play();
-
-        }, 1000 / 30);
-
+               clearInterval(moveInterval);
+            clearInterval(animationInterval);
+            this.die();
+             }
+              //  this.axe_sound.play();
+        }, 1000 / 15);
     }
-
-         
-         
-}      
+}

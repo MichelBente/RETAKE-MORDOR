@@ -9,14 +9,14 @@ class Level {
    
 
 
-constructor(enemies, enemies2, clouds, backgroundObjects, endboss, portions, throwableobjects) {
+constructor(enemies, enemies2, clouds, backgroundObjects, endboss, portions, fireball) {
 this.enemies = enemies;
 this.enemies2 = enemies2;
 this.clouds = clouds;
 this.backgroundObjects = backgroundObjects;
 this.endboss = endboss;
 this.portions = portions;
-this.throwableobjects = throwableobjects;
+this.fireball = fireball;
 }
 
 

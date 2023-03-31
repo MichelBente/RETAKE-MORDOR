@@ -4,9 +4,10 @@ class World {
     canvas;
     ctx;
     keyboard;
-    camera_x = 0;
+    camera_x = -100;
     StatusBar = new StatusBar();
-    throwableObjects = [];
+    StatusBar2 = new StatusBar2();
+    fireball = [];
 
 
     constructor(canvas, keyboard) {
@@ -15,6 +16,7 @@ class World {
         this.keyboard = keyboard;
         this.draw();
         this.setWorld();
+        this.checkCollisions();
         this.run();
     }
 
@@ -25,14 +27,14 @@ class World {
     run() {
         setInterval(() => {
             this.checkCollisions();
-            this.checkThrowObjects();
+            this.checkthrowObjects();
         }, 200);
     }
 
     checkThrowObjects() {
-        if(this.keyboard.enter) {
-            let fireball = new ThrowableObject(this.character.x +100, this.character.y + 100);
-            this.throwableObjects.push(fireball);
+        if (this.keyboard.specialAttack) {
+            let fireball = new Fireball(this.character.x, this.character.y);
+            this.fireball.push(fireball);
         }
     }
 
@@ -46,11 +48,18 @@ class World {
                 this.StatusBar.setPercentage(this.character.energy);
                 if (enemy.isColliding(this.character)) {
                     enemy.hit(this.character);
-                    console.log('orc-hp', enemy.energy);
+                    console.log('orc-hp', enemy.energy); }
+                    if (portion.isColliding(this.character)) {
+                        portion.healmana(this.character);
+                        console.log('Mana-bar', mana.energy);
                 }
-
+                this.fireball.forEach((fireball) => {
+                    if (enemy.isColliding(fireball)) {
+                        enemy.hit(fireball);
+                    }
+                });
             }
-        });
+        }, 200);
     }
     ;
 
@@ -75,15 +84,17 @@ class World {
 
         this.ctx.translate(-this.camera_x, 0); // Back
         this.addToMap(this.StatusBar);
+        this.addToMap(this.StatusBar2);
         this.ctx.translate(this.camera_x, 0);  //Front
 
         this.addToMap(this.character);
         this.addObjectsToMap(this.level.enemies);
         this.addObjectsToMap(this.level.enemies2);
         this.addObjectsToMap(this.level.clouds);
-        this.addObjectsToMap(this.throwableObjects);
-        
-        
+        this.addObjectsToMap(this.fireball);
+        this.addObjectsToMap(this.portion);
+
+
 
         this.ctx.translate(-this.camera_x, 0);
 
@@ -111,20 +122,17 @@ class World {
         if (mo.otherDirection) {
             this.flipImageBack(mo);
         }
-
     }
+    
     flipImage(mo) {
         this.ctx.save();
         this.ctx.translate(mo.width, 0);
         this.ctx.scale(-1, 1);
         mo.x = mo.x * -1;
     }
-
     flipImageBack(mo) {
         mo.x = mo.x * -1;
         this.ctx.restore();
     }
-
-
 }
 

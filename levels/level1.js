@@ -13,6 +13,13 @@ const level1 = new Level(
         new Endboss(),
     ],
     [
+        new Portion(),
+        new Portion(),
+        new Portion(),
+        new Portion(),
+        new Portion(),
+    ],
+    [
         new Cloud(),
         new Cloud(),
         new Cloud(),

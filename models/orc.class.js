@@ -4,8 +4,8 @@ class Orc extends MoveableObject {
     // framey = 120;
     // framew = -390;
     // frameh = -150;
-    energy = 50;
-
+    energy = 40;
+    damage = 10;
     offset = {
         top: 115,
         right: 210,
@@ -47,26 +47,26 @@ class Orc extends MoveableObject {
         super().loadImage("../img/orcs/_PNG/1_ORK/ORK_01_WALK_000.png");
         this.loadImages(this.IMAGES_WALKING);
         this.loadImages(this.IMAGES_DIE);
-        this.x = 300 + Math.random() * 2500;
-        this.speed = 0.15 + Math.random() * 0.5;
+        this.x = 300 + Math.random() * 400;
+        this.speed = 0.15 + Math.random() * 0.25;
 
         this.animate();
     }
 
     animate() {
-        setInterval(() => {
+        let moveInterval = setInterval(() => {
             this.moveLeft();
         }, 1000 / 60);
 
 
-        setInterval(() => {
+        let animationInterval = setInterval(() => {
+            this.playAnimation(this.IMAGES_WALKING);
             if (this.isDead()) {
-                this.playAnimation(this.IMAGES_DIE);
-            } else
-                this.playAnimation(this.IMAGES_WALKING);
-            //  this.axe_sound.play();
-        }, 1000 / 30);
-
+               clearInterval(moveInterval);
+            clearInterval(animationInterval);
+            this.die();
+             }
+              //  this.axe_sound.play();
+        }, 1000 / 15);
     }
-
 }
