@@ -168,5 +168,14 @@ class Character extends MoveableObject {
         jump() {
           this.speedY = 25;
         }
+
+        collect(mana) {
+          this.mana += mana
+          if (this.mana > 100) {
+              this.mana = 100;
+          }
+      }
+
+
       }
       

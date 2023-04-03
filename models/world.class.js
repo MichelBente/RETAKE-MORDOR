@@ -8,6 +8,7 @@ class World {
     StatusBar = new StatusBar();
     StatusBar2 = new StatusBar2();
     fireball = [];
+    portion = [];
 
 
     constructor(canvas, keyboard) {
@@ -51,8 +52,9 @@ class World {
                 if (enemy.isColliding(this.character)); {
                     enemy.hit(this.character);
                     console.log('orc-hp', enemy.energy); }
-                    if (this.portion.isColliding(this.character)); {
-                        portion.collect(this.character);
+                    if (this.character.isColliding(this.portion)); {
+                        character.collect(this.portion);
+                        portion.slice(1);
                         console.log('Mana-bar', mana.energy);
                 }
                 this.fireball.forEach((fireball) => {

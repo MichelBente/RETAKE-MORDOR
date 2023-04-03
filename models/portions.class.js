@@ -2,6 +2,7 @@ class Portion extends MoveableObject {
 y = 50;
 width = 50;
 height = 50;
+mana = 40;
 
 
 
