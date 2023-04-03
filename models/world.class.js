@@ -10,6 +10,7 @@ class World {
     fireball = [];
     portion = [];
     spellbook = [];
+    mana = 40;
 
 
     constructor(canvas, keyboard) {
@@ -35,16 +36,39 @@ class World {
         }, 200);
     }
 
+    // checkThrowObjects() {
+    //     if (this.keyboard.specialAttack) {
+    //         let fireball = new Fireball(this.character.x, this.character.y);
+    //         this.fireball.push(fireball);
+    //     }
+    // }
+
     checkThrowObjects() {
-        if (this.keyboard.specialAttack) {
-            let fireball = new Fireball(this.character.x, this.character.y);
-            this.fireball.push(fireball);
+        if (this.keyboard.specialAttack && this.character.mana > 15 && !this.coolDown()) {
+            let attack = new Fireball(this.character.x, this.character.y);
+            this.fireball.push(attack);
+            this.character.mana -= 20;
+            this.StatusBar2.setPercentage(this.character.mana);
+            this.lastAttack = new Date().getTime();
+            setTimeout(() => {
+                this.fireball.splice(-1)
+            }, 1800);
+
+        }  if (this.keyboard.specialAttack && this.character.mana >= 5 && !this.coolDown()) {
+            let attack = new Flash(this.character.x, this.character.y);
+            this.fireball.push(attack);
+            this.character.mana -= 5;
+            this.StatusBar2.setPercentage(this.character.mana);
+            this.lastAttack = new Date().getTime();
+            setTimeout(() => {
+                this.fireball.splice(-1)
+            }, 1000);
         }
     }
 
-
     checkCollisions() {
        this.collisionOrcs();
+       this.collisionOrcs2();
        this.collisionEndboss();
        this.collisionPortion();
        this.collisionSpellbooks();
@@ -53,9 +77,9 @@ class World {
 
     collisionEndboss() {
         this.level.endboss.forEach((endboss) => {
-            if (this.elf.isColliding(endboss)) {
-                this.elf.hit(endboss);
-                this.StatusBar.setPercentage(this.elf.energy);
+            if (this.character.isColliding(endboss)) {
+                this.character.hit(endboss);
+                this.StatusBar.setPercentage(this.character.energy);
             }
             this.fireball.forEach((attack) => {
                 if (endboss.isColliding(attack)) {
@@ -67,14 +91,29 @@ class World {
     }
 
     collisionOrcs() {
-        this.level.orcs.forEach((enemy) => {
+        this.level.enemies.forEach((enemy) => {
             if (this.character.isColliding(enemy)) {
                 this.character.hit(enemy);
                 this.StatusBar.setPercentage(this.character.energy);
             }
             this.fireball.forEach((attack) => {
                 if (enemy.isColliding(attack)) {
-                    orc.hit(attack);
+                    enemy.hit(attack);
+                    attack.hit(enemy);
+                }
+            });
+        })
+    }
+
+    collisionOrcs2() {
+        this.level.enemies2.forEach((enemy) => {
+            if (this.character.isColliding(enemy)) {
+                this.character.hit(enemy);
+                this.StatusBar.setPercentage(this.character.energy);
+            }
+            this.fireball.forEach((attack) => {
+                if (enemy.isColliding(attack)) {
+                    enemy.hit(attack);
                     attack.hit(enemy);
                 }
             });
@@ -88,11 +127,11 @@ coolDown() {
 }
 
 collisionPortion() {
-    this.level.portions.forEach((portion) => {
+    this.level.portion.forEach((portion, mana) => {
         if (this.character.isColliding(portion)) {
             this.character.collect(portion, mana)
             portion.collect();
-            this.level.portion.splice(this.level.portions.indexOf(portion), 1);
+            this.level.portion.splice(this.level.portion.indexOf(portion), 1);
             this.StatusBar2.setPercentage(this.character.mana)
             this.increasePoints(900);
         }
@@ -102,8 +141,8 @@ collisionPortion() {
 
 
 collisionSpellbooks() {
-    this.level.spellbooks.forEach((spellbook) => {
-        if (this.elf.isColliding(spellbook)) {
+    this.level.spellbook.forEach((spellbook) => {
+        if (this.character.isColliding(spellbook)) {
             this.level.spellbook.splice(this.level.spellbook.indexOf(spellbook), 1);
 
         }
