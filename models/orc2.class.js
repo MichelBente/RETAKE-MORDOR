@@ -1,6 +1,6 @@
 class Orc2 extends MoveableObject {
-    energy = 40;
-    damage = 10;
+    energy = 10;
+    damage = 1;
     // framex = 210;
     // framey = 120;
     // framew = -390;

@@ -4,8 +4,8 @@ class Orc extends MoveableObject {
     // framey = 120;
     // framew = -390;
     // frameh = -150;
-    energy = 40;
-    damage = 10;
+    energy = 10;
+    damage = 1;
     offset = {
         top: 115,
         right: 210,

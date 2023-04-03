@@ -175,7 +175,7 @@ draw() {
     this.addObjectsToMap(this.level.clouds);
     this.addObjectsToMap(this.level.endboss);
     this.addObjectsToMap(this.level.portion);
-    this.addObjectsToMap(this.level.fireball);
+    this.addObjectsToMap(this.fireball);
     this.addObjectsToMap(this.level.spellbook);
 
 

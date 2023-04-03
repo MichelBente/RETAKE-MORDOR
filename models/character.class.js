@@ -9,6 +9,7 @@ class Character extends MoveableObject {
     // frameh = -140;
     energy = 100;
     mana = 100;
+    speedx = 30;
 
     offset = {
         top: 93,
@@ -123,8 +124,6 @@ class Character extends MoveableObject {
             this.playAnimation(this.IMAGES_IDLE);
             this.walking_sound.pause();
             
-
-
             if (this.world.keyboard.RIGHT && this.x < this.world.level.level_end_x) {
                 this.moveRight();
                 this.otherDirection = false;
@@ -167,7 +166,7 @@ class Character extends MoveableObject {
     }
       
         jump() {
-          this.speedY = 25;
+          this.speedY = 30;
         }
 
         collect(mana) {

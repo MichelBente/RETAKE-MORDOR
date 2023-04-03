@@ -42,9 +42,8 @@ IMAGES_FIREBALL = [
     "../img/stuff/FIREBALL/37.png",
     "../img/stuff/FIREBALL/38.png",
     "../img/stuff/FIREBALL/39.png",
-   
 ];
-
+energy = 10;
 damage = 20;
 
   constructor(x, y) {
@@ -60,7 +59,7 @@ damage = 20;
    
   }
 
-  throw(x, y) {
+  throw() {
     this.speedX = 30;
     let fireballSpeed = setInterval(() => {
       this.x += 10;
@@ -74,6 +73,10 @@ damage = 20;
   specialAttack() {
     let attack = setInterval(() => {
       this.playAnimation(this.IMAGES_FIREBALL);
+      if(this.isDead()) {
+      clearInterval(attack);
+      this.damage = 0;
+      }
     }, 1000 / 30);
     setTimeout(() => {
       clearInterval(attack);
