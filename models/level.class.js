@@ -5,12 +5,14 @@ class Level {
     backgroundObjects;
     endboss;
     level_end_x = 2500;
-    portion;
+    level_start_x = -700;
+    portion = [];
     fireball =[];
+    spellbook = [];
    
 
 
-constructor(enemies, enemies2, clouds, backgroundObjects, endboss, portion, fireball) {
+constructor(enemies, enemies2, clouds, backgroundObjects, endboss, portion, fireball, spellbook,) {
 this.enemies = enemies;
 this.enemies2 = enemies2;
 this.clouds = clouds;
@@ -18,6 +20,7 @@ this.backgroundObjects = backgroundObjects;
 this.endboss = endboss;
 this.portion = portion;
 this.fireball = fireball;
+this.spellbook = spellbook;
 
 }
 

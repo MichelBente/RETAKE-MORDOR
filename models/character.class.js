@@ -8,6 +8,7 @@ class Character extends MoveableObject {
     // framew = -440;
     // frameh = -140;
     energy = 100;
+    mana = 100;
 
     offset = {
         top: 93,

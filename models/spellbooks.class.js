@@ -1,22 +1,22 @@
-class Portion extends MoveableObject {
+class Spellbook extends MoveableObject {
+
     y = 50;
     width = 50;
     height = 50;
     mana = 40;
-    energy = 10;
 
 
 
 
     constructor() {
-        super().loadImage("../img/stuff/craftpix-net-500794-50-free-rpg-paint-icons/PNG/without background/23.png");
+        super().loadImage("../img/stuff/craftpix-net-715454-free-50-rpg-book-icons/PNG/without background/43.png");
         this.x = 250 + Math.random() * 2500;
         this.animate();
     }
 
     animate() {
         setInterval(() => {
-            this.x -= 0.15;
+            this.x -= 0.15;  
         }, 60);
 
     }
@@ -26,12 +26,7 @@ class Portion extends MoveableObject {
             this.x -= this.speed;
         }, 1000 / 60);
     }
-
-    collect() {
-        this.mana = 0;
-    }
 }
-
 
 
 

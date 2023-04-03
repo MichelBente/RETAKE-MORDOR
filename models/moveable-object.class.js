@@ -93,7 +93,7 @@ class MoveableObject extends DrawableObject {
         this.damage = 0;
         this.currentImage = 0;
         let animationInterval = setInterval(() => {
-          this.playAnimation(this.IMAGES_DEAD);
+          this.playAnimation(this.IMAGES_DIE);
         }, 100);
         setTimeout(() => {
           clearInterval(animationInterval);

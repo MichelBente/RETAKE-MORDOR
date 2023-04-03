@@ -9,6 +9,7 @@ class World {
     StatusBar2 = new StatusBar2();
     fireball = [];
     portion = [];
+    spellbook = [];
 
 
     constructor(canvas, keyboard) {
@@ -20,7 +21,7 @@ class World {
         this.checkCollisions();
         this.run();
         this.checkThrowObjects();
-        
+
     }
 
     setWorld() {
@@ -43,101 +44,140 @@ class World {
 
 
     checkCollisions() {
-        this.level.enemies.forEach((enemy) => {
-            if (this.character.isColliding(enemy)) {
-                console.log('collision with', enemy);
-                this.character.hit(enemy);
-                console.log('collision with', this.character.energy);
-                this.StatusBar.setPercentage(this.character.energy);
-                if (enemy.isColliding(this.character)); {
-                    enemy.hit(this.character);
-                    console.log('orc-hp', enemy.energy); }
-                    if (this.character.isColliding(this.portion)); {
-                        character.collect(this.portion);
-                        portion.slice(1);
-                        console.log('Mana-bar', mana.energy);
-                }
-                this.fireball.forEach((fireball) => {
-                    if (enemy.isColliding(fireball)) {
-                        enemy.hit(fireball);
-                    }
-                });
+       this.collisionOrcs();
+       this.collisionEndboss();
+       this.collisionPortion();
+       this.collisionSpellbooks();
+    }
+    
+
+    collisionEndboss() {
+        this.level.endboss.forEach((endboss) => {
+            if (this.elf.isColliding(endboss)) {
+                this.elf.hit(endboss);
+                this.StatusBar.setPercentage(this.elf.energy);
             }
-        }, 200);
-    }
-    ;
-
-
-    // checkCollisions() {
-    //     setInterval(() => {
-    //       this.level.enemies.forEach((enemy) => {
-    //         if (this.character.isColliding(enemy)) {
-    //           this.character.hit();
-    //           this.StatusBar.setPercentage(this.character.energy);
-    //         }
-    //       });
-    //     }, 200);
-    //   }
-
-
-    draw() {
-        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-
-        this.ctx.translate(this.camera_x, 0);
-        this.addObjectsToMap(this.level.backgroundObjects);
-
-        this.ctx.translate(-this.camera_x, 0); // Back
-        this.addToMap(this.StatusBar);
-        this.addToMap(this.StatusBar2);
-        this.ctx.translate(this.camera_x, 0);  //Front
-
-        this.addToMap(this.character);
-        this.addObjectsToMap(this.level.enemies);
-        this.addObjectsToMap(this.level.enemies2);
-        this.addObjectsToMap(this.level.clouds);
-        this.addObjectsToMap(this.level.endboss);
-        this.addObjectsToMap(this.level.portion);
-        this.addObjectsToMap(this.level.fireball);
-
-
-
-        this.ctx.translate(-this.camera_x, 0);
-
-        // draw wird immerwieder aufgerufen
-        let self = this;
-        requestAnimationFrame(function () {
-            self.draw();
-        });
-    }
-
-    addObjectsToMap(objects) {
-        objects.forEach(o => {
-            this.addToMap(o);
+            this.fireball.forEach((attack) => {
+                if (endboss.isColliding(attack)) {
+                    endboss.hit(attack);
+                    attack.hit(endboss);
+                }
+            });
         })
-    };
+    }
 
-    addToMap(mo) {
-        if (mo.otherDirection) {
-            this.flipImage(mo);
+    collisionOrcs() {
+        this.level.orcs.forEach((enemy) => {
+            if (this.character.isColliding(enemy)) {
+                this.character.hit(enemy);
+                this.StatusBar.setPercentage(this.character.energy);
+            }
+            this.fireball.forEach((attack) => {
+                if (enemy.isColliding(attack)) {
+                    orc.hit(attack);
+                    attack.hit(enemy);
+                }
+            });
+        })
+    }
+
+coolDown() {
+    let timePassed = new Date().getTime() -this.lastAttack;
+    timePassed = timePassed /1000;
+    return timePassed < 0.5;
+}
+
+collisionPortion() {
+    this.level.portions.forEach((portion) => {
+        if (this.character.isColliding(portion)) {
+            this.character.collect(portion, mana)
+            portion.collect();
+            this.level.portion.splice(this.level.portions.indexOf(portion), 1);
+            this.StatusBar2.setPercentage(this.character.mana)
+            this.increasePoints(900);
         }
+    })
+}
 
-        mo.draw(this.ctx);
-        mo.drawFrame(this.ctx);
 
-        if (mo.otherDirection) {
-            this.flipImageBack(mo);
+
+collisionSpellbooks() {
+    this.level.spellbooks.forEach((spellbook) => {
+        if (this.elf.isColliding(spellbook)) {
+            this.level.spellbook.splice(this.level.spellbook.indexOf(spellbook), 1);
+
         }
+    })
+}
+
+increasePoints(n) {
+    this.points += 10;
+}
+
+updateScore() {
+    this.score = this.points;
+}
+
+
+draw() {
+    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+    this.ctx.translate(this.camera_x, 0);
+    this.addObjectsToMap(this.level.backgroundObjects);
+
+    this.ctx.translate(-this.camera_x, 0); // Back
+    this.addToMap(this.StatusBar);
+    this.addToMap(this.StatusBar2);
+    this.ctx.translate(this.camera_x, 0);  //Front
+
+    this.addToMap(this.character);
+    this.addObjectsToMap(this.level.enemies);
+    this.addObjectsToMap(this.level.enemies2);
+    this.addObjectsToMap(this.level.clouds);
+    this.addObjectsToMap(this.level.endboss);
+    this.addObjectsToMap(this.level.portion);
+    this.addObjectsToMap(this.level.fireball);
+    this.addObjectsToMap(this.level.spellbook);
+
+
+
+    this.ctx.translate(-this.camera_x, 0);
+
+    // draw wird immerwieder aufgerufen
+    let self = this;
+    requestAnimationFrame(function () {
+        self.draw();
+    });
+}
+
+addObjectsToMap(objects) {
+    objects.forEach(o => {
+        this.addToMap(o);
+    })
+};
+
+addToMap(mo) {
+    if (mo.otherDirection) {
+        this.flipImage(mo);
     }
 
-    flipImage(mo) {
-        this.ctx.save();
-        this.ctx.translate(mo.width, 0);
-        this.ctx.scale(-1, 1);
-        mo.x = mo.x * -1;
+    mo.draw(this.ctx);
+    mo.drawFrame(this.ctx);
+
+    if (mo.otherDirection) {
+        this.flipImageBack(mo);
     }
-    flipImageBack(mo) {
-        mo.x = mo.x * -1;
-        this.ctx.restore();
-    }
+}
+
+flipImage(mo) {
+    this.ctx.save();
+    this.ctx.translate(mo.width, 0);
+    this.ctx.scale(-1, 1);
+    mo.x = mo.x * -1;
+}
+flipImageBack(mo) {
+    mo.x = mo.x * -1;
+    this.ctx.restore();
+}
 }
 

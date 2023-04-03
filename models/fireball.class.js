@@ -51,11 +51,13 @@ damage = 20;
     super().loadImage("../img/stuff/FIREBALL/1.png");
     this.loadImages(this.IMAGES_FIREBALL);
     this.x = x + 100;
-    this.y = y - 70;
-    this.width = 500;
-    this.height = 500;
+    this.y = y + 70;
+    this.width = 250;
+    this.height = 250;
+    this.speed = 20;
     this.throw();
     this.specialAttack();
+   
   }
 
   throw(x, y) {

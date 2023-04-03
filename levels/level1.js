@@ -16,7 +16,7 @@ const level1 = new Level(
         new Cloud(),
         new Cloud(),
         new Cloud(),
-        
+
     ],
     [
         new BackgroundObject("../img/backgrounds/PNG/game_background_4/game_background_4.png", -720),
@@ -24,7 +24,7 @@ const level1 = new Level(
         new BackgroundObject("../img/backgrounds/PNG/game_background_4/layers/ground_decor.png", -720),
         new BackgroundObject("../img/backgrounds/PNG/game_background_3/layers/ground_decor.png", -720),
         new BackgroundObject("../img/backgrounds/PNG/game_background_1/layers/ground_decor.png", -720),
-        new BackgroundObject("../img/backgrounds/PNG/game_background_2/layers/front_decor.png",  -740),
+        new BackgroundObject("../img/backgrounds/PNG/game_background_2/layers/front_decor.png", -740),
         new BackgroundObject("../img/backgrounds/PNG/game_background_2/layers/front_decor.png", -720),
 
         new BackgroundObject("../img/backgrounds/PNG/game_background_4/game_background_4.png", 0),
@@ -43,29 +43,29 @@ const level1 = new Level(
         new BackgroundObject("../img/backgrounds/PNG/game_background_2/layers/front_decor.png", 720),
         new BackgroundObject("../img/backgrounds/PNG/game_background_2/layers/front_decor.png", 720),
 
-        new BackgroundObject("../img/backgrounds/PNG/game_background_4/game_background_4.png", 720 *2),
-        new BackgroundObject("../img/backgrounds/PNG/game_background_2/layers/back_decor.png",720 *2),
-        new BackgroundObject("../img/backgrounds/PNG/game_background_4/layers/ground_decor.png", 720 *2),
-        new BackgroundObject("../img/backgrounds/PNG/game_background_3/layers/ground_decor.png", 720 *2),
-        new BackgroundObject("../img/backgrounds/PNG/game_background_1/layers/ground_decor.png", 720 *2),
-        new BackgroundObject("../img/backgrounds/PNG/game_background_2/layers/front_decor.png", 720 *2),
-        new BackgroundObject("../img/backgrounds/PNG/game_background_2/layers/front_decor.png", 720 *2),
+        new BackgroundObject("../img/backgrounds/PNG/game_background_4/game_background_4.png", 720 * 2),
+        new BackgroundObject("../img/backgrounds/PNG/game_background_2/layers/back_decor.png", 720 * 2),
+        new BackgroundObject("../img/backgrounds/PNG/game_background_4/layers/ground_decor.png", 720 * 2),
+        new BackgroundObject("../img/backgrounds/PNG/game_background_3/layers/ground_decor.png", 720 * 2),
+        new BackgroundObject("../img/backgrounds/PNG/game_background_1/layers/ground_decor.png", 720 * 2),
+        new BackgroundObject("../img/backgrounds/PNG/game_background_2/layers/front_decor.png", 720 * 2),
+        new BackgroundObject("../img/backgrounds/PNG/game_background_2/layers/front_decor.png", 720 * 2),
 
-        new BackgroundObject("../img/backgrounds/PNG/game_background_4/game_background_4.png", 720 *3),
-        new BackgroundObject("../img/backgrounds/PNG/game_background_2/layers/back_decor.png", 720 *3),
-        new BackgroundObject("../img/backgrounds/PNG/game_background_4/layers/ground_decor.png", 720 *3),
-        new BackgroundObject("../img/backgrounds/PNG/game_background_3/layers/ground_decor.png", 720 *3),
-        new BackgroundObject("../img/backgrounds/PNG/game_background_1/layers/ground_decor.png", 720 *3),
-        new BackgroundObject("../img/backgrounds/PNG/game_background_2/layers/front_decor.png", 720 *3),
-        new BackgroundObject("../img/backgrounds/PNG/game_background_2/layers/front_decor.png", 720 *3),
+        new BackgroundObject("../img/backgrounds/PNG/game_background_4/game_background_4.png", 720 * 3),
+        new BackgroundObject("../img/backgrounds/PNG/game_background_2/layers/back_decor.png", 720 * 3),
+        new BackgroundObject("../img/backgrounds/PNG/game_background_4/layers/ground_decor.png", 720 * 3),
+        new BackgroundObject("../img/backgrounds/PNG/game_background_3/layers/ground_decor.png", 720 * 3),
+        new BackgroundObject("../img/backgrounds/PNG/game_background_1/layers/ground_decor.png", 720 * 3),
+        new BackgroundObject("../img/backgrounds/PNG/game_background_2/layers/front_decor.png", 720 * 3),
+        new BackgroundObject("../img/backgrounds/PNG/game_background_2/layers/front_decor.png", 720 * 3),
 
-        new BackgroundObject("../img/backgrounds/PNG/game_background_4/game_background_4.png", 720 *4),
-        new BackgroundObject("../img/backgrounds/PNG/game_background_2/layers/back_decor.png", 720 *4),
-        new BackgroundObject("../img/backgrounds/PNG/game_background_4/layers/ground_decor.png", 720 *4),
-        new BackgroundObject("../img/backgrounds/PNG/game_background_3/layers/ground_decor.png", 720 *4),
-        new BackgroundObject("../img/backgrounds/PNG/game_background_1/layers/ground_decor.png", 720 *4),
-        new BackgroundObject("../img/backgrounds/PNG/game_background_2/layers/front_decor.png", 720 *4),
-        new BackgroundObject("../img/backgrounds/PNG/game_background_2/layers/front_decor.png", 720 *4),
+        new BackgroundObject("../img/backgrounds/PNG/game_background_4/game_background_4.png", 720 * 4),
+        new BackgroundObject("../img/backgrounds/PNG/game_background_2/layers/back_decor.png", 720 * 4),
+        new BackgroundObject("../img/backgrounds/PNG/game_background_4/layers/ground_decor.png", 720 * 4),
+        new BackgroundObject("../img/backgrounds/PNG/game_background_3/layers/ground_decor.png", 720 * 4),
+        new BackgroundObject("../img/backgrounds/PNG/game_background_1/layers/ground_decor.png", 720 * 4),
+        new BackgroundObject("../img/backgrounds/PNG/game_background_2/layers/front_decor.png", 720 * 4),
+        new BackgroundObject("../img/backgrounds/PNG/game_background_2/layers/front_decor.png", 720 * 4),
     ],
     [
         new Endboss(),
@@ -86,6 +86,14 @@ const level1 = new Level(
         new Fireball(),
         new Fireball(),
         new Fireball(),
-        
+
     ],
-    );
+    [
+        new Spellbook(),
+        new Spellbook(),
+        new Spellbook(),
+        new Spellbook(),
+        new Spellbook(),
+        new Spellbook(),
+    ],
+);
