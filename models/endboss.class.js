@@ -1,19 +1,20 @@
 class Endboss extends MoveableObject {
-    height = 196.875 * 3.5;
-    width = 375 * 3.5;
+    height = 196.875 * 3.0;
+    width = 375 * 3.0;
     energy = 50;
-    x = 200;
-    y = -180;
+    x = 100;
+    y = -80;
     speed = 0.5;
+    damage = 20;
     // framex = 230;
     // framey = 250;
     // framew = -410;
     // frameh = -300;
     offset = {
         top: 250,
-        right: 420,
+        right: 400,
         bottom: 50,
-        left: 400
+        left: 350,
     };
 
     IMAGES_WALKING = [
@@ -59,7 +60,7 @@ class Endboss extends MoveableObject {
     // horn_sound = new Audio("audio/horn.mp3");
 
     constructor() {
-        super().loadImage("img/orcs/_PNG/2_ORK/ORK_02_IDLE_000.png");
+        super().loadImage("../img/orcs/_PNG/2_ORK/ORK_02_IDLE_000.png");
         this.x = 2500;
         this.y = -190,
         this.speed = 0.05 + Math.random() + 0.5;
@@ -110,13 +111,8 @@ class Endboss extends MoveableObject {
                             this.playAnimation(this.IMAGES_ATTACK);
                         }
                     }, 1000 / 20);
-
-                    this.damage = 30;
-
                     setTimeout(() => {
                         clearInterval(animationAttackInterval);
-                        this.damage = 8;
-                        console.log(this.damage);
                     }, 2000);
 
                 }, 4000);

@@ -48,7 +48,7 @@ IMAGES_FIREBALL = [
 damage = 20;
 
   constructor(x, y) {
-    super().loadImage(this.IMAGES_FIREBALL[0]);
+    super().loadImage("../img/stuff/FIREBALL/1.png");
     this.loadImages(this.IMAGES_FIREBALL);
     this.x = x + 100;
     this.y = y - 70;
@@ -59,7 +59,7 @@ damage = 20;
   }
 
   throw(x, y) {
-    this.speedx = 30;
+    this.speedX = 30;
     let fireballSpeed = setInterval(() => {
       this.x += 10;
     }, 50);

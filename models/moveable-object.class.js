@@ -1,9 +1,9 @@
 class MoveableObject extends DrawableObject {
-    damage = 1;
+    
     speed = 0.25;
     otherDirection = false;
     speedY = 2;
-    acceleration = 1.2;
+    acceleration = 2;
     energy = 100;
     lastHit = 0;
     lastDamage = 0;
@@ -51,9 +51,8 @@ class MoveableObject extends DrawableObject {
     //           (this.y + this.framey) <= (obj.y + obj.framey) + (obj.height + obj.frameh)) 
     //   }
 
-    hit(obj) {
-        this.energy -= obj.damage;
-        this.lastDamage = obj.damage;
+    hit(objDamage) {
+        this.energy -= objDamage.damage;
         if (this.energy < 0) {
             this.energy = 0;
         } else {
@@ -81,6 +80,7 @@ class MoveableObject extends DrawableObject {
 
     moveRight() {
         this.x += this.speed;
+        this.otherDirection = false;
     }
 
     moveLeft() {

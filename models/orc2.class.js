@@ -42,7 +42,7 @@ class Orc2 extends MoveableObject {
     // sword_sound = new Audio("audio/swordhit.mp3");
 
     constructor() {
-        super().loadImage("../img/orcs/_PNG/3_ORK/ORK_03_WALK_000.png");
+        super().loadImage("../img/orcs/_PNG/3_ORK/ORK_03_IDLE_000.png");
         this.loadImages(this.IMAGES_WALKING);
         this.loadImages(this.IMAGES_DIE);
         this.x = 300 + Math.random() * 400;

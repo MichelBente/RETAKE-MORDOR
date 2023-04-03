@@ -18,6 +18,8 @@ class World {
         this.setWorld();
         this.checkCollisions();
         this.run();
+        this.checkThrowObjects();
+        
     }
 
     setWorld() {
@@ -27,7 +29,7 @@ class World {
     run() {
         setInterval(() => {
             this.checkCollisions();
-            this.checkthrowObjects();
+            this.checkThrowObjects();
         }, 200);
     }
 
@@ -46,11 +48,11 @@ class World {
                 this.character.hit(enemy);
                 console.log('collision with', this.character.energy);
                 this.StatusBar.setPercentage(this.character.energy);
-                if (enemy.isColliding(this.character)) {
+                if (enemy.isColliding(this.character)); {
                     enemy.hit(this.character);
                     console.log('orc-hp', enemy.energy); }
-                    if (portion.isColliding(this.character)) {
-                        portion.healmana(this.character);
+                    if (this.portion.isColliding(this.character)); {
+                        portion.collect(this.character);
                         console.log('Mana-bar', mana.energy);
                 }
                 this.fireball.forEach((fireball) => {
@@ -91,8 +93,9 @@ class World {
         this.addObjectsToMap(this.level.enemies);
         this.addObjectsToMap(this.level.enemies2);
         this.addObjectsToMap(this.level.clouds);
-        this.addObjectsToMap(this.fireball);
-        this.addObjectsToMap(this.portion);
+        this.addObjectsToMap(this.level.endboss);
+        this.addObjectsToMap(this.level.portion);
+        this.addObjectsToMap(this.level.fireball);
 
 
 
@@ -123,7 +126,7 @@ class World {
             this.flipImageBack(mo);
         }
     }
-    
+
     flipImage(mo) {
         this.ctx.save();
         this.ctx.translate(mo.width, 0);

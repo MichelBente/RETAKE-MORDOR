@@ -1,6 +1,7 @@
 class Character extends MoveableObject {
     y = 30;
     speed = 20;
+    damage = 10;
     otherDirection = false;
     // framex = 220;
     // framey = 90;
@@ -162,7 +163,7 @@ class Character extends MoveableObject {
               }
             }
           }, 1000 / 15);
-        }
+    }
       
         jump() {
           this.speedY = 25;
