@@ -1,4 +1,4 @@
-class Portion extends MoveableObject {
+class Portion extends CollectibleObject {
     y = 50;
     width = 50;
     height = 50;

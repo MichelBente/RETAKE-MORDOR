@@ -8,7 +8,7 @@ class Character extends MoveableObject {
     // framew = -440;
     // frameh = -140;
     energy = 100;
-    mana = 100;
+    mana = 20;
     speedx = 30;
 
     offset = {
@@ -101,9 +101,9 @@ class Character extends MoveableObject {
 
     world;
     walking_sound = new Audio("audio/walking.mp3")
-    //jumping_sound = new Audio("audio/jump.mp3");
-    //  hurt_sound = new Audio("audio/hurt1.mp3");
-    // die_sound = new Audio("audio/die.mp3");
+    jumping_sound = new Audio("audio/jump.mp3");
+    hurt_sound = new Audio("audio/hurt1.mp3");
+    die_sound = new Audio("audio/die.mp3");
 
 
     constructor() {
@@ -136,7 +136,7 @@ class Character extends MoveableObject {
                 this.walking_sound.play();
             }
 
-            if (this.world.keyboard.SPACE && !this.isAboveGround()) {
+            if (this.world.keyboard.UP && !this.isAboveGround()) {
                 this.jump();
                 this.jumping_sound.play();
             }

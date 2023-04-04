@@ -11,6 +11,7 @@ class World {
     portion = [];
     spellbook = [];
     mana = 40;
+    flash = [];
 
 
     constructor(canvas, keyboard) {
@@ -54,14 +55,14 @@ class World {
                 this.fireball.splice(-1)
             }, 1800);
 
-        }  if (this.keyboard.specialAttack && this.character.mana >= 5 && !this.coolDown()) {
+        }  if (this.keyboard.SPACE && this.character.mana >= 5 && !this.coolDown()) {
             let attack = new Flash(this.character.x, this.character.y);
-            this.fireball.push(attack);
+            this.flash.push(attack);
             this.character.mana -= 5;
             this.StatusBar2.setPercentage(this.character.mana);
             this.lastAttack = new Date().getTime();
             setTimeout(() => {
-                this.fireball.splice(-1)
+                this.flash.splice(-1)
             }, 1000);
         }
     }
@@ -87,6 +88,12 @@ class World {
                     attack.hit(endboss);
                 }
             });
+            this.flash.forEach((attack) => {
+                if (endboss.isColliding(attack)) {
+                    endboss.hit(attack);
+                    attack.hit(endboss);
+                }
+            });
         })
     }
 
@@ -97,6 +104,12 @@ class World {
                 this.StatusBar.setPercentage(this.character.energy);
             }
             this.fireball.forEach((attack) => {
+                if (enemy.isColliding(attack)) {
+                    enemy.hit(attack);
+                    attack.hit(enemy);
+                }
+            });
+            this.flash.forEach((attack) => {
                 if (enemy.isColliding(attack)) {
                     enemy.hit(attack);
                     attack.hit(enemy);
@@ -117,8 +130,16 @@ class World {
                     attack.hit(enemy);
                 }
             });
+            this.flash.forEach((attack) => {
+                if (enemy.isColliding(attack)) {
+                    enemy.hit(attack);
+                    attack.hit(enemy);
+                }
+            });
         })
     }
+
+    
 
 coolDown() {
     let timePassed = new Date().getTime() -this.lastAttack;
@@ -127,15 +148,15 @@ coolDown() {
 }
 
 collisionPortion() {
-    this.level.portion.forEach((portion, mana) => {
+    this.level.portion.forEach((portion) => {
         if (this.character.isColliding(portion)) {
-            this.character.collect(portion, mana)
+            this.character.collect(portion)
             portion.collect();
             this.level.portion.splice(this.level.portion.indexOf(portion), 1);
             this.StatusBar2.setPercentage(this.character.mana)
             this.increasePoints(900);
         }
-    })
+    });
 }
 
 
@@ -177,6 +198,7 @@ draw() {
     this.addObjectsToMap(this.level.portion);
     this.addObjectsToMap(this.fireball);
     this.addObjectsToMap(this.level.spellbook);
+    this.addObjectsToMap(this.flash);
 
 
 

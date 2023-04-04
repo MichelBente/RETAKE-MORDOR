@@ -16,7 +16,7 @@ class StatusBar2 extends DrawableObject {
         "../img/stuff/MANA_Bar/Mana_bar_100.png",
     ];
 
-    percentage = 100;
+    percentage = 20;
 
 
 

@@ -5,7 +5,7 @@ class CollectibleObject extends DrawableObject {
       bottom: 0,
       left: 0,
     };
-    mana = 0;
+    mana = 20;
     energy = 1;
   
     constructor() {

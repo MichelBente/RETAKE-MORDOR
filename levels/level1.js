@@ -86,6 +86,9 @@ const level1 = new Level(
         new Fireball(),
         new Fireball(),
         new Fireball(),
+        new Fireball(),
+        new Fireball(),
+        new Fireball(),
 
     ],
     [
@@ -95,5 +98,16 @@ const level1 = new Level(
         new Spellbook(),
         new Spellbook(),
         new Spellbook(),
+    ],
+    [
+        new Flash(),
+        new Flash(),
+        new Flash(),
+        new Flash(),
+        new Flash(),
+        new Flash(),
+        new Flash(),
+        new Flash(),
+        new Flash(),
     ],
 );

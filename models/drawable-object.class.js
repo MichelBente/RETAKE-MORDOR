@@ -20,7 +20,9 @@ class DrawableObject {
         if (this instanceof Character || 
             this instanceof Orc || 
             this instanceof Orc2 || 
-            this instanceof Endboss) {
+            this instanceof Endboss || 
+            this instanceof Fireball ||
+            this instanceof Flash) {
             ctx.beginPath();
             ctx.lineWidth = '1';
             ctx.strokeStyle = 'blue';

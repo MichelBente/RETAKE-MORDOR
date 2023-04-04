@@ -1,5 +1,11 @@
 class Flash extends MoveableObject {
-
+    offset = {
+        top: 100,
+        right: 50,
+        left : 100,
+        bottom: 0,
+      }
+      
 
 IMAGES_FLASH = [
     "../img/stuff/flash/flash/flash01.png",
@@ -15,6 +21,45 @@ IMAGES_FLASH = [
 ];
 
 
+energy = 1;
+damage = 10;
 
+  constructor(x, y) {
+    super().loadImage("../img/stuff/flash/flash/flash01.png");
+    this.loadImages(this.IMAGES_FLASH);
+    this.x = x + 200;
+    this.y = y + 70;
+    this.width = 250;
+    this.height = 250;
+    this.speed = 20;
+    this.throw2();
+    this.specialAttack2();
+   
+  }
 
+  throw2() {
+    this.speedX = 30;
+    let flashSpeed = setInterval(() => {
+      this.x += 10;
+    }, 50);
+    setTimeout(() => {
+      clearInterval(flashSpeed);
+      this.y = 500;
+    }, 1333);
+  }
+
+  specialAttack2() {
+    this.currentImage = 0;
+    let attack = setInterval(() => {
+      this.playAnimation(this.IMAGES_FLASH);
+      if(this.isDead()) {
+      clearInterval(attack);
+      this.damage = 0;
+      }
+    }, 1000 / 30);
+    setTimeout(() => {
+      clearInterval(attack);
+    }, 1333);
+  }
 }
+

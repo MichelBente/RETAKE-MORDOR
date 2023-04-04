@@ -19,10 +19,10 @@ window.addEventListener("keydown", (e) => {
     if (e.keyCode == 65) {
         keyboard.LEFT = true;
     }
-    if (e.keyCode == 38) {
+    if (e.keyCode == 87) {
         keyboard.UP = true;
     }
-    if (e.keyCode == 87) {
+    if (e.keyCode == 83 ) {
         keyboard.DOWN = true;
     }
     if (e.keyCode == 32) {

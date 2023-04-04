@@ -1,5 +1,10 @@
 class Fireball extends MoveableObject {
-
+offset = {
+  top: 100,
+  right: 50,
+  left : 100,
+  bottom: 0,
+}
 
 
 IMAGES_FIREBALL = [
@@ -49,7 +54,7 @@ damage = 20;
   constructor(x, y) {
     super().loadImage("../img/stuff/FIREBALL/1.png");
     this.loadImages(this.IMAGES_FIREBALL);
-    this.x = x + 100;
+    this.x = x + 200;
     this.y = y + 70;
     this.width = 250;
     this.height = 250;
@@ -71,6 +76,7 @@ damage = 20;
   }
 
   specialAttack() {
+    this.currentImage = 0;
     let attack = setInterval(() => {
       this.playAnimation(this.IMAGES_FIREBALL);
       if(this.isDead()) {
