@@ -20,8 +20,9 @@ class StatusBar2 extends DrawableObject {
 
 
 
-    constructor() {
-        super();this.loadImage("../img/stuff/MANA_Bar/Mana_bar_00.png");
+    constructor() { 
+        super();
+        this.loadImage("../img/stuff/MANA_Bar/Mana_bar_00.png");
         this.loadImages(this.IMAGES_MANABAR);
         this.setPercentage(this.percentage);
     }

@@ -5,7 +5,7 @@ class Spellbook extends MoveableObject {
     height = 50;
     mana = 40;
 
-
+    magicalstrike_sound = new Audio("audio/magicalstrike.mp3")
 
 
     constructor() {
@@ -26,6 +26,13 @@ class Spellbook extends MoveableObject {
             this.x -= this.speed;
         }, 1000 / 60);
     }
+
+
+    collect() {
+        this.mana = 0;
+        this.magicalstrike_sound.play();
+    }
+
 }
 
 

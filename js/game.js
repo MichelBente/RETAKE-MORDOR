@@ -54,3 +54,7 @@ window.addEventListener("keyup", (e) => {
         keyboard.specialAttack = false;
     }
 });
+
+function startGame() {
+    document.getElementById('startscreen').classList.add('dnone');
+}

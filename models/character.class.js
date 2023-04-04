@@ -150,9 +150,10 @@ class Character extends MoveableObject {
       
             if (this.isDead()) {
               clearInterval(animation);
-              this.die();
+              this.die();this.die_sound.play();
             } else if (this.isHurt()) {
               this.playAnimation(this.IMAGES_HURT);
+              this.hurt_sound.play();
             }
       
             if (this.isAboveGround() || this.speedY > 0) {
@@ -170,7 +171,7 @@ class Character extends MoveableObject {
         }
 
         collect(mana) {
-          this.mana += mana
+          this.mana += mana.mana
           if (this.mana > 100) {
               this.mana = 100;
           }

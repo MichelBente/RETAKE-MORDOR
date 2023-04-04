@@ -108,11 +108,59 @@ canvas {
     font-family: monospace;
     z-index: 20;
     opacity: 100%;
-
 }
 
 .headline:hover {
     cursor: pointer;
     animation-name: bounce;
     -moz-animation-name: bounce;
+}
+
+.startscreen {
+    position:absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: 100;
+    background-image: url("../Retake_Mordor/img/backgrounds/PNG/game_background_2/game_background_2.png");
+}
+
+.backdrop {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.gameLore {
+font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+font-size: 24px;
+padding: 40px;
+color: rgb(247, 219, 181);
+text-shadow:rgb(255, 255, 255);
+}
+
+.btn { 
+    width: 200px;
+    height: 50px;
+    background-image: url("img/elfs/_PNG/1/Elf_01__ATTACK_000.png");
+    color: whitesmoke;
+    font-size: 20px;
+    border: 4px solid white;
+    font-weight: 800;
+    object-fit: cover;
+    background-color:#C21022;
+    text-shadow:rgb(255, 255, 255);
+}
+
+.btn:hover {
+text-decoration: dotted;
+font-weight: 800;
+color: rgba(255, 255, 255, 0.348);
+background-image: url( "img/elfs/_PNG/3/Elf_03__DIE_000.png");
+object-fit: cover;
+font-size: 28px;
+}
+
+.dnone {
+    display: none;
 }

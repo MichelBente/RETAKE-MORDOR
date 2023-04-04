@@ -50,6 +50,7 @@ IMAGES_FIREBALL = [
 ];
 energy = 10;
 damage = 20;
+fireball_sound = new Audio("audio/fireball.mp3")
 
   constructor(x, y) {
     super().loadImage("../img/stuff/FIREBALL/1.png");
@@ -65,6 +66,7 @@ damage = 20;
   }
 
   throw() {
+    this.fireball_sound.play();
     this.speedX = 30;
     let fireballSpeed = setInterval(() => {
       this.x += 10;
@@ -73,6 +75,7 @@ damage = 20;
       clearInterval(fireballSpeed);
       this.y = 500;
     }, 1333);
+    
   }
 
   specialAttack() {

@@ -23,6 +23,7 @@ IMAGES_FLASH = [
 
 energy = 1;
 damage = 10;
+magicalstrike3_sound = new Audio("audio/magicalstrike3.mp3")
 
   constructor(x, y) {
     super().loadImage("../img/stuff/flash/flash/flash01.png");
@@ -38,6 +39,7 @@ damage = 10;
   }
 
   throw2() {
+    this.magicalstrike3_sound.play();
     this.speedX = 30;
     let flashSpeed = setInterval(() => {
       this.x += 10;

@@ -12,7 +12,7 @@
     <script src="models/collectibleObject.class.js"></script>
     <script src="models/character.class.js"></script>
     <script src="models/orc.class.js"></script>
-    <script src="models/orc2.class.js"></script> 
+    <script src="models/orc2.class.js"></script>
     <script src="models/status-bar.class.js"></script>
     <script src="models/status-bar2.class.js"></script>
     <script src="models/fireball.class.js"></script>
@@ -27,7 +27,7 @@
     <script src="levels/level1.js"></script>
     <script src="models/world.class.js"></script>
     <script src="js/game.js"></script>
-    <link rel="icon" type="image/png" href="img/orc.png" sizes="any">
+    <link rel="icon" type="image/png" href="../img/orc.png" sizes="any">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
 </head>
@@ -36,14 +36,43 @@
 
     <div class="maincontainer">
 
-        <div class="header animate__animated animate__fadeInLeftBig">
-            <h1 class="headline"><img class="animate__animated animate__bounce animate__animated animate__fadeInRight logo" src="./img/logo/logo_selfmade3.jpg"></h1>
-           
-        </div>
         <canvas id="canvas" width="720" height="480">
 
         </canvas>
+        <!-- <div class="startscreen" id="startscreen">
+            <div class="backdrop">
+                <div class="header animate__animated animate__fadeInLeftBig"></div>
+                    <h1 class="headline"><img class="animate__animated animate__bounce animate__animated animate__fadeInRight logo" src="./img/logo/logo_selfmade3.jpg"></h1>
+                    <div class="gameLore">
+                        <span>
+                            <p>In the dark and desolate land of Mordor, the once-beautiful kingdom of the Elves has been
+                            overrun by the ferocious and bloodthirsty Orcs. The Elven army, led by a brave commander,
+                            sets out to retake their homeland and restore peace to the land.</p>
 
+                            <p>As the player takes on the role of this commander, they must lead their troops into epic
+                            battles against the overwhelming Orc army. The player must carefully manage their resources, build up
+                            their army, and choose their tactics wisely to outsmart the enemy and emerge victorious.</p>
+
+                            <p>Through the course of the game, the player will encounter a host of challenging obstacles,
+                            from treacherous terrain to powerful enemy warlords. But with determination, courage, and strategic
+                            thinking, the player can overcome these challenges and lead the Elves to a hard-earned victory.</p>
+
+                            <p>As the battle rages on, the player will witness stunning visuals and experience
+                            heart-pumping action, making for a truly immersive and captivating gaming experience. Retake Mordor is the
+                            ultimate adventure for fantasy strategy fans, offering a thrilling story and epic battles
+                            that will leave players on the edge of their seats.</p>
+                        </span>
+                    </div>
+                    <button class="btn" id="buttonStart" onclick="startGame()">Start Game</button>
+                </div>
+            </div>
+        </div>
+        <div class="endscreen dnone" id="endscreen">
+            <div class="endscreenContent">
+                <span id="endscreenHeadline">THE END</span>
+                <button class="btn" id="startGame" onclick="startGame()">Resume</button>
+            </div>
+        </div> -->
     </div>
 </body>
 

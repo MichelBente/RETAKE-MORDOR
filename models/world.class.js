@@ -152,6 +152,7 @@ collisionPortion() {
         if (this.character.isColliding(portion)) {
             this.character.collect(portion)
             portion.collect();
+            // this.character.mana +40;
             this.level.portion.splice(this.level.portion.indexOf(portion), 1);
             this.StatusBar2.setPercentage(this.character.mana)
             this.increasePoints(900);
@@ -165,7 +166,7 @@ collisionSpellbooks() {
     this.level.spellbook.forEach((spellbook) => {
         if (this.character.isColliding(spellbook)) {
             this.level.spellbook.splice(this.level.spellbook.indexOf(spellbook), 1);
-
+            this.increasePoints(2500);
         }
     })
 }
