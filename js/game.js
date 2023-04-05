@@ -2,12 +2,11 @@ let canvas;
 let world;
 let keyboard = new Keyboard();
 
-
+war_sound = new Audio("audio/audio/dark-mystery-trailer-taking-our-time-131566.mp3")
 
 function init() {
     canvas = document.getElementById('canvas');
-    world = new World(canvas, keyboard);
-
+    world = new World(canvas, keyboard); 
 
 }
 
@@ -57,4 +56,5 @@ window.addEventListener("keyup", (e) => {
 
 function startGame() {
     document.getElementById('startscreen').classList.add('dnone');
+    this.war_sound.play();
 }

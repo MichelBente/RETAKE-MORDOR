@@ -13,6 +13,10 @@ class World {
     mana = 40;
     flash = [];
 
+    sword_sound = new Audio("audio/swordhit.mp3");
+    axe_sound = new Audio ("audio/axehit.mp3");
+    magicalstrike_sound = new Audio ("audio/magicalstrike.mp3");
+
 
     constructor(canvas, keyboard) {
         this.ctx = canvas.getContext('2d');
@@ -37,12 +41,6 @@ class World {
         }, 200);
     }
 
-    // checkThrowObjects() {
-    //     if (this.keyboard.specialAttack) {
-    //         let fireball = new Fireball(this.character.x, this.character.y);
-    //         this.fireball.push(fireball);
-    //     }
-    // }
 
     checkThrowObjects() {
         if (this.keyboard.specialAttack && this.character.mana > 15 && !this.coolDown()) {
@@ -80,6 +78,7 @@ class World {
         this.level.endboss.forEach((endboss) => {
             if (this.character.isColliding(endboss)) {
                 this.character.hit(endboss);
+                this.sword_sound.play();
                 this.StatusBar.setPercentage(this.character.energy);
             }
             this.fireball.forEach((attack) => {
@@ -101,6 +100,7 @@ class World {
         this.level.enemies.forEach((enemy) => {
             if (this.character.isColliding(enemy)) {
                 this.character.hit(enemy);
+                this.axe_sound.play();
                 this.StatusBar.setPercentage(this.character.energy);
             }
             this.fireball.forEach((attack) => {
@@ -122,6 +122,7 @@ class World {
         this.level.enemies2.forEach((enemy) => {
             if (this.character.isColliding(enemy)) {
                 this.character.hit(enemy);
+                this.axe_sound.play();
                 this.StatusBar.setPercentage(this.character.energy);
             }
             this.fireball.forEach((attack) => {
@@ -152,7 +153,6 @@ collisionPortion() {
         if (this.character.isColliding(portion)) {
             this.character.collect(portion)
             portion.collect();
-            // this.character.mana +40;
             this.level.portion.splice(this.level.portion.indexOf(portion), 1);
             this.StatusBar2.setPercentage(this.character.mana)
             this.increasePoints(900);
@@ -165,6 +165,7 @@ collisionPortion() {
 collisionSpellbooks() {
     this.level.spellbook.forEach((spellbook) => {
         if (this.character.isColliding(spellbook)) {
+            this.magicalstrike_sound.play();
             this.level.spellbook.splice(this.level.spellbook.indexOf(spellbook), 1);
             this.increasePoints(2500);
         }

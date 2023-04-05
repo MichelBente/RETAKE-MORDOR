@@ -1,4 +1,4 @@
-class Spellbook extends MoveableObject {
+class Spellbook extends CollectibleObject {
 
     y = 50;
     width = 50;

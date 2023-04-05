@@ -5,7 +5,7 @@ class Portion extends CollectibleObject {
     mana = 40;
     energy = 10;
 
-    succes_sound = new Audio("audio/success.mp3")
+    succes_sound = new Audio("audio/success.mp3");
 
 
     constructor() {

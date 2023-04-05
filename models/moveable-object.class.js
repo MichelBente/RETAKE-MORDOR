@@ -3,7 +3,7 @@ class MoveableObject extends DrawableObject {
     speed = 0.25;
     otherDirection = false;
     speedY = 2;
-    acceleration = 2;
+    acceleration = 1;
     energy = 100;
     lastHit = 0;
     lastDamage = 0;
@@ -53,6 +53,7 @@ class MoveableObject extends DrawableObject {
 
     hit(objDamage) {
         this.energy -= objDamage.damage;
+        this.lastDamage =objDamage.damage;
         if (this.energy < 0) {
             this.energy = 0;
         } else {

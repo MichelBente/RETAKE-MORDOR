@@ -70,7 +70,7 @@ class Character extends MoveableObject {
         "../img/elfs/_PNG/3/Elf_03__HURT_009.png",
     ];
 
-    IMAGES_DEAD = [
+    IMAGES_DIE = [
         "../img/elfs/_PNG/3/Elf_03__DIE_000.png",
         "../img/elfs/_PNG/3/Elf_03__DIE_001.png",
         "../img/elfs/_PNG/3/Elf_03__DIE_002.png",
@@ -111,12 +111,12 @@ class Character extends MoveableObject {
         this.loadImages(this.IMAGES_WALKING);
         this.loadImages(this.IMAGES_JUMPING);
         this.loadImages(this.IMAGES_HURT);
-        this.loadImages(this.IMAGES_DEAD);
+        this.loadImages(this.IMAGES_DIE);
         this.loadImages(this.IMAGES_ATTACK);
         this.loadImages(this.IMAGES_IDLE);
         this.applyGravity();
         this.animate();
-    }
+    }   
 
     animate() {
 
@@ -150,8 +150,9 @@ class Character extends MoveableObject {
       
             if (this.isDead()) {
               clearInterval(animation);
-              this.die();this.die_sound.play();
-            } else if (this.isHurt()) {
+              this.die();
+              this.die_sound.play();
+            } else if (this.isHurt()&& this.lastDamage!= 0) {
               this.playAnimation(this.IMAGES_HURT);
               this.hurt_sound.play();
             }

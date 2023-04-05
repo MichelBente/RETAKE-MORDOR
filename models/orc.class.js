@@ -39,7 +39,7 @@ class Orc extends MoveableObject {
         "../img/orcs/_PNG/1_ORK/ORK_01_DIE_009.png",
 
     ]
-    //axe_sound = new Audio("audio/axehit.mp3");
+    axe_sound = new Audio("audio/axehit.mp3");
 
 
 
@@ -66,7 +66,7 @@ class Orc extends MoveableObject {
             clearInterval(animationInterval);
             this.die();
              }
-              //  this.axe_sound.play();
+                
         }, 1000 / 15);
     }
 }

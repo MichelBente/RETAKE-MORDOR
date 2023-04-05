@@ -38,7 +38,7 @@ class Orc2 extends MoveableObject {
         "../img/orcs/_PNG/3_ORK/ORK_03_DIE_009.png",
        
     ];
-    // grawl_sound = new Audio("audio/orc_crawl.mp3");
+     grawl_sound = new Audio("audio/orc_crawl.mp3");
     // sword_sound = new Audio("audio/swordhit.mp3");
 
     constructor() {
@@ -54,6 +54,7 @@ class Orc2 extends MoveableObject {
     animate() {
         let moveInterval = setInterval(() => {
             this.moveLeft();
+            this.grawl_sound.play();
         }, 1000 / 60);
 
 
@@ -64,7 +65,6 @@ class Orc2 extends MoveableObject {
             clearInterval(animationInterval);
             this.die();
              }
-              //  this.axe_sound.play();
         }, 1000 / 15);
     }
 }
