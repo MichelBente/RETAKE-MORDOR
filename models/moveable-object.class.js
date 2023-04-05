@@ -1,5 +1,5 @@
 class MoveableObject extends DrawableObject {
-    
+
     speed = 0.25;
     otherDirection = false;
     speedY = 2;
@@ -7,6 +7,7 @@ class MoveableObject extends DrawableObject {
     energy = 100;
     lastHit = 0;
     lastDamage = 0;
+    points = 0;
 
     offset = {
         top: 0,
@@ -25,16 +26,8 @@ class MoveableObject extends DrawableObject {
     }
 
     isAboveGround() {
-            return this.y < 95;
-        }
-    
-
-    // isColliding(obj) {
-    //     return this.x + this.width - this.offset.right > obj.x + obj.offset.left &&
-    //     this.y + this.height - this.offset.bottom >obj.y + obj.offset.top &&
-    //     this.x + this.offset.left < obj.x + obj.width - obj.offset.right &&
-    //     this.y + this.offset.top < obj.y + obj.height - obj.offset.bottom
-    // }
+        return this.y < 95;
+    }
 
 
     isColliding(obj) {
@@ -44,16 +37,10 @@ class MoveableObject extends DrawableObject {
             this.y + this.offset.top < obj.y + obj.height - obj.offset.bottom
     };
 
-    //   isColliding(obj) {
-    //   return ((this.x + this.framex) + (this.width + this.framew) >= (obj.x && this.x + obj.framex ) && 
-    //          ((this.y + this.framey) <= (this.height + this.frameh)) >= (obj.y + obj.framey) &&
-    //           (this.x + this.framex) + (obj.x + obj.framex) &&
-    //           (this.y + this.framey) <= (obj.y + obj.framey) + (obj.height + obj.frameh)) 
-    //   }
-
+ 
     hit(objDamage) {
         this.energy -= objDamage.damage;
-        this.lastDamage =objDamage.damage;
+        this.lastDamage = objDamage.damage;
         if (this.energy < 0) {
             this.energy = 0;
         } else {
@@ -94,12 +81,14 @@ class MoveableObject extends DrawableObject {
         this.damage = 0;
         this.currentImage = 0;
         let animationInterval = setInterval(() => {
-          this.playAnimation(this.IMAGES_DIE);
+            this.playAnimation(this.IMAGES_DIE);
+            this.grawl_sound.pause();
+            this.axe_sound.pause();
         }, 100);
         setTimeout(() => {
-          clearInterval(animationInterval);
+            clearInterval(animationInterval);
         }, 950);
-      }
     }
-    
+}
+
 

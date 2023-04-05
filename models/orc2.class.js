@@ -64,6 +64,7 @@ class Orc2 extends MoveableObject {
                clearInterval(moveInterval);
             clearInterval(animationInterval);
             this.die();
+            this.grawl_sound.pause();
              }
         }, 1000 / 15);
     }

@@ -85,12 +85,14 @@ class World {
                 if (endboss.isColliding(attack)) {
                     endboss.hit(attack);
                     attack.hit(endboss);
+                    this.increasePoints(2000);
                 }
             });
             this.flash.forEach((attack) => {
                 if (endboss.isColliding(attack)) {
                     endboss.hit(attack);
                     attack.hit(endboss);
+                    this.increasePoints(1500);
                 }
             });
         })
@@ -107,12 +109,14 @@ class World {
                 if (enemy.isColliding(attack)) {
                     enemy.hit(attack);
                     attack.hit(enemy);
+                    this.increasePoints(1000);
                 }
             });
             this.flash.forEach((attack) => {
                 if (enemy.isColliding(attack)) {
                     enemy.hit(attack);
                     attack.hit(enemy);
+                    this.increasePoints(500);
                 }
             });
         })
@@ -129,12 +133,14 @@ class World {
                 if (enemy.isColliding(attack)) {
                     enemy.hit(attack);
                     attack.hit(enemy);
+                    this.increasePoints(1000);
                 }
             });
             this.flash.forEach((attack) => {
                 if (enemy.isColliding(attack)) {
                     enemy.hit(attack);
                     attack.hit(enemy);
+                    this.increasePoints(500);
                 }
             });
         })
@@ -173,12 +179,23 @@ collisionSpellbooks() {
 }
 
 increasePoints(n) {
-    this.points += 10;
+    this.points += +n;
 }
+    
+
 
 updateScore() {
     this.score = this.points;
-}
+    this.score += this.character.points;
+        this.level.enemies.forEach((enemy) => {
+            this.score += enemy.points;
+
+        })
+        this.level.endboss.forEach((endboss) => {
+            this.score += endboss.points;
+        })
+    }
+
 
 
 draw() {

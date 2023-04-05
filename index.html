@@ -27,7 +27,7 @@
     <script src="levels/level1.js"></script>
     <script src="models/world.class.js"></script>
     <script src="js/game.js"></script>
-    <link rel="icon" type="image/png" href="../img/orc.png" sizes="any">
+    <link rel="icon" type="image/png" href="../Retake_Mordor/img/orcs/_PNG/2_ORK/ORK_02_ATTAK_005.png" sizes="any">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
 </head>
@@ -37,43 +37,114 @@
     <div class="maincontainer">
 
         <canvas id="canvas" width="720" height="480">
-
         </canvas>
-         <div class="startscreen" id="startscreen">
+        <div class="score">
+            <span>Highscore:</span>
+            <span id="score">0000000</span>
+        </div>
+        <div class="sound">
+            <img src="img/icons/unmute.png" id="soundIconIngame" alt="" onclick="soundMute()">
+        </div>
+        <div class="mobileControllerLeft" id="mobileControllerLeft">
+            <div>
+                <button class="btnSmall" id="btnJump">
+                    <img class="arrowUp" src="img/icons/arrow-204-256.png" alt="">
+                </button>
+            </div>
+            <div class="buttonContainer">
+                <button class="btnSmall" id="btnLeft">
+                    <img class="arrowLeft" src="img/icons/arrow-204-256.png" alt="">
+                </button>
+                <button class="btnSmall" id="btnRight">
+                    <img class="arrowRight" src="img/icons/arrow-204-256.png" alt="">
+                </button>
+            </div>
+        </div>
+
+        <div class="mobileControllerRight" id="mobileControllerRight">
+            <button class="btnSmall" id="btnLeft">
+                <img class="flashcastBtn" src="img/Flashcast/flash06.png" alt="">
+            </button>
+            <button class="btnSmall" id="btnRight">
+                <img class="firecastBtn" src="img/Firecast/22.png" alt="">
+            </button>
+        </div>
+        <div class="startscreen" id="startscreen">
             <div class="backdrop">
                 <div class="header animate__animated animate__fadeInLeftBig"></div>
-                    <h1 class="headline"><img class="animate__animated animate__bounce animate__animated animate__fadeInRight logo" src="./img/logo/logo_selfmade3.jpg"></h1>
-                    <div class="gameLore">
-                        <span>
-                            <p>In the dark and desolate land of Mordor, the once-beautiful kingdom of the Elves has been
+                <h1 class="headline"><img
+                        class="animate__animated animate__bounce animate__animated animate__fadeInRight logo"
+                        src="./img/logo/logo_selfmade3.jpg"></h1>
+                <div class="gameLore">
+                    <span>
+                        <p>In the dark and desolate land of Mordor, the once-beautiful kingdom of the Elves has been
                             overrun by the ferocious and bloodthirsty Orcs. The Elven army, led by a brave commander,
                             sets out to retake their homeland and restore peace to the land.</p>
 
-                            <p>As the player takes on the role of this commander, they must lead their troops into epic
-                            battles against the overwhelming Orc army. The player must carefully manage their resources, build up
+                        <p>As the player takes on the role of this commander, they must lead their troops into epic
+                            battles against the overwhelming Orc army. The player must carefully manage their resources,
+                            build up
                             their army, and choose their tactics wisely to outsmart the enemy and emerge victorious.</p>
 
-                            <p>Through the course of the game, the player will encounter a host of challenging obstacles,
-                            from treacherous terrain to powerful enemy warlords. But with determination, courage, and strategic
-                            thinking, the player can overcome these challenges and lead the Elves to a hard-earned victory.</p>
+                        <p>Through the course of the game, the player will encounter a host of challenging obstacles,
+                            from treacherous terrain to powerful enemy warlords. But with determination, courage, and
+                            strategic
+                            thinking, the player can overcome these challenges and lead the Elves to a hard-earned
+                            victory.</p>
 
-                            <p>As the battle rages on, the player will witness stunning visuals and experience
-                            heart-pumping action, making for a truly immersive and captivating gaming experience. Retake Mordor is the
+                        <p>As the battle rages on, the player will witness stunning visuals and experience
+                            heart-pumping action, making for a truly immersive and captivating gaming experience. Retake
+                            Mordor is the
                             ultimate adventure for fantasy strategy fans, offering a thrilling story and epic battles
                             that will leave players on the edge of their seats.</p>
-                        </span>
-                    </div>
-                    <button class="btn" id="buttonStart" onclick="startGame()">Start Game</button>
+                    </span>
+                </div>
+                <div class="buttons">
+                <button class="settings" id="howtoplay" onclick="openSettings()">
+                    <img class="controller" src="/img/icons/gamepad.png"></button>
+                <div>
+                    <button class="settings"><img class="sound" src="/img/icons/mute-2-512.png"></button>
+                    <button class="settings"><img class="sound" src="/img/icons/volume-up-4-512.png"></button>
                 </div>
             </div>
-        </div>
-        <div class="endscreen dnone" id="endscreen">
-            <div class="endscreenContent">
-                <span class="endscreenHeadline">THE END</span>
-                <span class="gameendlore gameLore">"Victory is ours! The Elven army has retaken Mordor and driven the Orcs back to their dark abyss. Your skillful tactics and brave leadership have brought peace back to the land. Congratulations on your epic victory!"</span>
-                <button class="btn2" id="restartGame" onclick="restartGame()">Start again?</button>
+                <button class="btn" id="buttonGoOn" onclick="secondPage()">Ready?</button>
             </div>
         </div>
+    </div>
+    <div class="secondscreen dnone" id="secondscreen">
+        <div class="howToPlay">
+            <div class="walkRight">
+                Walk Right: D or<button class="btnSmall" id="btnRight"><img class="arrows" src="img/icons/right.png"
+                        alt=""></button>
+            </div>
+            <div class="walkLeft">
+                Walk Left: A or<button class="btnSmall" id="btnLeft"><img class="arrows" src="img/icons/left.png"
+                        alt=""></button>
+            </div>
+            <div class="jump">
+                Jump: SPACE or<button class="btnSmall" id="btnJump"><img class="arrows" src="img/icons/up.png"
+                        alt=""></button>
+            </div>
+        </div>
+        <div class="howToPlay">
+            <div class="flash">
+                <img src="img/stuff/flash/flash/flash06.png" alt="">Flash (Requires 5 Mana): SHIFT
+            </div>
+            <div class="fire">
+                <img src="img/stuff/FIREBALL/28.png" alt="">Fireball (Requires 30 Mana): ENTER
+            </div>
+        </div>
+        <button class="btn" id="buttonstart" onclick="startGame()">Start Game</button>
+    </div>
+    <div class="endscreen dnone" id="endscreen">
+        <div class="endscreenContent">
+            <span class="endscreenHeadline">THE END</span>
+            <span class="gameendlore gameLore">"Victory is ours! The Elven army has retaken Mordor and driven the Orcs
+                back to their dark abyss. Your skillful tactics and brave leadership have brought peace back to the
+                land. Congratulations on your epic victory!"</span>
+            <button class="btn2" id="restartGame" onclick="restartGame()">Start again?</button>
+        </div>
+    </div>
     </div>
 </body>
 

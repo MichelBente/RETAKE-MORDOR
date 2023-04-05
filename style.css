@@ -23,14 +23,14 @@ body {
     flex-direction: row-reverse;
     align-items: center;
     justify-content: center;
-    margin-bottom: 40px!important;
+    margin-bottom: 40px !important;
 }
 
 canvas {
     background-color: rgb(0, 0, 0);
     border: 2px solid rgba(255, 253, 253, 0.8);
     margin-bottom: 350px;
-    margin-top: 30px!important;
+    margin-top: 30px !important;
     /* background-image: url(./img/backgrounds/PNG/game_background_2/game_background_2.png);*/
     object-fit: cover;
     background-position: bottom;
@@ -117,29 +117,47 @@ canvas {
 }
 
 .startscreen {
-    position:absolute;
+    position: absolute;
     width: 100%;
     height: 100vh;
     z-index: 100;
     background-image: url("img/backgrounds/PNG/game_background_2/game_background_2.png");
 }
 
+
+.secondscreen {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: 100;
+    background-image: url("img/backgrounds/PNG/game_background_2/game_background_2.png");
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .backdrop {
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: 100;
+    background-image: url("img/backgrounds/PNG/game_background_2/game_background_2.png");
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .gameLore {
-font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-font-size: 24px;
-padding: 40px;
-color: rgb(247, 219, 181);
-text-shadow:rgb(255, 255, 255);
+    font-family: 'ARIAL';
+    font-size: 24px;
+    padding: 40px;
+    color: rgb(247, 219, 181);
+    text-shadow: rgb(255, 255, 255);
 }
 
-.btn { 
+.btn {
     width: 300px;
     height: 50px;
     background-image: url("img/elfs/_PNG/1/Elf_01__ATTACK_000.png");
@@ -148,20 +166,20 @@ text-shadow:rgb(255, 255, 255);
     border: 4px solid white;
     font-weight: 800;
     object-fit: cover;
-    background-color:#C21022;
-    text-shadow:rgb(255, 255, 255);
+    background-color: #C21022;
+    text-shadow: rgb(255, 255, 255);
 }
 
 .btn:hover {
-text-decoration: dotted;
-font-weight: 800;
-color: rgba(255, 255, 255, 0.985);
-background-image: url("img/elfs/_PNG/3/Elf_03__DIE_000.png");
-object-fit: cover;
-font-size: 28px;
+    text-decoration: dotted;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.985);
+    background-image: url("img/elfs/_PNG/3/Elf_03__DIE_000.png");
+    object-fit: cover;
+    font-size: 28px;
 }
 
-.btn2 { 
+.btn2 {
     width: 400px;
     height: 50px;
     background-image: url("img/elfs/_PNG/1/Elf_01__ATTACK_000.png");
@@ -170,22 +188,50 @@ font-size: 28px;
     border: 4px solid white;
     font-weight: 800;
     object-fit: cover;
-    background-color:#C21022;
-    text-shadow:rgb(255, 255, 255);
+    background-color: #C21022;
+    text-shadow: rgb(255, 255, 255);
 }
 
 .btn2:hover {
-text-decoration: dotted;
-font-weight: 800;
-color: rgb(255, 255, 255);
-background-image: url("img/elfs/_PNG/3/Elf_03__DIE_000.png");
-object-fit: cover;
-font-size: 28px;
+    text-decoration: dotted;
+    font-weight: 800;
+    color: rgb(255, 255, 255);
+    background-image: url("img/elfs/_PNG/3/Elf_03__DIE_000.png");
+    object-fit: cover;
+    font-size: 28px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
 }
 
 
+.arrows {
+    width: 50px;
+}
+
+.settings {
+    border-radius: 16px;
+    background-color: #62721A;
+    margin: 20px;
+}
+
+.settings:hover {
+    background-color: #C21022;
+}
+
+.controller {
+    width: 40px;
+}
+
+.sound {
+    width: 40px;
+    border-radius: 16px;
+}
+
 .endscreen {
-    position:absolute;
+    position: absolute;
     width: 100%;
     height: 100vh;
     z-index: 100;
@@ -194,7 +240,7 @@ font-size: 28px;
     align-items: center;
     justify-items: center;
     flex-direction: column;
-}  
+}
 
 .endscreenContent {
     display: flex;
@@ -211,9 +257,193 @@ font-size: 28px;
 }
 
 .gameendlore {
-display: flex;
-align-items: center;
-justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'ARIAL';
+}
+
+.mobileControllerLeft{
+    display: none;
+    z-index: 10;
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.btnSmall {
+    width: 50px;
+    height: 50px;
+    border-radius: 20px;
+    background-color: #62721A;
+    border: 2px solid #272D05;
+    color: #D7CC8D;
+    text-shadow: -1px 0 #7D4B07, 0 1px #7D4B07, 1px 0 #7D4B07, 0 -1px #7D4B07;
+    font-size: 30px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnSmall:hover {
+	background:linear-gradient(to bottom,  #65751c 5%, #343D0E 100%);
+	background-color:#2A320B;
+}
+
+.arrowUp {
+    transform: rotate(180deg);
+    width: 30px;
+}
+
+.arrowLeft {
+    transform: rotate(90deg);
+    width: 30px;
+}
+
+.arrowRight {
+    transform: rotate(270deg);
+    width: 30px;  
+}
+
+.mobileControllerRight {
+    display: none;
+    z-index: 10;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.flashcastBtn {
+    width: 80px;
+}
+
+.firecastBtn {
+    width: 80px;
+}
+
+.howToPlay{
+    font-family: 'ARIAL';
+    font-size: 30px;
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.walkRight {
+    font-family: 'ARIAL';
+    font-size: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    color:#e4efab;
+    font-weight: 700;
+    text-shadow: #000000;
+}
+.walkLeft {
+    font-family: 'ARIAL';
+    font-size: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    color:#e4efab;
+    font-weight: 700;
+    text-shadow: #000000;
+}
+
+
+.jump {
+    font-family: 'ARIAL';
+    font-size: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    color:#e4efab;
+    font-weight: 700;
+    text-shadow: #000000;
+}
+
+
+.flash {
+    font-family: 'ARIAL';
+    font-size: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    color:#e4efab;
+    font-weight: 700;
+    text-shadow: #000000;
+}
+
+
+.flash img {
+    width: 150px;
+}
+
+.fire {
+    font-family: 'ARIAL';
+    font-size: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    color:#e4efab;
+    font-weight: 700;
+    text-shadow: #000000;
+}
+
+
+.fire img {
+    width: 250px;
+}
+
+.startMenu {
+    display: flex;
+    gap: 15px;
+}
+
+.icon {
+    width: 60px;
+}
+
+.btn {
+    font-family: 'GrowlyGrin';
+    width: 200px;
+    height: 50px;
+    border-radius: 20px;
+    background-color: #62721A;
+    border: 2px solid #272D05;
+    color: #D7CC8D;
+    text-shadow: -1px 0 #7D4B07, 0 1px #7D4B07, 1px 0 #7D4B07, 0 -1px #7D4B07;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.btn:hover {
+	background:linear-gradient(to bottom,  #65751c 5%, #343D0E 100%);
+	background-color:#2A320B;
+}
+.btn:active {
+	position:relative;
+	top:1px;
 }
 
 .dnone {

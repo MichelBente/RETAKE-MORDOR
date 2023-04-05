@@ -1,13 +1,15 @@
 class Fireball extends MoveableObject {
-offset = {
-  top: 100,
-  right: 50,
-  left : 100,
-  bottom: 0,
-}
+  fireball_sound = new Audio("audio/fireball.mp3")
+
+  offset = {
+    top: 100,
+    right: 50,
+    left: 100,
+    bottom: 0,
+  }
 
 
-IMAGES_FIREBALL = [
+  IMAGES_FIREBALL = [
     "../img/stuff/FIREBALL/1.png",
     "../img/stuff/FIREBALL/2.png",
     "../img/stuff/FIREBALL/3.png",
@@ -47,10 +49,10 @@ IMAGES_FIREBALL = [
     "../img/stuff/FIREBALL/37.png",
     "../img/stuff/FIREBALL/38.png",
     "../img/stuff/FIREBALL/39.png",
-];
-energy = 10;
-damage = 20;
-fireball_sound = new Audio("audio/fireball.mp3")
+  ];
+  energy = 10;
+  damage = 20;
+
 
   constructor(x, y) {
     super().loadImage("../img/stuff/FIREBALL/1.png");
@@ -62,7 +64,7 @@ fireball_sound = new Audio("audio/fireball.mp3")
     this.speed = 20;
     this.throw();
     this.specialAttack();
-   
+
   }
 
   throw() {
@@ -75,16 +77,16 @@ fireball_sound = new Audio("audio/fireball.mp3")
       clearInterval(fireballSpeed);
       this.y = 500;
     }, 1333);
-    
+
   }
 
   specialAttack() {
     this.currentImage = 0;
     let attack = setInterval(() => {
       this.playAnimation(this.IMAGES_FIREBALL);
-      if(this.isDead()) {
-      clearInterval(attack);
-      this.damage = 0;
+      if (this.isDead()) {
+        clearInterval(attack);
+        this.damage = 0;
       }
     }, 1000 / 30);
     setTimeout(() => {
@@ -92,24 +94,3 @@ fireball_sound = new Audio("audio/fireball.mp3")
     }, 1333);
   }
 }
-// constructor(x,y) {
-    
-//     super().loadImages(this.IMAGES_FIREBALL);
-//     this.x = x;
-//     this.y = y;
-//     this.height = 190;
-//     this.width = 300;  
-//     this.throw();
-      
-// }
-
-// throw() {
-//     this.x = x;
-//     this.y = y;
-//     this.speedY = 10;
-//     this.applyGravity();
-//     setInterval(() => {
-//         this.x += 0;
-//     }, 25);
-// }
-
