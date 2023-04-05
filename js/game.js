@@ -58,3 +58,40 @@ function startGame() {
     document.getElementById('startscreen').classList.add('dnone');
     this.war_sound.play();
 }
+
+function endGame() {
+    document.getElementById('endscreen').classList.remove('dnone');
+}
+
+function restartGame() {
+    document.getElementById('endscreen').classList.add('dnone');
+    document.getElementById('startscreen').classList.remove('dnone');
+    this.war_sound.play();
+}
+
+function setHighscore() {
+    let score = world.score;
+    if (score >= 0) {
+        highscore = '0' + '0' + '0' + '0' + '0' + '0' + score;
+    }
+    if (score >= 10) {
+        highscore = '0' + '0' + '0' + '0' + '0' + score;
+    }
+    if (score >= 100) {
+        highscore = '0' + '0' + '0' + '0' + score;
+    }
+    if (score >= 1000) {
+        highscore = '0' + '0' + '0' + score;
+    }
+    if (score >= 10000) {
+        highscore = '0' + '0' + score;
+    }
+    if (score >= 100000) {
+        highscore = score;
+    }
+    if (score >= 1000000) {
+        highscore = score;
+    }
+    document.getElementById('score').innerHTML = highscore;
+}
+

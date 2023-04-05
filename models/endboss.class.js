@@ -92,7 +92,7 @@ class Endboss extends MoveableObject {
                         clearInterval(moveInterval);
                         clearInterval(animationWalkInterval);
                         clearInterval(animationInterval);
-                        this.die();
+                        this.die();endGame();
                     } else {
                         this.playAnimation(this.IMAGES_WALKING);
                     }
@@ -121,16 +121,3 @@ class Endboss extends MoveableObject {
     }
 }
 
-
-//         setInterval(() => {
-//             this.playAnimation(this.IMAGES_WALKING);
-//             this.playAnimation(this.IMAGES_ATTACK);
-//             this.playAnimation(this.IMAGES_DIE);
-//             //  this.horn_sound.play();
-//         }, 60);
-
-
-//     }
-
-
-// }
