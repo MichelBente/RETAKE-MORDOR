@@ -69,12 +69,16 @@
                 <img class="firecastBtn" src="img/Firecast/22.png" alt="">
             </button>
         </div>
+        <div class="firstscreen" id="firstscreen"><img src="img/icons/logonew.png" alt="retake mordor logo"></div>
         <div class="startscreen" id="startscreen">
             <div class="backdrop">
+                <span class="headline">RETAKE MORDOR</span>
                 <div class="header animate__animated animate__fadeInLeftBig"></div>
-                <h1 class="headline"><img
-                        class="animate__animated animate__bounce animate__animated animate__fadeInRight logo"
-                        src="./img/logo/logo_selfmade3.jpg"></h1>
+                <h1 class="headline">
+                    <img class="logoelf"src="img/elfs/_PNG/1/Elf_01__ATTACK_001.png">
+                    <img class="logoelf"src="img/elfs/_PNG/2/Elf_02__ATTACK_001.png">
+                    <img class="logoelf"src="img/elfs/_PNG/3/Elf_03__ATTACK_001.png">
+                </h1>
                 <div class="gameLore">
                     <span>
                         <p>In the dark and desolate land of Mordor, the once-beautiful kingdom of the Elves has been
@@ -103,8 +107,8 @@
                 <button class="settings" id="howtoplay" onclick="openSettings()">
                     <img class="controller" src="/img/icons/gamepad.png"></button>
                 <div>
-                    <button class="settings"><img class="sound" src="/img/icons/mute-2-512.png"></button>
-                    <button class="settings"><img class="sound" src="/img/icons/volume-up-4-512.png"></button>
+                    <button class="settings" id="mute" onclick="soundMute()"><img class="sound" src="/img/icons/mute-2-512.png"></button>
+                    <button class="settings" id="mute" onclick="setWorldAudio()"><img class="sound" src="/img/icons/volume-up-4-512.png"></button>
                 </div>
             </div>
                 <button class="btn" id="buttonGoOn" onclick="secondPage()">Ready?</button>

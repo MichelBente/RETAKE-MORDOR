@@ -30,14 +30,14 @@ function soundMute() {
     let soundIconIngame = document.getElementById('soundIconIngame');
     if (soundMuted) {
         soundMuted = false;
-        soundIconMenu.src = 'img/icons/unmute.png';
-        soundIconIngame.src = 'img/icons/unmute.png';
+        soundIconMenu.src = '/img/icons/volume-up-4-512.png';
+        soundIconIngame.src = '/img/icons/volume-up-4-512.png';
         gameAudio.muted = false;
         menuAudio.muted = false;
     } else {
         soundMuted = true;
-        soundIconMenu.src = 'img/icons/mute.png';
-        soundIconIngame.src = 'img/icons/mute.png';
+        soundIconMenu.src = '/img/icons/mute-2-512.png';
+        soundIconIngame.src = '/img/icons/mute-2-512.png';
         gameAudio.muted = true;
         menuAudio.muted = true;
     }
@@ -260,4 +260,8 @@ function createHowToPlay() {
 function openSettings() {
     document.getElementById('startscreen').classList.add('dnone');
     document.getElementById('secondscreen').classList.remove('dnone');
+}
+
+function firstScreen() {
+    document.getElementById('secondscreen').classList.add('dnone');
 }
