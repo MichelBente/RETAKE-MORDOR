@@ -106,7 +106,8 @@ class Endboss extends MoveableObject {
                         clearInterval(moveInterval);
                         clearInterval(animationWalkInterval);
                         clearInterval(animationInterval);
-                        this.die();endGame();
+                        this.die();
+                        this.increasePoints(25000);
                     } else {
                         this.playAnimation(this.IMAGES_WALKING);
                     }
@@ -118,12 +119,13 @@ class Endboss extends MoveableObject {
 
                     let animationAttackInterval = setInterval(() => {
                         if (this.isDead()) {
+                            this.increasePoints(this.points);
                             clearInterval(animationAttackInterval);
                             clearInterval(animationInterval);
-                            this.die();
+                            this.die();endGame();
                         } else {
                             this.playAnimation(this.IMAGES_ATTACK);
-                        }
+                        }  
                     }, 1000 / 20);
                     setTimeout(() => {
                         clearInterval(animationAttackInterval);
@@ -132,6 +134,6 @@ class Endboss extends MoveableObject {
                 }, 4000);
             }
         }, 6000);
-    }
+        } 
 }
 

@@ -40,6 +40,7 @@ class World {
         setInterval(() => {
             this.checkCollisions();
             this.checkThrowObjects();
+            this.updateScore();
         }, 200);
     }
 

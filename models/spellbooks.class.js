@@ -31,6 +31,7 @@ class Spellbook extends CollectibleObject {
     collect() {
         this.mana = 0;
         this.magicalstrike_sound.play();
+        this.increasePoints(1500);
     }
 
 }

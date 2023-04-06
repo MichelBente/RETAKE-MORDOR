@@ -65,6 +65,7 @@ class Orc extends MoveableObject {
                clearInterval(moveInterval);
             clearInterval(animationInterval);
             this.die();
+            this.increasePoints(1500);
             this.axe_sound.pause();
              }
                 

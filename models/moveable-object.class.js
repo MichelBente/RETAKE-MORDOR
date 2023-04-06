@@ -92,6 +92,12 @@ class MoveableObject extends DrawableObject {
             clearInterval(animationInterval);
         }, 950);
     }
+    
+    increasePoints(n) {
+        this.points += +n;
+    }
+
 }
+
 
 
