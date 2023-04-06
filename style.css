@@ -28,7 +28,6 @@ body {
 canvas {
     background-color: rgb(0, 0, 0);
     border: 2px solid rgba(255, 253, 253, 0.8);
-    margin-bottom: 350px;
     margin-top: 30px !important;
     /* background-image: url(./img/backgrounds/PNG/game_background_2/game_background_2.png);*/
     object-fit: cover;
@@ -38,6 +37,7 @@ canvas {
 .logoelf {
     width: 335px;
 }
+
 
 .logo {
     border-radius: 4px;
@@ -124,6 +124,14 @@ canvas {
     height: 100px;
     z-index: 130;
 
+}
+
+.score {
+    font-size: 30px;
+    font-family: 'ARIUAL';
+    font-weight: 700;
+    color: #bbd826;
+   
 }
 
 .position {

@@ -9,11 +9,14 @@ class Fireball extends MoveableObject {
   }
 
 
-  IMAGES_FIREBALL = [
+  IMAGES_FIREBALL1 = [
     "../img/stuff/FIREBALL/1.png",
     "../img/stuff/FIREBALL/2.png",
     "../img/stuff/FIREBALL/3.png",
     "../img/stuff/FIREBALL/4.png",
+  ];
+
+  IMAGES_FIREBALL = [
     "../img/stuff/FIREBALL/5.png",
     "../img/stuff/FIREBALL/6.png",
     "../img/stuff/FIREBALL/7.png",

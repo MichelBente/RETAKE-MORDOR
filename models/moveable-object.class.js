@@ -9,6 +9,9 @@ class MoveableObject extends DrawableObject {
     lastDamage = 0;
     points = 0;
 
+    grawl_sound = new Audio("audio/orc_crawl.mp3");
+    axe_sound = new Audio("audio/axehit.mp3");
+
     offset = {
         top: 0,
         right: 0,

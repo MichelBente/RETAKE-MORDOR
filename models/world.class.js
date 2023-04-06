@@ -12,6 +12,7 @@ class World {
     spellbook = [];
     mana = 40;
     flash = [];
+    points = 0;
 
     sword_sound = new Audio("audio/swordhit.mp3");
     axe_sound = new Audio ("audio/axehit.mp3");
