@@ -56,6 +56,19 @@ class Endboss extends MoveableObject {
         "../img/orcs/_PNG/2_ORK/ORK_02_DIE_009.png",
     ];
 
+    IMAGES_HURT = [
+        "../img/orcs/_PNG/2_ORK/ORK_02_HURT_000.png",
+        "../img/orcs/_PNG/2_ORK/ORK_02_HURT_001.png",
+        "../img/orcs/_PNG/2_ORK/ORK_02_HURT_002.png",
+        "../img/orcs/_PNG/2_ORK/ORK_02_HURT_003.png",
+        "../img/orcs/_PNG/2_ORK/ORK_02_HURT_004.png",
+        "../img/orcs/_PNG/2_ORK/ORK_02_HURT_005.png",
+        "../img/orcs/_PNG/2_ORK/ORK_02_HURT_006.png",
+        "../img/orcs/_PNG/2_ORK/ORK_02_HURT_007.png",
+        "../img/orcs/_PNG/2_ORK/ORK_02_HURT_008.png",
+        "../img/orcs/_PNG/2_ORK/ORK_02_HURT_009.png",
+
+    ];
 
     // horn_sound = new Audio("audio/horn.mp3");
 
@@ -68,6 +81,7 @@ class Endboss extends MoveableObject {
         this.loadImages(this.IMAGES_WALKING);
         this.loadImages(this.IMAGES_ATTACK);
         this.loadImages(this.IMAGES_DIE);
+        this.loadImages(this.IMAGES_HURT);
 
         this.x = 2500;
         this.animate();

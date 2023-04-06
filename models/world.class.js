@@ -85,6 +85,7 @@ class World {
                 if (endboss.isColliding(attack)) {
                     endboss.hit(attack);
                     attack.hit(endboss);
+                    this.playanimation.IMAGES_HURT;
                     this.increasePoints(2000);
                 }
             });

@@ -23,7 +23,6 @@ body {
     flex-direction: row-reverse;
     align-items: center;
     justify-content: center;
-    margin-bottom: 40px !important;
 }
 
 canvas {
@@ -43,7 +42,6 @@ canvas {
 .logo {
     border-radius: 4px;
     transition: all 5s;
-    background-color: #fff;
     border: 2px solid #fff;
     z-index: 1;
     box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.5);
@@ -102,10 +100,10 @@ canvas {
     -webkit-animation-iteration-count: infinite;
     font-size: 80px;
     color: rgb(255, 255, 255);
-    font-family: monospace;
     z-index: 20;
     opacity: 100%;
-    font-family: 'ARIUAL'
+    font-family: 'ARIUAL';
+    padding-top: 40px;
 }
 
 .headline:hover {
@@ -113,11 +111,30 @@ canvas {
     animation-name: bounce;
     -moz-animation-name: bounce;
 }
+
 .firstscreen {
     position: absolute;
-    width: 100%;
     height: 100vh;
-    z-index: 100;
+    z-index: 120;
+    background-image: url('img/backgrounds/PNG/game_background_2/game_background_2.png');
+}
+
+.jumpin {
+    width: 100px;
+    height: 100px;
+    z-index: 130;
+
+}
+
+.position {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    margin-top: 580px;
+    margin-left: 200px;
 }
 
 .startscreen {
@@ -155,7 +172,8 @@ canvas {
 .gameLore {
     font-family: 'ARIUAL';
     font-size: 24px;
-    padding: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
     color: rgb(247, 219, 181);
     text-shadow: rgb(255, 255, 255);
 }
@@ -193,6 +211,7 @@ canvas {
     object-fit: cover;
     background-color: #C21022;
     text-shadow: rgb(255, 255, 255);
+    margin-top: 40px;
 }
 
 .btn2:hover {
@@ -272,10 +291,11 @@ canvas {
     align-items: center;
     justify-content: center;
     font-family: 'ARIUAL';
-    padding-top: 50px;
+    margin-top: 50px !important;
+    margin-bottom: 50px;
 }
 
-.mobileControllerLeft{
+.mobileControllerLeft {
     display: none;
     z-index: 10;
     position: absolute;
@@ -309,8 +329,8 @@ canvas {
 }
 
 .btnSmall:hover {
-	background:linear-gradient(to bottom,  #65751c 5%, #343D0E 100%);
-	background-color:#2A320B;
+    background: linear-gradient(to bottom, #65751c 5%, #343D0E 100%);
+    background-color: #2A320B;
 }
 
 .arrowUp {
@@ -325,7 +345,7 @@ canvas {
 
 .arrowRight {
     transform: rotate(270deg);
-    width: 30px;  
+    width: 30px;
 }
 
 .mobileControllerRight {
@@ -348,7 +368,7 @@ canvas {
     width: 80px;
 }
 
-.howToPlay{
+.howToPlay {
     font-family: 'ARIUAL';
     font-size: 30px;
     display: flex;
@@ -365,10 +385,11 @@ canvas {
     align-items: center;
     justify-content: center;
     gap: 15px;
-    color:#e4efab;
+    color: #e4efab;
     font-weight: 700;
     text-shadow: #000000;
 }
+
 .walkLeft {
     font-family: 'ARIUAL';
     font-size: 30px;
@@ -376,7 +397,7 @@ canvas {
     align-items: center;
     justify-content: center;
     gap: 15px;
-    color:#e4efab;
+    color: #e4efab;
     font-weight: 700;
     text-shadow: #000000;
     flex-direction: row-reverse;
@@ -390,7 +411,7 @@ canvas {
     align-items: center;
     justify-content: center;
     gap: 15px;
-    color:#e4efab;
+    color: #e4efab;
     font-weight: 700;
     text-shadow: #000000;
 }
@@ -403,7 +424,7 @@ canvas {
     align-items: center;
     justify-content: center;
     gap: 15px;
-    color:#e4efab;
+    color: #e4efab;
     font-weight: 700;
     text-shadow: #000000;
     margin-top: 20px;
@@ -422,7 +443,7 @@ canvas {
     align-items: center;
     justify-content: center;
     gap: 15px;
-    color:#e4efab;
+    color: #e4efab;
     font-weight: 700;
     text-shadow: #000000;
     margin-top: -100px;
@@ -456,14 +477,19 @@ canvas {
 }
 
 .btn:hover {
-	background:linear-gradient(to bottom,  #65751c 5%, #343D0E 100%);
-	background-color:#2A320B;
+    background: linear-gradient(to bottom, #65751c 5%, #343D0E 100%);
+    background-color: #2A320B;
 }
+
 .btn:active {
-	position:relative;
-	top:1px;
+    position: relative;
+    top: 1px;
 }
 
 .dnone {
     display: none;
+}
+
+.show {
+    display: flex;
 }

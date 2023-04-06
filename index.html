@@ -69,17 +69,20 @@
                 <img class="firecastBtn" src="img/Firecast/22.png" alt="">
             </button>
         </div>
-        <div class="firstscreen" id="firstscreen"><img src="img/icons/logonew.png" alt="retake mordor logo"></div>
+        <div class="firstscreen" id="firstscreen" onclick="firstScreen()">
+            <img id="logo1" class="logo" src="../img/icons/4.png" onclick="firstScreen()" alt="retake mordor logo">
+            <button class="btn logo position" id="btn1">Join battle!</button>
+        </div>
         <div class="startscreen" id="startscreen">
             <div class="backdrop">
-                <span class="headline">RETAKE MORDOR</span>
+                <span class="headline dnone" id="title">RETAKE MORDOR</span>
                 <div class="header animate__animated animate__fadeInLeftBig"></div>
                 <h1 class="headline">
                     <img class="logoelf"src="img/elfs/_PNG/1/Elf_01__ATTACK_001.png">
                     <img class="logoelf"src="img/elfs/_PNG/2/Elf_02__ATTACK_001.png">
                     <img class="logoelf"src="img/elfs/_PNG/3/Elf_03__ATTACK_001.png">
                 </h1>
-                <div class="gameLore">
+                <div class="gameLore dnone" id="lore">
                     <span>
                         <p>In the dark and desolate land of Mordor, the once-beautiful kingdom of the Elves has been
                             overrun by the ferocious and bloodthirsty Orcs. The Elven army, led by a brave commander,
@@ -107,7 +110,7 @@
                 <button class="settings" id="howtoplay" onclick="openSettings()">
                     <img class="controller" src="/img/icons/gamepad.png"></button>
                 <div>
-                    <button class="settings" id="mute" onclick="soundMute()"><img class="sound" src="/img/icons/mute-2-512.png"></button>
+                    <button class="settings" id="mute" onclick="soundMute()"><img class="sound" id="soundIconMenu" src="/img/icons/mute-2-512.png"></button>
                     <button class="settings" id="mute" onclick="setWorldAudio()"><img class="sound" src="/img/icons/volume-up-4-512.png"></button>
                 </div>
             </div>
@@ -146,7 +149,7 @@
             <span class="gameendlore gameLore">"Victory is ours! The Elven army has retaken Mordor and driven the Orcs
                 back to their dark abyss. Your skillful tactics and brave leadership have brought peace back to the
                 land. Congratulations on your epic victory!"</span>
-            <button class="btn2" id="restartGame" onclick="restartGame()">Start again?</button>
+            <button class="btn" id="restartGame" onclick="restartGame()">Start again?</button>
         </div>
     </div>
     </div>

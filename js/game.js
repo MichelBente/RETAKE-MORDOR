@@ -263,5 +263,7 @@ function openSettings() {
 }
 
 function firstScreen() {
-    document.getElementById('secondscreen').classList.add('dnone');
+    document.getElementById('firstscreen').classList.add('dnone');
+    document.getElementById('title').classList.remove('dnone');
+    document.getElementById('lore').classList.remove('dnone');
 }
