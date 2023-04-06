@@ -31,7 +31,6 @@ class Portion extends CollectibleObject {
     collect() {
         this.mana = 0;
         this.succes_sound.play();
-        this.increasePoints(500);
     }
 }
 

@@ -33,17 +33,18 @@
 </head>
 
 <body onload="init()">
+    loadImages();
 
     <div class="maincontainer">
 
         <canvas id="canvas" width="720" height="480">
         </canvas>
-        <div class="score">
+        <div class="score" id="showscore">
             <span>Highscore:</span>
             <span id="score">0000000</span>
         </div>
         <div class="sound">
-            <img src="img/icons/unmute.png" id="soundIconIngame" alt="" onclick="soundMute()">
+            <img  class="sound" src="img/icons/unmute.png" id="soundIconIngame" alt="" onclick="soundMute()">
         </div>
         <div class="mobileControllerLeft" id="mobileControllerLeft">
             <div>
@@ -71,7 +72,7 @@
         </div>
         <div class="firstscreen" id="firstscreen" onclick="firstScreen()">
             <img id="logo1" class="logo" src="../img/icons/4.png" onclick="firstScreen()" alt="retake mordor logo">
-            <button class="btn logo position" id="btn1">FIGHT?</button>
+            <button class="position btn3 logo" id="btn1">FIGHT?</button>
         </div>
         <div class="startscreen" id="startscreen">
             <div class="backdrop">
@@ -146,9 +147,8 @@
     <div class="endscreen dnone" id="endscreen">
         <div class="endscreenContent">
             <span class="endscreenHeadline" id="endscreenHeadline"></span>
-            
-            <
-            <button class="btn" id="restartGame" onclick="restartGame()">Start again?</button>
+            <button class="btn" id="restartGame" onclick="restartGame()">TRY AGAIN?</button>
+            <img id="logo1" class="logo3" src="../img/icons/4.png" onclick="firstScreen()" alt="retake mordor logo">
         </div>
     </div>
     </div>

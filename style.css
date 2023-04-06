@@ -131,7 +131,7 @@ canvas {
     font-family: 'ARIUAL';
     font-weight: 700;
     color: #bbd826;
-   
+
 }
 
 .position {
@@ -288,10 +288,10 @@ canvas {
 }
 
 .endscreenHeadline {
-    font-size: 120px;
+    font-size: 160px;
     font-weight: 800;
     color: aliceblue;
-    padding-top: 200px;
+    padding-top: 136px;
 }
 
 .gameendlore {
@@ -482,6 +482,7 @@ canvas {
     text-shadow: -1px 0 #7D4B07, 0 1px #7D4B07, 1px 0 #7D4B07, 0 -1px #7D4B07;
     font-size: 30px;
     cursor: pointer;
+    margin-top: 20px;
 }
 
 .btn:hover {
@@ -490,6 +491,48 @@ canvas {
 }
 
 .btn:active {
+    position: relative;
+    top: 1px;
+}
+
+.logo3 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 600px;
+    transition: all 5s;
+    z-index: 1;
+    display: inline-block;
+    animation: bounce;
+    animation-duration: 2s;
+    margin-top: 10px;
+}
+
+.logo3:hover .wrapper {
+    transform: perspective(900px) translateY(-80%) rotateX(50deg) translateZ(10);
+    box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+}
+
+.btn3 {
+    font-family: 'GrowlyGrin';
+    width: 200px;
+    height: 50px;
+    border-radius: 20px;
+    background-color: #62721A;
+    border: 2px solid #272D05;
+    color: #D7CC8D;
+    text-shadow: -1px 0 #7D4B07, 0 1px #7D4B07, 1px 0 #7D4B07, 0 -1px #7D4B07;
+    font-size: 30px;
+    cursor: pointer;
+    margin-top: 580px;
+}
+
+.btn3:hover {
+    background: linear-gradient(to bottom, #65751c 5%, #343D0E 100%);
+    background-color: #2A320B;
+}
+
+.btn3:active {
     position: relative;
     top: 1px;
 }
