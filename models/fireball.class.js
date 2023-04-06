@@ -3,9 +3,9 @@ class Fireball extends MoveableObject {
 
   offset = {
     top: 100,
-    right: 50,
+    right: 60,
     left: 100,
-    bottom: 0,
+    bottom: 100,
   }
 
 
