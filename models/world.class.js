@@ -13,6 +13,7 @@ class World {
     mana = 40;
     flash = [];
     points = 0;
+    score = 0;
 
     sword_sound = new Audio("audio/swordhit.mp3");
     axe_sound = new Audio ("audio/axehit.mp3");
@@ -86,7 +87,6 @@ class World {
                 if (endboss.isColliding(attack)) {
                     endboss.hit(attack);
                     attack.hit(endboss);
-                    this.playanimation.IMAGES_HURT;
                     this.increasePoints(2000);
                 }
             });

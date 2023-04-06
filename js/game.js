@@ -1,8 +1,8 @@
 let canvas;
 let world;
 let keyboard = new Keyboard();
-let gameAudio = new Audio ('/audio/dark-mystery-trailer-taking-our-time-131566.mp3');
-let menuAudio = new Audio ('/audio/dark-mystery-trailer-taking-our-time-131566.mp3');
+let gameAudio = new Audio ('audio/dark-mystery-trailer-taking-our-time-131566.mp3');
+let menuAudio = new Audio ('audio/dark-mystery-trailer-taking-our-time-131566.mp3');
 let soundMuted = false;
 
 
@@ -266,4 +266,22 @@ function firstScreen() {
     document.getElementById('firstscreen').classList.add('dnone');
     document.getElementById('title').classList.remove('dnone');
     document.getElementById('lore').classList.remove('dnone');
+}
+
+function checkGameOver(gameInterval) {
+    if (world.character.energy == 0) {
+        clearInterval(gameInterval);
+        setTimeout(() => {
+            document.getElementById('endscreen').classList.remove('dnone');
+            document.getElementById('endscreenHeadline').innerHTML = 'YOU LOOSE';
+        }, 1000);
+    }
+
+    if (world.level.endboss[0].energy == 0) {
+        clearInterval(gameInterval);
+        setTimeout(() => {
+            document.getElementById('endscreen').classList.remove('dnone');
+            document.getElementById('endscreenHeadline').innerHTML = 'YOU WIN';
+        }, 1000);
+    }
 }

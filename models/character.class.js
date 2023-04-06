@@ -159,11 +159,11 @@ class Character extends MoveableObject {
       
             if (this.isAboveGround() || this.speedY > 0) {
               this.playAnimation(this.IMAGES_JUMPING);
-            } else {
-              if (this.world.keyboard.right || this.world.keyboard.left) {
+            } else 
+              if (this.world.keyboard.RIGHT || this.world.keyboard.LEFT) {
                 this.playAnimation(this.IMAGES_WALKING);
               }
-            }
+            
           }, 1000 / 15);
     }
       
