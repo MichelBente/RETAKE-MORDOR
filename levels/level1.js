@@ -1,5 +1,9 @@
-const level1 = new Level(
+let level1;
+function initLevel() {
+level1 = new Level(
     [
+        new Orc(),
+        new Orc(),
         new Orc(),
         new Orc(),
         new Orc(),
@@ -7,6 +11,9 @@ const level1 = new Level(
     ],
 
     [
+        new Orc2(),
+        new Orc2(),
+        new Orc2(),
         new Orc2(),
         new Orc2(),
         new Orc2(),
@@ -76,6 +83,8 @@ const level1 = new Level(
         new Portion(),
         new Portion(),
         new Portion(),
+        new Portion(),
+        new Portion(),
     ],
     [
         new Fireball(),
@@ -109,5 +118,6 @@ const level1 = new Level(
         new Flash(),
         new Flash(),
         new Flash(),
-    ],
-);
+    ]
+); 
+}

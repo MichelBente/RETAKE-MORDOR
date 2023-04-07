@@ -6,15 +6,8 @@ let menuAudio = new Audio ('audio/dark-mystery-trailer-taking-our-time-131566.mp
 let soundMuted = false;
 
 
-let music = new Audio({
-    loop: true,
-    volume: -5.1,
-    src: ['/audio/dark-mystery-trailer-taking-our-time-131566.mp3']
-})
-
 function init() {
     canvas = document.getElementById('canvas');
-    
 }
 
 function runGame() {
@@ -61,8 +54,9 @@ function secondPage() {
 
 
 function startGame() {
-    world = new World(canvas, keyboard);
     hideScreens();
+    initLevel();
+    world = new World(canvas, keyboard);
     runGame();
     menuAudio.pause();
     gameAudio.play();

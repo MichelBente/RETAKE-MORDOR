@@ -14,6 +14,7 @@ class World {
     flash = [];
     points = 0;
     score = 0;
+    backgroundObjects = [];
 
     sword_sound = new Audio("audio/swordhit.mp3");
     axe_sound = new Audio ("audio/axehit.mp3");

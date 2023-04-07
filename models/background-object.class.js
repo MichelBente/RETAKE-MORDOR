@@ -6,7 +6,6 @@ class BackgroundObject extends MoveableObject {
    // thunder_sound = new Audio("audio/thunder.mp3");
   //  nopassing_sound = new Audio("audio/you_shall_not_pass.mp3");
   
-
     constructor(imagePath, x ) {
         super().loadImage(imagePath);
         this.x = x;
@@ -15,8 +14,6 @@ class BackgroundObject extends MoveableObject {
      //   this.nopassing_sound.play();
        
     }
-
-
 }
 
 

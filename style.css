@@ -2,7 +2,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("./img/backgrounds/PNG/game_background_3/game_background_3.png");
+    background-image: url("./img/backgrounds/PNG/game_background_2/game_background_2.png");
     object-fit: cover;
     background-position: top;
     background-repeat: no-repeat;
@@ -29,9 +29,9 @@ canvas {
     background-color: rgb(0, 0, 0);
     border: 2px solid rgba(255, 253, 253, 0.8);
     margin-top: 30px !important;
-    /* background-image: url(./img/backgrounds/PNG/game_background_2/game_background_2.png);*/
     object-fit: cover;
     background-position: bottom;
+    display: block;
 }
 
 .logoelf {
@@ -48,6 +48,9 @@ canvas {
     display: inline-block;
     animation: bounce;
     animation-duration: 2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .logo:hover .wrapper {
@@ -104,6 +107,8 @@ canvas {
     opacity: 100%;
     font-family: 'ARIUAL';
     padding-top: 40px;
+    color: rgb(247, 219, 181);
+    text-shadow: 2px 4px 2px rgb(0, 0, 0);
 }
 
 .headline:hover {
@@ -113,9 +118,16 @@ canvas {
 }
 
 .firstscreen {
+    margin: 0;
     position: absolute;
+    width: 100%;
     height: 100vh;
     z-index: 120;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-image: url('img/backgrounds/PNG/game_background_2/game_background_2.png');
 }
 
@@ -142,7 +154,6 @@ canvas {
     bottom: 0;
     justify-content: center;
     margin-top: 580px;
-    margin-left: 200px;
 }
 
 .startscreen {
@@ -183,7 +194,7 @@ canvas {
     padding-left: 40px;
     padding-right: 40px;
     color: rgb(247, 219, 181);
-    text-shadow: rgb(255, 255, 255);
+    text-shadow: 2px 4px 2px rgb(0, 0, 0);
 }
 
 .btn {
@@ -292,6 +303,8 @@ canvas {
     font-weight: 800;
     color: aliceblue;
     padding-top: 136px;
+    color: rgb(247, 219, 181);
+    text-shadow: 2px 4px 2px rgb(0, 0, 0);
 }
 
 .gameendlore {
@@ -384,6 +397,8 @@ canvas {
     align-items: center;
     flex-direction: column;
     gap: 50px;
+    color: rgb(247, 219, 181);
+    text-shadow: 2px 4px 2px rgb(0, 0, 0);
 }
 
 .walkRight {
@@ -395,7 +410,8 @@ canvas {
     gap: 15px;
     color: #e4efab;
     font-weight: 700;
-    text-shadow: #000000;
+    color: rgb(247, 219, 181);
+    text-shadow: 2px 4px 2px rgb(0, 0, 0);
 }
 
 .walkLeft {
@@ -407,7 +423,8 @@ canvas {
     gap: 15px;
     color: #e4efab;
     font-weight: 700;
-    text-shadow: #000000;
+    color: rgb(247, 219, 181);
+    text-shadow: 2px 4px 2px rgb(0, 0, 0);
     flex-direction: row-reverse;
 }
 
@@ -421,7 +438,8 @@ canvas {
     gap: 15px;
     color: #e4efab;
     font-weight: 700;
-    text-shadow: #000000;
+    color: rgb(247, 219, 181);
+    text-shadow: 2px 4px 2px rgb(0, 0, 0);
 }
 
 
@@ -434,7 +452,8 @@ canvas {
     gap: 15px;
     color: #e4efab;
     font-weight: 700;
-    text-shadow: #000000;
+    color: rgb(247, 219, 181);
+    text-shadow: 2px 4px 2px rgb(0, 0, 0);
     margin-top: 20px;
 }
 
@@ -453,13 +472,15 @@ canvas {
     gap: 15px;
     color: #e4efab;
     font-weight: 700;
-    text-shadow: #000000;
+    color: rgb(247, 219, 181);
+    text-shadow: 2px 4px 2px rgb(0, 0, 0);
     margin-top: -100px;
 }
 
 
 .fire img {
     width: 250px;
+
 }
 
 .startMenu {
@@ -483,6 +504,8 @@ canvas {
     font-size: 30px;
     cursor: pointer;
     margin-top: 20px;
+    color: rgb(247, 219, 181);
+    text-shadow: 2px 4px 2px rgb(0, 0, 0);
 }
 
 .btn:hover {
@@ -513,7 +536,7 @@ canvas {
     box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
 }
 
-.btn3 {
+/* .btn3 {
     font-family: 'GrowlyGrin';
     width: 200px;
     height: 50px;
@@ -525,6 +548,9 @@ canvas {
     font-size: 30px;
     cursor: pointer;
     margin-top: 580px;
+    margin-left: 200px;
+    color: rgb(247, 219, 181);
+    text-shadow: 2px 4px 2px rgb(0, 0, 0);
 }
 
 .btn3:hover {
@@ -535,7 +561,7 @@ canvas {
 .btn3:active {
     position: relative;
     top: 1px;
-}
+} */
 
 .dnone {
     display: none;
@@ -543,4 +569,150 @@ canvas {
 
 .show {
     display: flex;
+}
+
+
+
+/* Responsive */
+@media (max-width: 500px) {
+    body {
+        font-size: 21px;
+    }
+
+    .logo {
+        width: 300px;
+    }
+
+}
+
+/* Smartphone */
+@media only screen and (max-width:1368px) {
+    .logo {
+        width: 90%;
+    }
+
+
+    .headline {
+        width: 60%;
+    }
+
+    .mobileControllerLeft {
+        display: flex;
+    }
+
+    .mobileControllerRight {
+        display: flex;
+    }
+
+}
+
+@media only screen and (max-width:720px) {
+    header img {
+        display: none !important;
+
+    }
+
+    .game {
+        width: 100%;
+    }
+
+    canvas {
+        width: 100%;
+    }
+
+    .menu {
+        width: 100%;
+    }
+
+    .endscreen {
+        width: 100%;
+    }
+
+    .endscreenContent {
+        width: 100%;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .firstscreen {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-height:660px) {
+    .btn3 {
+        margin-top: 460px;
+        margin-left: 50px;
+        display: none;
+    }
+
+    .position {
+        margin-top: 286px;
+        margin-left: 72px;
+    }
+
+    .logo {
+        width: 40%;
+    }
+
+    .firstscreen {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-height:620px) {
+    .startscreen {
+        height: 100vh;
+        padding: 0;
+    }
+
+    .backdrop {
+        height: 100vh;
+        padding: 0;
+    }
+
+    .gameLore {
+        font-size: 20px;
+    }
+
+    .btn3 {
+        margin-top: 280px;
+        margin-left: 50px;
+
+    }
+
+}
+
+@media only screen and (max-height:580px) {
+    .btn3 {
+        margin-top: 100px;
+        margin-left: 40px;
+    }
+}
+
+@media only screen and (max-height:480px) {
+    .game {
+        height: 100vh;
+    }
+
+    canvas {
+        height: 100vh;
+        border: none;
+    }
+
+    .endscreen {
+        height: 100vh;
+    }
+
+    .endscreenContent {
+        height: 100vh;
+    }
+
+    .btn {
+        bottom: 5px;
+    }
 }

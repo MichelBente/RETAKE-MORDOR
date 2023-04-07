@@ -11,8 +11,6 @@ class Level {
     spellbook = [];
     flash = [];
    
-
-
 constructor(enemies, enemies2, clouds, backgroundObjects, endboss, portion, fireball, spellbook, flash,) {
 this.enemies = enemies;
 this.enemies2 = enemies2;
@@ -23,8 +21,5 @@ this.portion = portion;
 this.fireball = fireball;
 this.spellbook = spellbook;
 this.flash = flash;
-
-}
-
-
+    }
 }
