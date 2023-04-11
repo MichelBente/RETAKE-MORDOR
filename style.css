@@ -625,47 +625,51 @@ canvas {
         height: 100vh;
         width: 100wh;
     }
-.gameLore {
+
+    .gameLore {
+        font-size: 20px;
+    }
+
+    .logo3 {
+        width: 400px;
+        height: 630px;
+    }
+}
+
+.jump {
     font-size: 20px;
 }
 
-.logo3 {
-    width: 400px;
-    height: 630px;
+.walkLeft {
+    font-size: 20px;
 }
+
+.walkRight {
+    font-size: 20px;
 }
-    .jump {
-        font-size: 20px;
-    }
 
-    .walkLeft {
-        font-size: 20px;
-    }
+.flash {
+    font-size: 20px;
+    width: 50px;
+}
 
-    .walkRight {
-        font-size: 20px;
-    }
+.fire {
+    font-size: 20px;
+    width: 50px;
+    padding-right: 30px;
+}
 
-    .flash {
-        font-size: 20px;
-        width: 50px;
-    }
+.howToPlay {
+    font-size: 20px;
+}
 
-    .fire {
-        font-size: 20px;
-        width: 50px;
-        padding-right: 30px;
-    }
-
-    .howToPlay {
-        font-size: 20px;
-    }
-
-    .headline {
-        display: flex;
-        flex-direction: column;
-        font-size: 40px;
-    }
+.headline {
+    display: flex;
+    flex-direction: row;
+    font-size: 40px;
+    align-items: center;
+    justify-content: center;
+}
 
 
 @media only screen and (max-width:720px) {
@@ -706,7 +710,7 @@ canvas {
     .firstscreen {
         width: 100%;
     }
- 
+
 }
 
 
@@ -719,35 +723,35 @@ canvas {
 
     .headline {
         display: flex;
-        flex-direction: column;
         font-size: 30px;
         width: 50px;
+        flex-direction: row;
+    }
+
+
+    .btn3 {
+        margin-top: 460px;
+        margin-left: 50px;
+        display: none;
+    }
+
+    .position {
+        margin-top: 286px;
+        margin-left: 72px;
+    }
+
+    .logo {
+        width: 40%;
+    }
+
+    .firstscreen {
+        width: 100%;
+    }
+
+    .endscreenHeadline {
+        font-size: 40px;
     }
 }
-
-.btn3 {
-    margin-top: 460px;
-    margin-left: 50px;
-    display: none;
-}
-
-.position {
-    margin-top: 286px;
-    margin-left: 72px;
-}
-
-.logo {
-    width: 40%;
-}
-
-.firstscreen {
-    width: 100%;
-}
-
-.endscreenHeadline {
-    font-size: 40px;
-}
-
 
 @media only screen and (max-height:620px) {
     .startscreen {
@@ -782,20 +786,34 @@ canvas {
         margin-top: 100px;
         margin-left: 40px;
     }
+
 }
 
-@media only screen and (max-height:480px) {
+@media only screen and (max-width:1024px) {
     .game {
         height: 100vh;
     }
+    .headline {
+        width:80%;
+        font-size: 50px;
+    padding-top: 400px;
+    }
+.logo3 {
+    width:30%;
+    padding-bottom: 200px;
+}
+    .logo {
+        width: 30%;
+    }
 
     canvas {
-        height: 100vh;
         border: none;
     }
 
     .endscreen {
         height: 100vh;
+        display: flex;
+        
     }
 
     .endscreenContent {
@@ -804,5 +822,57 @@ canvas {
 
     .btn {
         bottom: 5px;
+        justify-content: center;
+    }
+
+    .endscreenHeadline {
+        font-size: 40px;
+        
+    }
+    
+}
+
+@media only screen and (max-height:1024px) {
+
+   
+
+    .headline {
+        font-size: 50px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .secondscreen {
+        display: flex;
+
+        padding: 30px;
+    }
+
+    .jump {
+        font-size: 20px;
+    }
+
+    .walkLeft {
+        font-size: 20px;
+    }
+
+    .walkRight {
+        font-size: 20px;
+    }
+
+    .flash {
+        font-size: 20px;
+        width: 50px;
+        margin-left: 130px;
+    }
+
+    .fire {
+        font-size: 20px;
+        width: 50px;
+        margin-left: 130px;
+    }
+
+    .btn {
+        margin-top: 325px;
     }
 }
