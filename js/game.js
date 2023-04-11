@@ -223,34 +223,6 @@ function setHighscore() {
     document.getElementById('score').innerHTML = highscore;
 }
 
-
-function howToPlay() {
-    document.getElementById('description').innerHTML = createHowToPlay();
-}
-
-function createHowToPlay() {
-    return `
-    <div class="howToPlay">
-        <div class="walkRight">
-            Walk Right: D or<button class="btnSmall" id="btnRight"><img  class="arrowRight" src="img/icons/arrow-204-256.png" class="rotateRight imgSmall" alt=""></button>
-        </div>
-        <div class="walkLeft">
-            Walk Left: A or<button class="btnSmall" id="btnLeft"><img class="arrowLeft" src="img/icons/arrow-204-256.png" class="rotateLeft imgSmall" alt=""></button>
-        </div>
-        <div class="jump">
-            Jump: SPACE or<button class="btnSmall" id="btnJump"><img class="arrowUp" src="img/icons/arrow-204-256.png" class="imgSmall" alt=""></button>
-        </div>
-    </div>
-    <div class="howToPlay">
-        <div class="flash">
-            <img src="img/Flashcast/flash06.png" alt="">Flash (Requires 5 Mana): SHIFT
-        </div>
-        <div class="fire">
-            <img src="img/Firecast/22.png" alt="">Fireball (Requires 30 Mana): ENTER
-        </div>
-    </div>`
-}
-
 function openSettings() {
     document.getElementById('startscreen').classList.add('dnone');
     document.getElementById('secondscreen').classList.remove('dnone');
