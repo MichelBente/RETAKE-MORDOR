@@ -193,6 +193,7 @@ canvas {
     font-size: 24px;
     padding-left: 40px;
     padding-right: 40px;
+    margin-right: 40px;
     color: rgb(247, 219, 181);
     text-shadow: 2px 4px 2px rgb(0, 0, 0);
 }
@@ -609,8 +610,10 @@ canvas {
 @media only screen and (max-width:720px) {
     header img {
         display: none !important;
-
     }
+.logoelf {
+    display: none;
+}
 
     .game {
         width: 100%;

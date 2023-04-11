@@ -50,6 +50,7 @@ function setWorldAudio() {
 function secondPage() {
     document.getElementById('startscreen').classList.add('dnone');
     document.getElementById('secondscreen').classList.remove('dnone');
+    d
 }
 
 
@@ -231,7 +232,18 @@ function openSettings() {
 function firstScreen() {
     document.getElementById('firstscreen').classList.add('dnone');
     document.getElementById('title').classList.remove('dnone');
+    document.getElementById('mute2').classList.add('dnone');
+   
+}
+
+function openStory() {
     document.getElementById('lore').classList.remove('dnone');
+    document.getElementById('buttonStory').classList.add('dnone');
+    
+}
+
+function closeStory() {
+    document.getElementById('lore').classList.add('dnone');
 }
 
 function checkGameOver(gameInterval) {
