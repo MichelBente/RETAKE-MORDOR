@@ -50,7 +50,7 @@ function setWorldAudio() {
 function secondPage() {
     document.getElementById('startscreen').classList.add('dnone');
     document.getElementById('secondscreen').classList.remove('dnone');
-    d
+    
 }
 
 
