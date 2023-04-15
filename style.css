@@ -662,13 +662,7 @@ canvas {
 @media only screen and (max-width:880px) {
 
 
-    .btn {
-        position: absolute;
-        top:1;
-        right:0;
-        left:130px;
-        bottom:50px;
-    }
+   
     .gameLore {
         font-size: 20px;
     }
@@ -852,7 +846,7 @@ canvas {
 
 }
 
-@media only screen and (max-width:896px) {
+/* @media only screen and (max-width:896px) {
 
     .btn {
         position: absolute;
@@ -880,4 +874,4 @@ canvas {
         gap:10px;
         margin-left: 500px;
     }
-}
+} */
