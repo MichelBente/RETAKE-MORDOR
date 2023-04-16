@@ -579,33 +579,6 @@ canvas {
 
 
 
-/* Responsive */
-@media (max-width: 500px) {
-    body {
-        font-size: 21px;
-    }
-
-    .logo {
-        width: 300px;
-    }
-
-}
-
-/* Smartphone */
-@media only screen and (max-width:1440px) {
-    .logo {
-        width: 400px;
-    }
-    .btn {
-        position: absolute;
-        top:610px;
-        right:0px;
-        left:620px;
-        bottom:50px;
-    }
-
-}
-
 @media only screen and (max-width:1368px) {
 
     .mobileControllerLeft {
@@ -619,289 +592,134 @@ canvas {
 
 }
 
-@media only screen and (max-height:1024px) {
-
-
-
-    .headline {
-        font-size: 50px;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .secondscreen {
-        padding: 30px;
-    }
-
-    .jump {
-        font-size: 20px;
-    }
-
-    .walkLeft {
-        font-size: 20px;
-    }
-
-    .walkRight {
-        font-size: 20px;
-    }
-
-    .flash {
-        font-size: 20px;
-        width: 50px;
-        margin-left: 130px;
-    }
-
-    .fire {
-        font-size: 20px;
-        width: 50px;
-        margin-left: 130px;
-    }
-
-    .btn {
-        margin-top: 125px;
-    }
-}
-
-@media only screen and (max-width:1200px) {
-    .logoelf {
-        flex-direction: row;
-    }
-}
-
-@media only screen and (max-width:1150px) {
-    .logoelf {
-        display: none !important;
-    }
-}
-
-@media only screen and (max-width:840px) {
-
-
-   
-    .gameLore {
-        font-size: 20px;
-    }
-
-    /* .logo3 {
+@media only screen and (max-width:1368px) {
+    .logo {
         width: 400px;
-        height: 630px;
-    } */
-    .btn {
-        position: absolute;
-        top:620px;
-        right:0px;
-        left:0px;
-        bottom:50px;
     }
-}
-
-.jump {
-    font-size: 20px;
-}
-
-.walkLeft {
-    font-size: 20px;
-}
-
-.walkRight {
-    font-size: 20px;
-}
-
-.flash {
-    font-size: 20px;
-    width: 50px;
-    gap: 50px;
-}
-
-.fire {
-    font-size: 20px;
-    width: 50px;
-    margin-right: 115px;
-}
-
-.howToPlay {
-    font-size: 20px;
-}
-
-.headline {
-    display: flex;
-    flex-direction: row;
-    font-size: 40px;
-    align-items: center;
-    justify-content: center;
-}
-
-
-@media only screen and (max-width:720px) {
-
-
-    .logoelf {
-        display: none;
-    }
-
-
-    canvas {
-        width: 100%;
-    }
-
-    .menu {
-        width: 100%;
-    }
-
-    .logo {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100px;
-    }
-
-  
-
-
-}
-
-
-@media only screen and (max-height:660px) {
-
-    .startscreen {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .headline {
-        display: flex;
-        font-size: 30px;
-        width: 50px;
-        flex-direction: row;
-    }
-
-
-    .btn3 {
-        margin-top: 460px;
-        margin-left: 50px;
-        display: none;
-    }
-
-    .position {
-        margin-top: 286px;
-        margin-left: 72px;
-    }
-
-    .logo {
-        width: 40%;
-    }
-
-    .endscreenHeadline {
-        font-size: 40px;
-    }
-}
-
-@media only screen and (max-height:620px) {
-
-
-    .backdrop {
-        padding: 0px;
-        z-index: 100;
-        background-image: url(img/backgrounds/PNG/game_background_2/game_background_2.png);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        font-size: 40px;
-    }
-
-
-    .gameLore {
-        font-size: 20px;
-    }
-
-    .btn3 {
-        margin-top: 280px;
-        margin-left: 50px;
-
-    }
-
-}
-
-@media only screen and (max-height:580px) {
-    .btn3 {
-        margin-top: 100px;
-        margin-left: 40px;
-    }
-
-}
-
-@media only screen and (max-height:480px) {
-    .gameLore {
-        font-size: 14px;
-    }
-
     h1 {
         display: none;
+    }
+    .gameLore {
+        font-size: 22px;
+        flex-wrap: wrap;
+        margin-left: 100px;
+    }
+    .maincontainer {
+        padding-right: 100px;
+    }
+    .headline {
+        font-size: 45px;
     }
 }
 
 
 @media only screen and (max-width:1024px) {
-
-
     .logo {
-        width: 30%;
+        width: 300px;
     }
-
-    canvas {
-        border: none;
+    .logo3 {
+        width: 300px;
     }
-
-    .btn {
-        justify-content: center;
-            align-items: center;
-            margin-right: 150px;
-        
+    
+    .logoelf {
+        display: none;
     }
-
-    .endscreenHeadline {
-        font-size: 40px;
+    h1 {
+        display: none;
     }
-
-}
-
- @media only screen and (max-width:896px) {
-
-    .btn {
-        position: absolute;
-        top:1;
-        right:0;
-        left:285px;
-        bottom:50px;
+    .gameLore {
+        font-size: 22px;
     }
-
-    /* .fire {
-        position: absolute;
-        top:0;
-        right:0;
-        left:0;
-        bottom:0;
+    .fire {
+        padding-right: 100px;
     }
     .flash {
-        position: absolute;
-        top:1;
-        right:0;
-        left:50px;
-        bottom:30px;
+        padding-right: 100px;
     }
-    .howToPlay {
-        gap:10px;
-        margin-left: 500px;
-    } */
-} 
-@media only screen and (max-width:390px) {
+    .canvas {
+        margin-right: 300px;
+    }
+    .endscreenHeadline {
+        font-size: 30px;
+    }
+}
+
+@media only screen and (max-width:844px) {
+    .logo {
+        width: 160px;
+    }
+
+    .logoelf {
+        display: none;
+    }
+    .headline {
+        font-size: 25px;
+    }
+    .gameLore {
+        font-size: 10px;
+    }
+    h1 {
+        display: none;
+    }
     .btn {
-        position: absolute;
-        top:0;
-        right:0;
-        left:5px;
-        bottom:50px;
-        margin-right: 100px;
+        margin-bottom: 80px;
     }
+    
+.howToPlay {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+    .jump {
+        font-size: 10px;
+    }
+
+    .walkLeft {
+        font-size: 10px;
+        margin-bottom: 30px;
+        margin-top: 30px;
+    }
+
+    .walkRight {
+        font-size: 10px;
+    }
+
+    .flash {
+        font-size: 10px;
+        width: 100px;
+        padding-top: 80px;
+        padding-right: 100px;
+    }
+
+    .fire {
+        font-size: 10px;
+        width:100px;
+        padding-left: 0px;
+    }
+    .secondscreen {
+        padding:30px;
+    }
+    .firstscreen {
+        padding: 30px;
+    }
+    .startscreen {
+        padding: 30px;
+    }
+    .mobileControllerLeft {
+        display: flex;
+        padding-left: 20px;
+        padding-top: 60px;
+        margin-top: 100px
+    }
+
+    .mobileControllerRight {
+        display: flex;
+        margin-right: 60px;
+    }
+.endscreenHeadline {
+    font-size: 30px;
+}
+.endscreen {
+    padding:30px;
+}
 }
