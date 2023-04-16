@@ -592,6 +592,20 @@ canvas {
 }
 
 /* Smartphone */
+@media only screen and (max-width:1440px) {
+    .logo {
+        width: 400px;
+    }
+    .btn {
+        position: absolute;
+        top:610px;
+        right:0px;
+        left:620px;
+        bottom:50px;
+    }
+
+}
+
 @media only screen and (max-width:1368px) {
 
     .mobileControllerLeft {
@@ -644,7 +658,7 @@ canvas {
     }
 
     .btn {
-        margin-top: 325px;
+        margin-top: 125px;
     }
 }
 
@@ -660,7 +674,7 @@ canvas {
     }
 }
 
-@media only screen and (max-width:880px) {
+@media only screen and (max-width:840px) {
 
 
    
@@ -672,6 +686,13 @@ canvas {
         width: 400px;
         height: 630px;
     } */
+    .btn {
+        position: absolute;
+        top:620px;
+        right:0px;
+        left:0px;
+        bottom:50px;
+    }
 }
 
 .jump {
@@ -731,8 +752,10 @@ canvas {
         display: flex;
         align-items: center;
         justify-content: center;
+        width: 100px;
     }
 
+  
 
 
 }
@@ -822,12 +845,6 @@ canvas {
 @media only screen and (max-width:1024px) {
 
 
-
-    .logo3 {
-        width: 30%;
-        padding-bottom: 200px;
-    }
-
     .logo {
         width: 30%;
     }
@@ -837,8 +854,10 @@ canvas {
     }
 
     .btn {
-        bottom: 5px;
         justify-content: center;
+            align-items: center;
+            margin-right: 150px;
+        
     }
 
     .endscreenHeadline {
@@ -847,17 +866,17 @@ canvas {
 
 }
 
-/* @media only screen and (max-width:896px) {
+ @media only screen and (max-width:896px) {
 
     .btn {
         position: absolute;
         top:1;
         right:0;
-        left:630px;
+        left:285px;
         bottom:50px;
     }
 
-    .fire {
+    /* .fire {
         position: absolute;
         top:0;
         right:0;
@@ -874,5 +893,15 @@ canvas {
     .howToPlay {
         gap:10px;
         margin-left: 500px;
+    } */
+} 
+@media only screen and (max-width:390px) {
+    .btn {
+        position: absolute;
+        top:0;
+        right:0;
+        left:5px;
+        bottom:50px;
+        margin-right: 100px;
     }
-} */
+}
