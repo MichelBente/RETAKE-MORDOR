@@ -9,7 +9,7 @@ class Portion extends CollectibleObject {
 
 
     constructor() {
-        super().loadImage("../img/stuff/craftpix-net-500794-50-free-rpg-paint-icons/PNG/without background/23.png");
+        super().loadImage("./img/stuff/craftpix-net-500794-50-free-rpg-paint-icons/PNG/without background/23.png");
         this.x = 250 + Math.random() * 2500;
         this.y = 50 + Math.random() * 50;
         this.animate();

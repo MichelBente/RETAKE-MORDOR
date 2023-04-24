@@ -18,62 +18,62 @@ class Endboss extends MoveableObject {
     };
 
     IMAGES_WALKING = [
-        "../img/orcs/_PNG/2_ORK/ORK_02_WALK_000.png",
-        "../img/orcs/_PNG/2_ORK/ORK_02_WALK_001.png",
-        "../img/orcs/_PNG/2_ORK/ORK_02_WALK_002.png",
-        "../img/orcs/_PNG/2_ORK/ORK_02_WALK_003.png",
-        "../img/orcs/_PNG/2_ORK/ORK_02_WALK_004.png",
-        "../img/orcs/_PNG/2_ORK/ORK_02_WALK_005.png",
-        "../img/orcs/_PNG/2_ORK/ORK_02_WALK_006.png",
-        "../img/orcs/_PNG/2_ORK/ORK_02_WALK_007.png",
-        "../img/orcs/_PNG/2_ORK/ORK_02_WALK_008.png",
-        "../img/orcs/_PNG/2_ORK/ORK_02_WALK_009.png",
+        "./img/orcs/_PNG/2_ORK/ORK_02_WALK_000.png",
+        "./img/orcs/_PNG/2_ORK/ORK_02_WALK_001.png",
+        "./img/orcs/_PNG/2_ORK/ORK_02_WALK_002.png",
+        "./img/orcs/_PNG/2_ORK/ORK_02_WALK_003.png",
+        "./img/orcs/_PNG/2_ORK/ORK_02_WALK_004.png",
+        "./img/orcs/_PNG/2_ORK/ORK_02_WALK_005.png",
+        "./img/orcs/_PNG/2_ORK/ORK_02_WALK_006.png",
+        "./img/orcs/_PNG/2_ORK/ORK_02_WALK_007.png",
+        "./img/orcs/_PNG/2_ORK/ORK_02_WALK_008.png",
+        "./img/orcs/_PNG/2_ORK/ORK_02_WALK_009.png",
     ];
 
     IMAGES_ATTACK = [
-        "../img/orcs/_PNG/2_ORK/ORK_02_ATTAK_000.png",
-        "../img/orcs/_PNG/2_ORK/ORK_02_ATTAK_001.png",
-        "../img/orcs/_PNG/2_ORK/ORK_02_ATTAK_002.png",
-        "../img/orcs/_PNG/2_ORK/ORK_02_ATTAK_003.png",
-        "../img/orcs/_PNG/2_ORK/ORK_02_ATTAK_004.png",
-        "../img/orcs/_PNG/2_ORK/ORK_02_ATTAK_005.png",
-        "../img/orcs/_PNG/2_ORK/ORK_02_ATTAK_006.png",
-        "../img/orcs/_PNG/2_ORK/ORK_02_ATTAK_007.png",
-        "../img/orcs/_PNG/2_ORK/ORK_02_ATTAK_008.png",
-        "../img/orcs/_PNG/2_ORK/ORK_02_ATTAK_009.png",
+        "./img/orcs/_PNG/2_ORK/ORK_02_ATTAK_000.png",
+        "./img/orcs/_PNG/2_ORK/ORK_02_ATTAK_001.png",
+        "./img/orcs/_PNG/2_ORK/ORK_02_ATTAK_002.png",
+        "./img/orcs/_PNG/2_ORK/ORK_02_ATTAK_003.png",
+        "./img/orcs/_PNG/2_ORK/ORK_02_ATTAK_004.png",
+        "./img/orcs/_PNG/2_ORK/ORK_02_ATTAK_005.png",
+        "./img/orcs/_PNG/2_ORK/ORK_02_ATTAK_006.png",
+        "./img/orcs/_PNG/2_ORK/ORK_02_ATTAK_007.png",
+        "./img/orcs/_PNG/2_ORK/ORK_02_ATTAK_008.png",
+        "./img/orcs/_PNG/2_ORK/ORK_02_ATTAK_009.png",
     ];
 
     IMAGES_DIE = [
-        "../img/orcs/_PNG/2_ORK/ORK_02_DIE_000.png",
-        "../img/orcs/_PNG/2_ORK/ORK_02_DIE_001.png",
-        "../img/orcs/_PNG/2_ORK/ORK_02_DIE_002.png",
-        "../img/orcs/_PNG/2_ORK/ORK_02_DIE_003.png",
-        "../img/orcs/_PNG/2_ORK/ORK_02_DIE_004.png",
-        "../img/orcs/_PNG/2_ORK/ORK_02_DIE_005.png",
-        "../img/orcs/_PNG/2_ORK/ORK_02_DIE_006.png",
-        "../img/orcs/_PNG/2_ORK/ORK_02_DIE_007.png",
-        "../img/orcs/_PNG/2_ORK/ORK_02_DIE_008.png",
-        "../img/orcs/_PNG/2_ORK/ORK_02_DIE_009.png",
+        "./img/orcs/_PNG/2_ORK/ORK_02_DIE_000.png",
+        "./img/orcs/_PNG/2_ORK/ORK_02_DIE_001.png",
+        "./img/orcs/_PNG/2_ORK/ORK_02_DIE_002.png",
+        "./img/orcs/_PNG/2_ORK/ORK_02_DIE_003.png",
+        "./img/orcs/_PNG/2_ORK/ORK_02_DIE_004.png",
+        "./img/orcs/_PNG/2_ORK/ORK_02_DIE_005.png",
+        "./img/orcs/_PNG/2_ORK/ORK_02_DIE_006.png",
+        "./img/orcs/_PNG/2_ORK/ORK_02_DIE_007.png",
+        "./img/orcs/_PNG/2_ORK/ORK_02_DIE_008.png",
+        "./img/orcs/_PNG/2_ORK/ORK_02_DIE_009.png",
     ];
 
     IMAGES_HURT = [
-        "../img/orcs/_PNG/2_ORK/ORK_02_HURT_000.png",
-        "../img/orcs/_PNG/2_ORK/ORK_02_HURT_001.png",
-        "../img/orcs/_PNG/2_ORK/ORK_02_HURT_002.png",
-        "../img/orcs/_PNG/2_ORK/ORK_02_HURT_003.png",
-        "../img/orcs/_PNG/2_ORK/ORK_02_HURT_004.png",
-        "../img/orcs/_PNG/2_ORK/ORK_02_HURT_005.png",
-        "../img/orcs/_PNG/2_ORK/ORK_02_HURT_006.png",
-        "../img/orcs/_PNG/2_ORK/ORK_02_HURT_007.png",
-        "../img/orcs/_PNG/2_ORK/ORK_02_HURT_008.png",
-        "../img/orcs/_PNG/2_ORK/ORK_02_HURT_009.png",
+        "./img/orcs/_PNG/2_ORK/ORK_02_HURT_000.png",
+        "./img/orcs/_PNG/2_ORK/ORK_02_HURT_001.png",
+        "./img/orcs/_PNG/2_ORK/ORK_02_HURT_002.png",
+        "./img/orcs/_PNG/2_ORK/ORK_02_HURT_003.png",
+        "./img/orcs/_PNG/2_ORK/ORK_02_HURT_004.png",
+        "./img/orcs/_PNG/2_ORK/ORK_02_HURT_005.png",
+        "./img/orcs/_PNG/2_ORK/ORK_02_HURT_006.png",
+        "./img/orcs/_PNG/2_ORK/ORK_02_HURT_007.png",
+        "./img/orcs/_PNG/2_ORK/ORK_02_HURT_008.png",
+        "./img/orcs/_PNG/2_ORK/ORK_02_HURT_009.png",
 
     ];
 
     // horn_sound = new Audio("audio/horn.mp3");
 
     constructor() {
-        super().loadImage("../img/orcs/_PNG/2_ORK/ORK_02_IDLE_000.png");
+        super().loadImage("./img/orcs/_PNG/2_ORK/ORK_02_IDLE_000.png");
         this.x = 2500;
         this.y = -190,
         this.speed = 0.05 + Math.random() + 0.5;

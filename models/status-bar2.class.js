@@ -3,17 +3,17 @@ class StatusBar2 extends DrawableObject {
 
 
     IMAGES_MANABAR = [
-        "../img/stuff/MANA_Bar/Mana_bar_00.png",
-        "../img/stuff/MANA_Bar/Mana_bar_10.png",
-        "../img/stuff/MANA_Bar/Mana_bar_20.png",
-        "../img/stuff/MANA_Bar/Mana_bar_30.png",
-        "../img/stuff/MANA_Bar/Mana_bar_40.png",
-        "../img/stuff/MANA_Bar/Mana_bar_50.png",
-        "../img/stuff/MANA_Bar/Mana_bar_60.png",
-        "../img/stuff/MANA_Bar/Mana_bar_70.png",
-        "../img/stuff/MANA_Bar/Mana_bar_80.png",
-        "../img/stuff/MANA_Bar/Mana_bar_90.png",
-        "../img/stuff/MANA_Bar/Mana_bar_100.png",
+        "./img/stuff/MANA_Bar/Mana_bar_00.png",
+        "./img/stuff/MANA_Bar/Mana_bar_10.png",
+        "./img/stuff/MANA_Bar/Mana_bar_20.png",
+        "./img/stuff/MANA_Bar/Mana_bar_30.png",
+        "./img/stuff/MANA_Bar/Mana_bar_40.png",
+        "./img/stuff/MANA_Bar/Mana_bar_50.png",
+        "./img/stuff/MANA_Bar/Mana_bar_60.png",
+        "./img/stuff/MANA_Bar/Mana_bar_70.png",
+        "./img/stuff/MANA_Bar/Mana_bar_80.png",
+        "./img/stuff/MANA_Bar/Mana_bar_90.png",
+        "./img/stuff/MANA_Bar/Mana_bar_100.png",
     ];
 
     percentage = 20;
@@ -22,7 +22,7 @@ class StatusBar2 extends DrawableObject {
 
     constructor() { 
         super();
-        this.loadImage("../img/stuff/MANA_Bar/Mana_bar_00.png");
+        this.loadImage("./img/stuff/MANA_Bar/Mana_bar_00.png");
         this.loadImages(this.IMAGES_MANABAR);
         this.setPercentage(this.percentage);
     }

@@ -3,17 +3,17 @@ class StatusBar extends DrawableObject {
 
 
     IMAGES_HPBAR = [
-        "../img/stuff/HP_BAR/HP_BAR/HP_bar_00.png",
-        "../img/stuff/HP_BAR/HP_BAR/HP_bar_10.png",
-        "../img/stuff/HP_BAR/HP_BAR/HP_bar_20.png",
-        "../img/stuff/HP_BAR/HP_BAR/HP_bar_30.png",
-        "../img/stuff/HP_BAR/HP_BAR/HP_bar_40.png",
-        "../img/stuff/HP_BAR/HP_BAR/HP_bar_50.png",
-        "../img/stuff/HP_BAR/HP_BAR/HP_bar_60.png",
-        "../img/stuff/HP_BAR/HP_BAR/HP_bar_70.png",
-        "../img/stuff/HP_BAR/HP_BAR/HP_bar_80.png",
-        "../img/stuff/HP_BAR/HP_BAR/HP_bar_90.png",
-        "../img/stuff/HP_BAR/HP_BAR/HP_bar_100.png",
+        "./img/stuff/HP_BAR/HP_BAR/HP_bar_00.png",
+        "./img/stuff/HP_BAR/HP_BAR/HP_bar_10.png",
+        "./img/stuff/HP_BAR/HP_BAR/HP_bar_20.png",
+        "./img/stuff/HP_BAR/HP_BAR/HP_bar_30.png",
+        "./img/stuff/HP_BAR/HP_BAR/HP_bar_40.png",
+        "./img/stuff/HP_BAR/HP_BAR/HP_bar_50.png",
+        "./img/stuff/HP_BAR/HP_BAR/HP_bar_60.png",
+        "./img/stuff/HP_BAR/HP_BAR/HP_bar_70.png",
+        "./img/stuff/HP_BAR/HP_BAR/HP_bar_80.png",
+        "./img/stuff/HP_BAR/HP_BAR/HP_bar_90.png",
+        "./img/stuff/HP_BAR/HP_BAR/HP_bar_100.png",
     ];
 
     percentage = 100;
